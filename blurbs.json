@@ -1,0 +1,422 @@
+[
+  {
+    "chapter": "Apple Platform Security",
+    "section": "Intro to Apple platform security",
+    "blurb": "Apple's multi-layered security architecture integrates hardware, firmware, and software protections across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Security begins at the silicon layer with the Secure Enclave and dedicated cryptographic hardware, extending through secure boot chains, runtime process isolation, encrypted data storage, and network transport protection. Each layer is designed so a compromise at one level does not undermine the others, providing defense-in-depth that protects user data whether at rest, in transit, or during processing on any Apple device.",
+    "keywords": ["defense-in-depth", "Secure Enclave", "secure boot", "encryption", "sandboxing"]
+  },
+  {
+    "chapter": "Hardware security and biometrics",
+    "section": "Hardware security overview",
+    "blurb": "Apple silicon integrates dedicated security hardware – including an AES cryptographic engine, Public Key Accelerator (PKA), True Random Number Generator (TRNG), and Secure Enclave – directly on the system-on-chip. Hardware security features such as memory encryption, secure Boot ROM, and device-unique UID keys are provisioned at manufacturing time and are permanently inaccessible to software. This silicon-rooted trust model ensures cryptographic operations and key material are physically isolated from the application processor, establishing the immutable foundation upon which all higher-level platform security protections are built.",
+    "keywords": ["AES engine", "PKA", "TRNG", "UID key", "Boot ROM"]
+  },
+  {
+    "chapter": "Hardware security and biometrics",
+    "section": "Apple SoC security",
+    "blurb": "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material.",
+    "keywords": ["A-series", "M-series", "sepOS", "IOMMU", "hardware isolation"]
+  },
+  {
+    "chapter": "Hardware security and biometrics",
+    "section": "The Secure Enclave",
+    "blurb": "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material.",
+    "keywords": ["sepOS", "SKP", "UID", "mailbox interface", "key wrapping"]
+  },
+  {
+    "chapter": "Hardware security and biometrics",
+    "section": "Optic ID, Face ID, and Touch ID",
+    "blurb": "Optic ID (visionOS), Face ID, and Touch ID enable fast, secure biometric authentication by storing enrolled templates exclusively within the Secure Enclave, encrypted with a key derived from the device UID. Raw biometric data never leaves the Secure Enclave and is never transmitted to Apple or backed up. Authentication results are returned to the application processor only as a cryptographic assertion. A spoof probability below 1-in-1,000,000 for Face ID and built-in liveness detection protect against fraudulent authentication attempts using photographs or physical replicas.",
+    "keywords": ["Secure Enclave", "biometric template", "liveness detection", "Optic ID", "Face ID"]
+  },
+  {
+    "chapter": "Hardware security and biometrics",
+    "section": "Hardware microphone disconnect",
+    "blurb": "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
+    "keywords": ["hardware disconnect", "microphone privacy", "physical isolation", "lid switch", "side-channel"]
+  },
+  {
+    "chapter": "Hardware security and biometrics",
+    "section": "Express Cards with power reserve",
+    "blurb": "Express Cards allow Apple Pay and Apple Wallet credentials to function in a low-power mode without Face ID, Touch ID, or passcode authentication – supporting transit cards, hotel room keys, and student IDs. The Secure Element maintains a dedicated power reserve so Express Card transactions remain possible even when the iPhone battery is depleted. To prevent unauthorized large-value payments, Express Mode is restricted to specific card types that issuers explicitly configure, and Apple imposes transaction limits on eligible card categories to bound the risk of unauthorized use when authentication is bypassed.",
+    "keywords": ["Express Mode", "Secure Element", "power reserve", "transit card", "contactless"]
+  },
+  {
+    "chapter": "System security",
+    "section": "System security overview",
+    "blurb": "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
+    "keywords": ["secure boot", "SIP", "Gatekeeper", "XProtect", "entitlements"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Secure boot",
+    "blurb": "Apple's secure boot chain establishes a cryptographic chain of trust from immutable Boot ROM through each subsequent boot stage. On Apple silicon Macs, the Boot ROM loads and verifies the Low-Level Bootloader (LLB), which loads iBoot; on A-series devices Boot ROM loads iBoot directly. Each stage uses Apple's public key to verify a digital signature before passing control to the next. The LocalPolicy mechanism on Mac with Apple silicon encodes the user's chosen security configuration into a cryptographically signed structure managed by the Secure Enclave, ensuring only authorized operating systems and boot configurations can run.",
+    "keywords": ["Boot ROM", "iBoot", "LocalPolicy", "LLB", "chain of trust"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Signed system volume security",
+    "blurb": "The Signed System Volume (SSV) on macOS seals the entire operating system volume with a SHA-256-based Merkle hash tree, rooting the tree in a hash embedded in the signed boot manifest. Every file read from the system volume is verified against this tree by the kernel at the time of access; any tampered or corrupted file causes an immediate read error. The SSV mount is read-only and separate from the data volume, ensuring system files can never be modified at runtime. This architecture, combined with secure boot, provides end-to-end OS integrity from installation through every subsequent use.",
+    "keywords": ["SSV", "Merkle hash tree", "SHA-256", "read-only mount", "OS integrity"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Secure software updates",
+    "blurb": "Apple's Secure Software Authorization (SSA) prevents unauthorized or downgraded firmware from running. When updating, the device submits cryptographic measurements of the software to install plus its unique ECID to Apple's authorization servers. Apple signs only the specific software bundle for that specific device, returning a personalized ticket. Because each authorization is device-specific and version-specific, it is cryptographically impossible to replay an authorization from a different device or reinstall an older, potentially vulnerable OS version after Apple has stopped signing it.",
+    "keywords": ["SSA", "ECID", "personalized ticket", "anti-downgrade", "OTA update"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Background Security Improvements",
+    "blurb": "Background Security Improvements enable Apple to ship rapid security remediations – including XProtect signature updates, runtime mitigations, and new security policies – independently of full OS releases. The mechanism uses cryptographically signed disk images called cryptexes (Cryptographic Extensions), which are verified and mounted at boot alongside the main system volume. Cryptexes carry their own Sealed System Volume hash tree guarantees and are delivered via standard software update infrastructure without requiring a full OS upgrade, allowing Apple to address newly discovered vulnerabilities with minimal user friction.",
+    "keywords": ["cryptex", "XProtect", "rapid remediation", "signed disk image", "SSV"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Operating system integrity",
+    "blurb": "At runtime, Apple operating systems enforce multiple layers of OS integrity protection. Kernel Integrity Protection (KIP) on Apple silicon prevents unauthorized modification of kernel code and data at runtime. Code signing is required for all executable code, with AMFI verifying developer signatures and Apple-issued entitlements before allowing code to execute. Address Space Layout Randomization (ASLR), non-executable memory pages, and Pointer Authentication Codes (PAC) defend against memory corruption exploitation. On macOS, System Integrity Protection restricts root-level modification of protected system directories, maintaining OS integrity even if an attacker obtains administrative privileges.",
+    "keywords": ["KIP", "PAC", "ASLR", "SIP", "AMFI"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Device pairing and connection security",
+    "blurb": "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
+    "keywords": ["pairing record", "USB Restricted Mode", "RSA-2048", "trust dialog", "accessory"]
+  },
+  {
+    "chapter": "System security",
+    "section": "BlastDoor for Messages and IDS",
+    "blurb": "BlastDoor is a tightly sandboxed service that pre-processes all incoming iMessage content before it can reach the main Messages application process. All parsing of potentially untrusted data – including attachments, rich links, and message metadata – occurs within BlastDoor's restricted process, which has severely limited access to system resources, files, and network. Even if an attacker exploits a parsing vulnerability, the impact is contained within the BlastDoor sandbox. The system also implements exponential throttling of repeated failed exploitation attempts and re-randomizes ASLR layout between processing attempts, significantly raising the cost of zero-click exploit chains.",
+    "keywords": ["BlastDoor", "sandbox", "zero-click", "iMessage", "exploit mitigation"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Lockdown Mode security",
+    "blurb": "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac.",
+    "keywords": ["Lockdown Mode", "attack surface reduction", "JIT disable", "state-sponsored", "high-risk users"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Overview of additional macOS system security capabilities",
+    "blurb": "macOS provides defense-in-depth through a suite of system security technologies. System Integrity Protection prevents root-privileged modification of protected system directories, the kernel, and kernel extensions. Gatekeeper enforces notarization requirements and signature checking on all software before first launch. XProtect provides on-device signature-based malware detection updated independently of OS releases. The AMFI framework enforces code signing and entitlement checking at the kernel level. System Extensions and DriverKit allow vendor code to run in user space rather than the kernel, limiting the impact of driver bugs on system security.",
+    "keywords": ["SIP", "Gatekeeper", "XProtect", "notarization", "DriverKit"]
+  },
+  {
+    "chapter": "System security",
+    "section": "System security for watchOS",
+    "blurb": "watchOS implements the same hardware-rooted secure boot chain used by other Apple platforms, with each boot stage cryptographically verified before execution. The Apple Watch Secure Enclave manages biometric keys and Data Protection class keys analogously to iPhone. OTA software updates are cryptographically verified using System Software Authorization before installation. The watchOS pairing security model binds the watch cryptographically to a specific iPhone using a shared symmetric key established during pairing, ensuring that data exchanged between iPhone and Apple Watch over Bluetooth uses authenticated and encrypted channels.",
+    "keywords": ["watchOS", "secure boot", "Secure Enclave", "SSA", "Bluetooth pairing"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Random number generation",
+    "blurb": "Apple platforms use a hardware True Random Number Generator (TRNG) integrated into the Secure Enclave as the root entropy source. The operating system's /dev/random kernel interface seeds its internal CSPRNG with TRNG output, combined with additional entropy from interrupt timing, device sensor data, and other environmental sources. This cryptographically secure random output is used for generating encryption keys, authentication protocol nonces, ASLR address space randomization, unique identifiers, and all other cryptographic operations requiring high-quality unpredictable values across every Apple platform.",
+    "keywords": ["TRNG", "CSPRNG", "Fortuna", "entropy", "/dev/random"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Communicating emergency information using satellites",
+    "blurb": "Emergency SOS via Satellite allows iPhone 14 and later models to communicate with emergency services when no cellular or Wi-Fi network is available. A custom message compression algorithm transmits emergency text over the limited bandwidth of direct-to-satellite connections. Users are guided to point their device at the satellite using an on-screen pointing interface. Emergency data is routed through relay centers staffed by specialists who contact local emergency services on the user's behalf. The feature is designed as a last-resort emergency service for situations where no other communication infrastructure is reachable.",
+    "keywords": ["Emergency SOS", "satellite", "message compression", "relay center", "iPhone 14"]
+  },
+  {
+    "chapter": "System security",
+    "section": "Apple Security Research Device",
+    "blurb": "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
+    "keywords": ["SRD", "security research", "responsible disclosure", "SSH", "iOS research"]
+  },
+  {
+    "chapter": "Encryption and Data Protection",
+    "section": "Encryption and Data Protection overview",
+    "blurb": "Apple's Encryption and Data Protection framework provides hardware-accelerated AES-256 encryption for all data stored on devices. Every file on NAND storage is encrypted using a unique per-file key, which is itself wrapped by a class key derived from the device UID and – for sensitive classes – the user's passcode. This key hierarchy, maintained in keybags, enables instantaneous crypto-erase by discarding the media key, and protects data when the device is locked by making class keys unavailable without passcode or biometric authentication. The Secure Enclave manages the entire key hierarchy, ensuring the OS and apps cannot access raw cryptographic material.",
+    "keywords": ["per-file key", "class key", "keybag", "AES-256", "crypto-erase"]
+  },
+  {
+    "chapter": "Encryption and Data Protection",
+    "section": "Quantum-secure cryptography with Apple devices",
+    "blurb": "Apple has deployed quantum-resistant cryptography in iMessage through the PQ3 protocol, combining classical elliptic-curve key agreement with ML-KEM (Module Lattice-based Key Encapsulation Mechanism), a NIST-standardized post-quantum algorithm. PQ3 provides Level 3 post-quantum security – the highest of any widely deployed messaging protocol – using HKDF-based ratcheting so future cryptographically-relevant quantum computers cannot retroactively decrypt past messages. The hybrid classical-plus-post-quantum approach ensures protection against both current classical cryptanalysis and anticipated future quantum attacks, with additional quantum-secure algorithms being progressively integrated into iCloud Keychain and other Apple security services.",
+    "keywords": ["PQ3", "ML-KEM", "post-quantum", "HKDF ratchet", "iMessage"]
+  },
+  {
+    "chapter": "Encryption and Data Protection",
+    "section": "Passcodes and passwords",
+    "blurb": "Device passcodes are the foundation of iOS, iPadOS, and watchOS data security. A user's passcode is combined with the device's hardware UID using PBKDF2-AES tangling performed exclusively in the Secure Enclave, producing a passcode-derived key (PDK) that wraps Data Protection class keys. This tangling ensures brute-force attacks must occur on the specific device, subject to mandatory hardware-enforced delays between attempts that escalate from milliseconds to hours. The secure nonvolatile storage component provides anti-replay protection, preventing backup-and-restore techniques from defeating attempt counters. Devices can be configured to erase after ten failed attempts.",
+    "keywords": ["PBKDF2", "PDK", "UID tangling", "anti-replay", "attempt throttling"]
+  },
+  {
+    "chapter": "Encryption and Data Protection",
+    "section": "Data Protection",
+    "blurb": "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage.",
+    "keywords": ["protection class", "class key", "keybag", "Effaceable Storage", "NSFileProtection"]
+  },
+  {
+    "chapter": "Encryption and Data Protection",
+    "section": "FileVault",
+    "blurb": "FileVault provides full-volume encryption for macOS using XTS-AES-128 with a 256-bit key applied to the entire startup volume including user data and system files. On Macs with Apple silicon, the Secure Enclave manages FileVault keys, providing hardware-rooted protection analogous to iOS Data Protection; the SSD controller performs real-time encryption with no performance penalty. Recovery options include an iCloud-escrowed recovery key, a personal recovery key generated at setup, or an institutional recovery key managed via MDM. Instant wipe is achieved by discarding the volume encryption key, rendering all data cryptographically inaccessible.",
+    "keywords": ["FileVault", "XTS-AES-128", "Secure Enclave", "recovery key", "full-disk encryption"]
+  },
+  {
+    "chapter": "Encryption and Data Protection",
+    "section": "How Apple protects users' personal data",
+    "blurb": "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
+    "keywords": ["differential privacy", "on-device processing", "data minimization", "Neural Engine", "end-to-end encryption"]
+  },
+  {
+    "chapter": "Encryption and Data Protection",
+    "section": "Digital signing and encryption",
+    "blurb": "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
+    "keywords": ["code signing", "ECDSA", "S/MIME", "Certificate Transparency", "notarization"]
+  },
+  {
+    "chapter": "App security",
+    "section": "App security overview",
+    "blurb": "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication.",
+    "keywords": ["sandbox", "entitlements", "code signing", "App Store review", "XNU"]
+  },
+  {
+    "chapter": "App security",
+    "section": "App code signing process",
+    "blurb": "App code signing requires developers to obtain a signing certificate from Apple and use it to cryptographically sign all executable binaries and resources before distribution. On iOS and iPadOS, the AMFI kernel extension verifies the signature and entitlements of every app at launch, rejecting unsigned or improperly signed code. Provisioning profiles, signed by Apple, scope the capabilities an app may use and restrict which devices can run development builds. Apps distributed via the App Store are additionally signed by Apple with a distribution signature, providing an Apple-attested chain of trust from developer certificate through to device installation.",
+    "keywords": ["AMFI", "provisioning profile", "developer certificate", "distribution signature", "entitlements"]
+  },
+  {
+    "chapter": "App security",
+    "section": "App security in iOS, iPadOS, and visionOS",
+    "blurb": "iOS, iPadOS, and visionOS apps run in a strictly enforced UNIX-level sandbox, with each app receiving a unique container directory inaccessible to other apps. The kernel enforces mandatory access control: apps must request user permission to access location, contacts, camera, microphone, and other sensitive resources through the TCC framework. Position-Independent Executable compilation, Automatic Reference Counting, and stack canaries reduce exploitability of memory corruption vulnerabilities. Dynamic library injection is prevented by the code signing requirement; the system linker loads only Apple-signed libraries or those explicitly included in the app bundle.",
+    "keywords": ["app sandbox", "TCC", "PIE", "ARC", "container isolation"]
+  },
+  {
+    "chapter": "App security",
+    "section": "App security in macOS",
+    "blurb": "macOS app security extends the App Sandbox and Hardened Runtime frameworks to protect against malware and privilege escalation. Apps with the App Sandbox entitlement are restricted to a defined container and must declare entitlements to access any external resources. The Hardened Runtime prevents code injection, dynamic library hijacking, and debugging by untrusted tools. Gatekeeper checks notarization status and developer code signatures at first launch, quarantining non-compliant apps. The TCC framework requires user consent for access to sensitive data categories including Documents, Desktop, Contacts, Calendar, Photos, and Microphone.",
+    "keywords": ["App Sandbox", "Hardened Runtime", "Gatekeeper", "TCC", "notarization"]
+  },
+  {
+    "chapter": "App security",
+    "section": "Supporting extensions",
+    "blurb": "App extensions enable third-party functionality within system contexts – keyboards, share sheets, content blockers, widgets – while maintaining strict security isolation. Each extension runs as a separate process from both its containing app and the host app, communicating exclusively via XPC with serialized data. Extensions receive a separate, scoped sandbox and entitlement set, limiting data access compared to a full application. System Extensions on macOS allow vendors to extend kernel functionality – such as network filtering and endpoint security – in user space, eliminating the risk profile of traditional kernel extensions and confining any bugs to a user-space process.",
+    "keywords": ["app extension", "XPC", "sandboxing", "System Extension", "out-of-process"]
+  },
+  {
+    "chapter": "App security",
+    "section": "Secure features in the Notes app",
+    "blurb": "The Notes app protects individual notes using per-note encryption keyed to a user-set password hashed with PBKDF2-HMAC-SHA512. The derived key is stored in the iOS Keychain with Data Protection Class A (CompleteWhenLocked), so locked notes cannot be accessed without device unlock plus the Notes password or biometric authentication. Shared notes enforce iCloud-based access control so only invited collaborators can view or edit content. Note content and attachments are encrypted at rest, with only ciphertext stored in the underlying database, preventing unauthorized access even if the SQLite database file is extracted from a device backup.",
+    "keywords": ["PBKDF2-HMAC-SHA512", "Data Protection Class A", "note encryption", "shared notes", "iCloud access control"]
+  },
+  {
+    "chapter": "App security",
+    "section": "Secure features in the Shortcuts app",
+    "blurb": "The Shortcuts app enables user-created automation sequences that may access sensitive data and system capabilities. Each action within a shortcut that touches privacy-protected resources – Location, Contacts, Photos, Health – requires the same user-granted permissions as any other app, enforced through the TCC framework. Shortcuts imported from external sources trigger a privacy audit dialog before first run, informing users of the data categories each shortcut accesses. Shortcuts run in a sandboxed process, preventing any single action from accessing data outside its declared scope or silently exfiltrating information without user-visible consent prompts.",
+    "keywords": ["TCC permissions", "shortcut sandbox", "privacy audit", "automation security", "consent prompt"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Services security overview",
+    "blurb": "Apple services security encompasses the authentication, authorization, and encryption protections applied to iCloud, Apple Account, iMessage, FaceTime, Apple Pay, and other Apple-operated services. All service communications use TLS with certificate pinning to prevent interception. Apple Account is protected by two-factor authentication using hardware-rooted device trust. iCloud data is encrypted at rest in Apple's data centers, with end-to-end encrypted categories – expanded by Advanced Data Protection – where Apple holds no decryption keys. CloudKit end-to-end encryption uses per-record symmetric keys wrapped with device-specific keys, ensuring only the user's enrolled devices can decrypt their data.",
+    "keywords": ["TLS", "2FA", "CloudKit E2E", "certificate pinning", "iCloud encryption"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Apple Account and Managed Apple Account",
+    "blurb": "The Apple Account is secured by two-factor authentication using trusted devices and 6-digit time-limited codes. Authentication generates a session token bound to the specific device; account recovery requires knowledge of the account password plus possession of a trusted device or trusted phone number. Managed Apple Accounts, provisioned through Apple School Manager or Apple Business Manager, extend this model to institutional deployments with federated identity provider integration via SAML and SCIM for automated provisioning. Managed accounts are governed by the organization's IdP policies and support supervised enrollment for enterprise and educational device management.",
+    "keywords": ["2FA", "Managed Apple Account", "SAML", "SCIM", "federated identity"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "iCloud",
+    "blurb": "iCloud stores user data across service categories with varying encryption models. Standard data categories are encrypted at rest using keys Apple holds for service operation. End-to-end encrypted categories – including Health, iCloud Keychain, and most others under Advanced Data Protection – use keys derived exclusively from device hardware that Apple cannot access. CloudKit end-to-end encryption uses asymmetric keys generated on the user's devices, with public keys registered to Apple's Identity Service and private keys held only in device secure storage. iCloud Backup optionally backs up the Data Protection keybag, escrowed to enable account recovery.",
+    "keywords": ["CloudKit", "end-to-end encryption", "Advanced Data Protection", "keybag escrow", "iCloud Backup"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Passcode and password management",
+    "blurb": "Apple provides a comprehensive password management ecosystem built into iOS, iPadOS, macOS, and Safari. Automatic Strong Passwords generates cryptographically random credentials stored in iCloud Keychain, synced end-to-end encrypted across devices. Password AutoFill securely retrieves credentials via associated domains verification. Password Monitoring checks stored passwords against known breach databases using a private set intersection protocol with NIST P-256 elliptic curve encryption, so Apple never learns which specific passwords a user has while still detecting compromised credentials. Sign in with Apple provides privacy-preserving OAuth authentication with an optional email relay service.",
+    "keywords": ["iCloud Keychain", "Password AutoFill", "Password Monitoring", "private set intersection", "Sign in with Apple"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Apple Pay",
+    "blurb": "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
+    "keywords": ["Device Account Number", "Secure Element", "payment cryptogram", "NFC controller", "EMVCo"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Using Apple Wallet",
+    "blurb": "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
+    "keywords": ["car key", "CCC standard", "ISO/IEC 18013-5", "UWB", "selective disclosure"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "iMessage",
+    "blurb": "iMessage provides end-to-end encryption using a per-message AES-128 encryption key wrapped with each recipient's registered public key from the Apple Identity Service. Each device generates its own encryption (RSA-1280 or EC P-256) and signing (ECDSA-256) key pair; private keys are stored in the Secure Enclave or device Keychain. Messages are signed and encrypted before leaving the sender's device – Apple's servers relay ciphertext only. The PQ3 protocol upgrade incorporates ML-KEM post-quantum key encapsulation alongside ECDH, with a Diffie-Hellman ratchet providing forward secrecy against both classical and quantum adversaries.",
+    "keywords": ["AES-128-CTR", "IDS", "ECDSA-256", "PQ3", "forward secrecy"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Secure Apple Messages for Business",
+    "blurb": "Apple Messages for Business enables organizations to communicate with customers through iMessage-based channels while maintaining verifiable business identity. Business identities are authenticated by Apple through a registration and verification process, with certified businesses displayed with a verified badge in the Messages interface. Customer interactions are protected by iMessage's end-to-end encryption with an added authentication layer for the business entity. The platform integrates with Apple Pay for secure in-conversation transactions and uses the Apple Identity Service to verify both customer device identity and the legitimacy of the business messaging endpoint.",
+    "keywords": ["business identity", "verified badge", "iMessage E2E", "IDS", "Apple Pay integration"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "FaceTime security",
+    "blurb": "FaceTime audio and video calls are protected with end-to-end encryption using SRTP with AES-256 for media streams. DTLS provides key negotiation and authentication at call setup, with keys established between endpoint devices via Apple's STUN/TURN relay infrastructure. Apple's relay servers facilitate NAT traversal but never receive or process media content – they relay only ciphertext. For Group FaceTime, each participant generates individual session keys; a per-conference key ladder distributes media decryption keys to all authorized participants. FaceTime identities are validated through IDS, binding calls to specific Apple Accounts and their registered device public keys.",
+    "keywords": ["SRTP", "AES-256", "DTLS", "IDS", "Group FaceTime"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Find My",
+    "blurb": "Find My uses an end-to-end encrypted crowd-sourced network to locate lost devices without revealing location data to Apple or reporting devices. Each lost device broadcasts Bluetooth Low Energy advertisements containing a rotating ephemeral public key derived from a device-specific EC P-224 key pair. Nearby devices encrypt the found device's GPS location using ECIES with the ephemeral public key and upload the encrypted report to Apple. Only the owner's device – holding the matching private key – can decrypt these location reports. Keys rotate every 15 minutes to prevent third-party tracking, ensuring privacy for both the lost device owner and the reporting bystander.",
+    "keywords": ["BLE beacon", "EC P-224", "ECIES", "ephemeral key rotation", "crowd-sourced location"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Continuity",
+    "blurb": "Continuity features – Handoff, Universal Clipboard, iPhone Cellular Call Relay, SMS Forwarding, Instant Hotspot, and iPhone Mirroring – use Bluetooth Low Energy device discovery combined with end-to-end encrypted peer-to-peer Wi-Fi or iCloud relay channels. Continuity relies on the Apple Identity Service to authenticate that both devices share the same iCloud account and to exchange public keys before establishing direct encrypted connections. Data transferred between devices is encrypted using keys derived from device-specific IDS key pairs, ensuring neither Apple's servers nor third parties can access transferred content even when routed through iCloud infrastructure.",
+    "keywords": ["Handoff", "IDS", "peer-to-peer Wi-Fi", "BLE discovery", "iCloud relay"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "Network security overview",
+    "blurb": "Apple's network security framework provides layered protections for all data in transit across Wi-Fi, cellular, Bluetooth, and USB connections. The foundation is TLS 1.2/1.3 with App Transport Security enforcing secure connections system-wide, requiring forward-secrecy cipher suites and valid certificate chains by default. Certificate Transparency log checking and OCSP stapling prevent use of misissued certificates. The Network Extension framework enables per-app VPN, content filtering, and DNS proxying in a controlled, sandboxed manner, while allowing enterprise network policies without requiring device-level VPN profiles that inspect all traffic.",
+    "keywords": ["TLS 1.3", "ATS", "Certificate Transparency", "Network Extension", "OCSP"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "TLS security",
+    "blurb": "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
+    "keywords": ["TLS 1.3", "ECDHE", "AES-GCM", "Certificate Transparency", "ATS"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "IPv6 security",
+    "blurb": "Apple platforms implement IPv6 privacy extensions per RFC 4941, generating semantically opaque randomized Interface Identifiers for SLAAC-configured addresses rather than deriving them from hardware MAC addresses. These privacy addresses rotate periodically and upon joining new networks, preventing correlation of a device's network activity across time or location by passive observers. iOS and iPadOS use separate independent IPv6 addresses for different network services to limit cross-service correlation, and the system prefers iCloud Private Relay paths where available to reduce exposure of the device's real IP address to network observers and servers.",
+    "keywords": ["RFC 4941", "SLAAC", "privacy address", "IPv6 rotation", "iCloud Private Relay"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "VPN security",
+    "blurb": "Apple platforms support enterprise-grade VPN through IKEv2/IPsec and TLS-based protocols via the Network Extension framework, with legacy L2TP/IPsec compatibility for older infrastructure. Per-app VPN routes only specific app traffic through the corporate tunnel, reducing unnecessary network overhead while allowing personal apps to access the internet directly. Always On VPN, configured via MDM, maintains a permanent tunnel to corporate infrastructure reconnecting transparently after network changes without user interaction. VPN configurations and credentials are stored in the device Keychain and delivered in CMS-encrypted MDM payloads, preventing credential exposure during provisioning.",
+    "keywords": ["IKEv2/IPsec", "per-app VPN", "Always On VPN", "Network Extension", "MDM provisioning"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "Wi-Fi security and privacy",
+    "blurb": "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods.",
+    "keywords": ["WPA3", "SAE", "PMF", "MAC randomization", "OWE"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "Bluetooth security",
+    "blurb": "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
+    "keywords": ["ECDH P-256", "AES-CCM", "LE Secure Connections", "BLE address randomization", "CTKD"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "Ultra Wideband security in iOS",
+    "blurb": "Ultra Wideband radio on Apple devices enables centimeter-precise spatial ranging for passive car key entry, Find My precision finding, and directional AirDrop. UWB ranging sessions are protected by session keys derived from a prior Bluetooth pairing exchange, ensuring only previously authenticated devices can establish ranging sessions. The short range of UWB combined with physical-layer time-of-flight measurement makes relay attacks significantly harder than with Bluetooth or NFC. Car key UWB ranging uses enhanced ranging calibration data and cryptographic binding of measurements to prevent spoofing of distance values by a relay adversary.",
+    "keywords": ["UWB", "time-of-flight", "ranging session key", "relay attack", "car key"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "Single Sign-on security",
+    "blurb": "Apple platforms support enterprise Single Sign-on through three complementary mechanisms. The Kerberos SSO extension integrates natively with Active Directory, obtaining TGTs using device certificates or user credentials and transparently presenting service tickets to Kerberos-protected resources. The Extensible SSO framework allows identity providers to deploy MDM-configured SSO extensions supporting SAML 2.0 and OpenID Connect for seamless authentication to web and native apps. Platform SSO on macOS binds local account authentication to enterprise identity provider credentials, with tokens issued by the IdP enabling unified corporate identity across all Mac sign-in contexts.",
+    "keywords": ["Kerberos SSO", "Extensible SSO", "Platform SSO", "SAML", "OpenID Connect"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "AirDrop security",
+    "blurb": "AirDrop uses Bluetooth Low Energy for device discovery and peer-to-peer Wi-Fi for file transfer, with TLS providing mutual authentication and encryption for the data transfer channel. Discovery employs hash-based contact matching: devices advertise a hash of their phone number and email address, and a receiving device checks whether the sender's hash matches any of its contacts. In Contacts Only mode, mutual authentication requires both parties to be in each other's contacts before identity is revealed. AirDrop transfers occur over an isolated peer-to-peer Wi-Fi network requiring no internet connection or access point association.",
+    "keywords": ["BLE discovery", "contact hash", "peer-to-peer Wi-Fi", "TLS mutual auth", "AirDrop"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "Wi-Fi password sharing security",
+    "blurb": "Wi-Fi password sharing securely transmits a Wi-Fi network password from one Apple device to another belonging to a contact in the user's address book. The process uses Bluetooth Low Energy for proximity detection and the Apple Identity Service to verify that the requesting device belongs to a known contact. The password is transmitted through an end-to-end encrypted iCloud channel between the two devices, not over the local Wi-Fi network or Bluetooth radio. No Wi-Fi password data is processed by Apple servers – the transaction is peer-to-peer through iCloud's end-to-end encrypted infrastructure, verified via IDS key exchange.",
+    "keywords": ["IDS verification", "BLE proximity", "iCloud E2E", "password sharing", "contact verification"]
+  },
+  {
+    "chapter": "Network security",
+    "section": "Firewall security in macOS",
+    "blurb": "macOS includes an application-level firewall controlling incoming network connections on a per-application basis, independent of port or protocol. Signed App Store applications are automatically trusted; other applications prompt the user for allow/deny authorization when first attempting to accept incoming connections. A stealth mode option prevents the Mac from responding to network probe requests from scanners. macOS also provides access to the pf packet filter for low-level network traffic filtering and port blocking, configurable via command line or third-party firewall applications for advanced network policies in enterprise deployments.",
+    "keywords": ["application firewall", "stealth mode", "pf packet filter", "incoming connections", "per-app rules"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "Developer kit security overview",
+    "blurb": "Apple developer kits apply uniform security and privacy protections to third-party applications using those frameworks. All APIs accessing sensitive hardware or user data – including ARKit, HealthKit, HomeKit, and SiriKit – require explicit user permission grants via the TCC framework. Sensitive processing occurs in system-managed processes rather than within the app's address space, limiting what a compromised app can extract. Extensions used by frameworks like ReplayKit and SiriKit run as separate processes with minimal privileges, preserving the security benefits of the extension model throughout the developer kit ecosystem while enabling powerful platform capabilities.",
+    "keywords": ["TCC permissions", "out-of-process", "extension model", "privacy", "sandboxing"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "ARKit security",
+    "blurb": "ARKit enables augmented reality experiences using the device camera, motion sensors, and LiDAR scanner, with privacy protections enforced at the framework level. Camera access requires explicit user authorization through TCC, and raw camera frames are processed by a system-managed ARKit service rather than being directly exposed to third-party app code. World map data, scene geometry, and tracked feature points are processed and retained on-device with no automatic transmission to Apple or third-party servers. The face tracking API for TrueDepth camera data carries additional entitlement requirements, restricting access to approved use cases and preventing misuse for covert biometric identification.",
+    "keywords": ["TCC camera permission", "on-device processing", "TrueDepth entitlement", "world tracking", "LiDAR"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "DriverKit security",
+    "blurb": "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
+    "keywords": ["DriverKit", "user-space driver", "kext replacement", "IOKit", "notarization"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "EnergyKit data security",
+    "blurb": "EnergyKit provides APIs for home energy management devices – including EV chargers, solar panels, and battery storage systems – with a privacy model restricting app access to energy usage data through user-granted permissions. Energy usage data, which can reveal behavioral patterns about occupancy and daily routines, is protected under TCC-style authorization requiring explicit user consent before any app can read home energy measurements. Data from EnergyKit-connected devices flows through HomeKit infrastructure, inheriting its end-to-end encrypted CloudKit storage model, ensuring energy data never transits Apple servers in plaintext.",
+    "keywords": ["EnergyKit", "home energy", "TCC authorization", "HomeKit infrastructure", "CloudKit E2E"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "HomeKit security",
+    "blurb": "HomeKit secures smart home device communication using the Home Accessory Protocol with Ed25519 signatures and Curve25519 ECDH for pairing and session key establishment. The Matter smart home standard uses SPAKE2+ for device commissioning, with ongoing communication secured by AES-128-CCM. Home configuration and automation data is stored in CloudKit using end-to-end encryption, accessible only to the user's enrolled devices. Remote access passes through Apple's infrastructure as ciphertext Apple cannot decrypt. Shared home access uses per-user cryptographic identities, and guest access is scoped to specific accessories via cryptographically bound access-controlled invitations.",
+    "keywords": ["HAP", "Ed25519", "Matter", "SPAKE2+", "CloudKit E2E"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "NFC & SE Platform security",
+    "blurb": "The NFC & SE Platform allows developers to deploy custom Secure Element applets for NFC-based transactions, with a mandatory security review pipeline before device deployment. Applets must pass evaluation by an accredited third-party security laboratory and Apple review before being signed and hosted for installation. Each applet is installed in an isolated Security Domain preventing inter-applet data access. Transaction authorization requires biometric or passcode authentication gated through the Secure Enclave, with transaction data routed exclusively through the NFC controller to the Secure Element – never exposed to the application processor or iOS.",
+    "keywords": ["Secure Element", "applet", "Security Domain", "NFC controller", "transaction authorization"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "ReplayKit security",
+    "blurb": "ReplayKit enables screen recording and live broadcasting by performing all capture operations within a privileged system daemon (replayd) running outside the host app's process. This architecture ensures recorded video and audio content is never directly accessible to the hosting application. User consent is collected via a system-presented permissions dialog before each recording session. Third-party broadcast services integrate through a two-process extension architecture – a UI extension for configuration and an upload extension for data handling – connected to the capture daemon via XPC, with video frames serialized as IOSurface objects to prevent raw buffer access across trust boundaries.",
+    "keywords": ["replayd", "out-of-process capture", "IOSurface", "XPC", "broadcast extension"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "SiriKit security",
+    "blurb": "SiriKit integrates third-party apps into Siri using the app extension model, with strict data minimization for user privacy. Before passing personal data to an app's SiriKit extension, Siri checks the app's user-granted permission settings: if the app lacks Contacts access, Siri passes only literal text for relationship references rather than resolved contact data. Custom vocabulary submitted by SiriKit-enabled apps is associated with a random identifier rather than the user's identity, and is purged when the app is deleted or Siri integration is disabled. Only the minimal data needed for the specific user intent is forwarded to the extension process.",
+    "keywords": ["SiriKit", "data minimization", "app extension", "random identifier", "TCC permissions"]
+  },
+  {
+    "chapter": "Developer kit security",
+    "section": "WidgetKit security",
+    "blurb": "WidgetKit enables app widgets and Apple Watch complications that may display sensitive information in prominent locations including the Lock Screen and Always On display. Developers apply Data Protection entitlements to widget extensions – using NSFileProtectionComplete or NSFileProtectionCompleteUnlessOpen – causing WidgetKit to render placeholder content instead of actual data when the device is locked. Users can independently configure Lock Screen widget visibility in Settings. On Apple Watch, Hide Sensitive Complications globally redacts complication data during Always On mode. Developers must implement the redacted(reason:) callback to supply appropriate placeholder views for privacy-sensitive widget content.",
+    "keywords": ["NSFileProtectionComplete", "Lock Screen widget", "Always On", "redacted callback", "Data Protection entitlement"]
+  },
+  {
+    "chapter": "Secure device management",
+    "section": "Secure device management overview",
+    "blurb": "Apple platforms support enterprise device management through a comprehensive MDM framework enabling organizations to enroll, configure, and manage Apple devices at scale across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Managed devices support remote enforcement of passcode complexity policies, content restrictions, Wi-Fi and VPN configuration deployment, app installation and removal, and remote wipe. Three enrollment modalities address different scenarios: User Enrollment for BYOD with cryptographic data separation, Device Enrollment for organization-managed devices, and Automated Device Enrollment for zero-touch supervised provisioning of corporate-owned devices.",
+    "keywords": ["MDM", "User Enrollment", "Device Enrollment", "ADE", "remote wipe"]
+  },
+  {
+    "chapter": "Secure device management",
+    "section": "Device management",
+    "blurb": "The Apple MDM protocol operates over HTTPS with TLS mutual authentication, using Apple Push Notification service to wake devices and trigger check-ins with the MDM server – no confidential data traverses APNs itself. Configuration profiles are XML or JSON structures encrypted using CMS with AES-128. Managed Device Attestation uses the Secure Enclave and ACME protocol to generate hardware-bound ECDSA keys (P-256 or P-384) that cryptographically attest device identity, OS version, and security posture to MDM servers, verified against the Apple Enterprise Attestation Root CA. This prevents compromised or impersonating devices from falsely representing their configuration or enrollment status.",
+    "keywords": ["MDM protocol", "APNs", "CMS encryption", "Managed Device Attestation", "ACME"]
+  },
+  {
+    "chapter": "Secure device management",
+    "section": "Apple Configurator security",
+    "blurb": "Apple Configurator for Mac enables administrators to configure, supervise, and restore iPad, iPhone, and Apple TV devices in bulk over USB without internet access on the target devices. For Mac and Apple Vision Pro restore operations, the required OS update files are downloaded from Apple servers over TLS and installed directly, with the file deleted after use to prevent unauthorized re-use. Devices enrolled via Apple Configurator can be added to Apple School Manager or Apple Business Manager, gaining supervised status and mandatory device management enrollment while still enforcing Activation Lock requirements that apply during normal nontethered activation.",
+    "keywords": ["Apple Configurator", "supervised device", "USB provisioning", "Activation Lock", "Apple Business Manager"]
+  },
+  {
+    "chapter": "Secure device management",
+    "section": "Screen Time security",
+    "blurb": "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules.",
+    "keywords": ["Screen Time passcode", "IDS E2E", "CloudKit E2E", "parental controls", "usage data privacy"]
+  }
+]

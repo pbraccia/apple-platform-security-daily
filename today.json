@@ -1,0 +1,13 @@
+{
+  "blurb" : "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules.",
+  "chapter" : "Secure device management",
+  "date" : "2026-03-09",
+  "keywords" : [
+    "Screen Time passcode",
+    "IDS E2E",
+    "CloudKit E2E",
+    "parental controls",
+    "usage data privacy"
+  ],
+  "section" : "Screen Time security"
+}
