@@ -4,7 +4,7 @@ A daily digest of Apple Platform Security topics, one section at a time.
 
 *Based on the [Apple Platform Security Guide](https://support.apple.com/guide/security/welcome/web) (January 2026 edition)*
 
-Built for [TRMNL](https://usetrmnl.com) devices, but `today.json` is just JSON – use it however you like.
+Built for [TRMNL](https://usetrmnl.com) devices, but `today.json` is just JSON – use it however you'd like.
 
 ## How it works
 
@@ -13,6 +13,9 @@ A GitHub action runs a Swift script that selects today's topic each day at midni
 - **[`blurbs.json`](blurbs.json)** – 70 entries covering every section in the guide, each with `chapter`, `section`, `blurb`, and `keywords`
 - **[`pick_blurb.swift`](pick_blurb.swift)** – Swift script that hashes today's date, maps it to an index, and writes the result to `today.json`
 - **[`.github/workflows/daily-blurb.yml`](.github/workflows/daily-blurb.yml)** – runs the script daily and commits the output
+
+> [!NOTE]
+> The blurbs in `blurbs.json` are AI-generated using the Apple Platform Security Guide as source material. They should be verified against the [official documentation](https://support.apple.com/guide/security/welcome/web) before being relied upon for security-critical decisions.
 
 ## today.json format
 
@@ -26,5 +29,6 @@ A GitHub action runs a Swift script that selects today's topic each day at midni
 }
 ```
 
-> [!NOTE]
-> The blurbs in `blurbs.json` are AI-generated using the Apple Platform Security Guide as source material. They should be verified against the [official documentation](https://support.apple.com/guide/security/welcome/web) before being relied upon for security-critical decisions.
+---
+
+*Apple, Swift, iOS, iPadOS, macOS, tvOS, watchOS, and visionOS are trademarks of Apple Inc., registered in the U.S. and other countries. This project is not affiliated with or endorsed by Apple Inc.*
