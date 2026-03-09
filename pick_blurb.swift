@@ -2,18 +2,18 @@
 import Foundation
 import CryptoKit
 
-// Get today's UTC date string
+// Get a string of today's UTC date
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "yyyy-MM-dd"
 dateFormatter.timeZone = TimeZone(identifier: "UTC")!
 let todayString = dateFormatter.string(from: Date())
 
-// Resolve paths relative to the current working directory (repo root in CI)
+// Find the blurbs.json file
 let cwd = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
 let blurbsData = try Data(contentsOf: cwd.appendingPathComponent("blurbs.json"))
 let blurbs = try JSONSerialization.jsonObject(with: blurbsData) as! [[String: Any]]
 
-// SHA-256 hash of the date string → deterministic daily index
+// Hash the date string to get a pseudo-random, but deterministic index for today's blurb
 let digest = SHA256.hash(data: Data(todayString.utf8))
 let hashValue = digest.prefix(8).reduce(UInt64(0)) { ($0 << 8) | UInt64($1) }
 let index = Int(hashValue % UInt64(blurbs.count))
@@ -29,4 +29,4 @@ let outputData = try JSONSerialization.data(
 )
 try outputData.write(to: cwd.appendingPathComponent("today.json"))
 
-print("✓ \(todayString) → index \(index): \(blurbs[index]["section"] ?? "unknown")")
+print("\(todayString) → index \(index): \(blurbs[index]["section"] ?? "unknown")")
