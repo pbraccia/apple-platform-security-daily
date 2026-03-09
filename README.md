@@ -18,11 +18,11 @@ A GitHub action runs a Swift script that selects today's topic each day at midni
 
 ```json
 {
-  "blurb": "...",
-  "chapter": "System security",
   "date": "2026-03-09",
-  "keywords": ["keyword1", "keyword2"],
-  "section": "Section name"
+  "chapter": "Hardware security and biometrics",
+  "section": "The Secure Enclave",
+  "blurb": "The Secure Enclave is a dedicated security coprocessor ...",
+  "keywords": ["sepOS", "SKP", "UID", "mailbox interface", "key wrapping"]
 }
 ```
 
