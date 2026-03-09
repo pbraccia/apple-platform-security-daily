@@ -25,7 +25,7 @@ for (key, value) in blurbs[index] { todayEntry[key] = value }
 // Write to today.json
 let outputData = try JSONSerialization.data(
     withJSONObject: todayEntry,
-    options: [.prettyPrinted, .sortedKeys]
+    options: [.prettyPrinted]
 )
 try outputData.write(to: cwd.appendingPathComponent("today.json"))
 
