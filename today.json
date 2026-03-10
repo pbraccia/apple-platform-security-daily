@@ -1,13 +1,13 @@
 {
-  "date" : "2026-03-09",
-  "blurb" : "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules.",
   "keywords" : [
-    "Screen Time passcode",
-    "IDS E2E",
-    "CloudKit E2E",
-    "parental controls",
-    "usage data privacy"
+    "FileVault",
+    "XTS-AES-128",
+    "Secure Enclave",
+    "recovery key",
+    "full-disk encryption"
   ],
-  "chapter" : "Secure device management",
-  "section" : "Screen Time security"
+  "chapter" : "Encryption and Data Protection",
+  "blurb" : "FileVault provides full-volume encryption for macOS using XTS-AES-128 with a 256-bit key applied to the entire startup volume including user data and system files. On Macs with Apple silicon, the Secure Enclave manages FileVault keys, providing hardware-rooted protection analogous to iOS Data Protection; the SSD controller performs real-time encryption with no performance penalty. Recovery options include an iCloud-escrowed recovery key, a personal recovery key generated at setup, or an institutional recovery key managed via MDM. Instant wipe is achieved by discarding the volume encryption key, rendering all data cryptographically inaccessible.",
+  "section" : "FileVault",
+  "date" : "2026-03-10"
 }
