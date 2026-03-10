@@ -11,7 +11,7 @@ Built for display on [TRMNL](https://usetrmnl.com) devices, but `today.json` is 
 Each day at midnight UTC, a Github action runs a Swift script that selects the day's topic. The workflow deterministically selects an entry from [`blurbs.json`](blurbs.json) by mapping a hash of the current date to a blurb index number, then writes its contents to [`today.json`](today.json). One blurb exists for each section in the [Apple Platform Security Guide](https://support.apple.com/guide/security/welcome/web).
 
 - **[`today.json`](today.json)** – the current day's entry
-- **[`blurbs.json`](blurbs.json)** – the collection of entries covering each section in the guide, including its relevant `chapter`, `section`, and `keywords`
+- **[`blurbs.json`](blurbs.json)** – the collection of entries covering each section in the guide, including its relevant `chapter`, `section`, and some `keywords`
 - **[`pick_blurb.swift`](pick_blurb.swift)** – Swift script that hashes today's date, maps it to an index, and writes the selected blurb to `today.json`
 - **[`.github/workflows/daily-blurb.yml`](.github/workflows/daily-blurb.yml)** – runs the script daily and commits the output
 
@@ -19,7 +19,7 @@ Each day at midnight UTC, a Github action runs a Swift script that selects the d
 > [!NOTE]
 > The blurbs in `blurbs.json` are AI-generated using the Apple Platform Security Guide as source material. They should be verified against the [official documentation](https://support.apple.com/guide/security/welcome/web) before being relied upon for security-critical decisions.
 
-## today.json format
+## `today.json` format
 
 ```json
 {
