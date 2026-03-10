@@ -1,4 +1,6 @@
 {
+  "chapter" : "Encryption and Data Protection",
+  "section" : "FileVault",
   "keywords" : [
     "FileVault",
     "XTS-AES-128",
@@ -6,8 +8,6 @@
     "recovery key",
     "full-disk encryption"
   ],
-  "chapter" : "Encryption and Data Protection",
   "blurb" : "FileVault provides full-volume encryption for macOS using XTS-AES-128 with a 256-bit key applied to the entire startup volume including user data and system files. On Macs with Apple silicon, the Secure Enclave manages FileVault keys, providing hardware-rooted protection analogous to iOS Data Protection; the SSD controller performs real-time encryption with no performance penalty. Recovery options include an iCloud-escrowed recovery key, a personal recovery key generated at setup, or an institutional recovery key managed via MDM. Instant wipe is achieved by discarding the volume encryption key, rendering all data cryptographically inaccessible.",
-  "section" : "FileVault",
   "date" : "2026-03-10"
 }
