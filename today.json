@@ -1,13 +1,13 @@
 {
-  "chapter" : "Encryption and Data Protection",
-  "section" : "FileVault",
+  "blurb" : "iMessage provides end-to-end encryption using a per-message AES-128 encryption key wrapped with each recipient's registered public key from the Apple Identity Service. Each device generates its own encryption (RSA-1280 or EC P-256) and signing (ECDSA-256) key pair; private keys are stored in the Secure Enclave or device Keychain. Messages are signed and encrypted before leaving the sender's device – Apple's servers relay ciphertext only. The PQ3 protocol upgrade incorporates ML-KEM post-quantum key encapsulation alongside ECDH, with a Diffie-Hellman ratchet providing forward secrecy against both classical and quantum adversaries.",
+  "chapter" : "Services security",
   "keywords" : [
-    "FileVault",
-    "XTS-AES-128",
-    "Secure Enclave",
-    "recovery key",
-    "full-disk encryption"
+    "AES-128-CTR",
+    "IDS",
+    "ECDSA-256",
+    "PQ3",
+    "forward secrecy"
   ],
-  "blurb" : "FileVault provides full-volume encryption for macOS using XTS-AES-128 with a 256-bit key applied to the entire startup volume including user data and system files. On Macs with Apple silicon, the Secure Enclave manages FileVault keys, providing hardware-rooted protection analogous to iOS Data Protection; the SSD controller performs real-time encryption with no performance penalty. Recovery options include an iCloud-escrowed recovery key, a personal recovery key generated at setup, or an institutional recovery key managed via MDM. Instant wipe is achieved by discarding the volume encryption key, rendering all data cryptographically inaccessible.",
-  "date" : "2026-03-10"
+  "section" : "iMessage",
+  "date" : "2026-03-11"
 }
