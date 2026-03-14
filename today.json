@@ -1,13 +1,13 @@
 {
-  "chapter" : "Network security",
+  "date" : "2026-03-14",
+  "section" : "Using Apple Wallet",
+  "chapter" : "Services security",
+  "blurb" : "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO\/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
   "keywords" : [
-    "TLS 1.3",
-    "ECDHE",
-    "AES-GCM",
-    "Certificate Transparency",
-    "ATS"
-  ],
-  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
-  "date" : "2026-03-13",
-  "section" : "TLS security"
+    "car key",
+    "CCC standard",
+    "ISO\/IEC 18013-5",
+    "UWB",
+    "selective disclosure"
+  ]
 }
