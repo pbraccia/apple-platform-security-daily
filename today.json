@@ -1,13 +1,13 @@
 {
-  "date" : "2026-03-14",
-  "section" : "Using Apple Wallet",
-  "chapter" : "Services security",
-  "blurb" : "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO\/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
+  "date" : "2026-03-15",
+  "chapter" : "App security",
   "keywords" : [
-    "car key",
-    "CCC standard",
-    "ISO\/IEC 18013-5",
-    "UWB",
-    "selective disclosure"
-  ]
+    "app extension",
+    "XPC",
+    "sandboxing",
+    "System Extension",
+    "out-of-process"
+  ],
+  "section" : "Supporting extensions",
+  "blurb" : "App extensions enable third-party functionality within system contexts – keyboards, share sheets, content blockers, widgets – while maintaining strict security isolation. Each extension runs as a separate process from both its containing app and the host app, communicating exclusively via XPC with serialized data. Extensions receive a separate, scoped sandbox and entitlement set, limiting data access compared to a full application. System Extensions on macOS allow vendors to extend kernel functionality – such as network filtering and endpoint security – in user space, eliminating the risk profile of traditional kernel extensions and confining any bugs to a user-space process."
 }
