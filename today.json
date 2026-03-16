@@ -1,4 +1,5 @@
 {
+  "chapter" : "Services security",
   "keywords" : [
     "AES-128-CTR",
     "IDS",
@@ -6,8 +7,7 @@
     "PQ3",
     "forward secrecy"
   ],
-  "blurb" : "iMessage provides end-to-end encryption using a per-message AES-128 encryption key wrapped with each recipient's registered public key from the Apple Identity Service. Each device generates its own encryption (RSA-1280 or EC P-256) and signing (ECDSA-256) key pair; private keys are stored in the Secure Enclave or device Keychain. Messages are signed and encrypted before leaving the sender's device – Apple's servers relay ciphertext only. The PQ3 protocol upgrade incorporates ML-KEM post-quantum key encapsulation alongside ECDH, with a Diffie-Hellman ratchet providing forward secrecy against both classical and quantum adversaries.",
-  "section" : "iMessage",
   "date" : "2026-03-16",
-  "chapter" : "Services security"
+  "section" : "iMessage",
+  "blurb" : "iMessage provides end-to-end encryption using a per-message AES-128 encryption key wrapped with each recipient's registered public key from the Apple Identity Service. Each device generates its own encryption (RSA-1280 or EC P-256) and signing (ECDSA-256) key pair; private keys are stored in the Secure Enclave or device Keychain. Messages are signed and encrypted before leaving the sender's device – Apple's servers relay ciphertext only. The PQ3 protocol upgrade incorporates ML-KEM post-quantum key encapsulation alongside ECDH, with a Diffie-Hellman ratchet providing forward secrecy against both classical and quantum adversaries."
 }
