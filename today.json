@@ -1,13 +1,13 @@
 {
-  "date" : "2026-03-15",
-  "chapter" : "App security",
   "keywords" : [
-    "app extension",
-    "XPC",
-    "sandboxing",
-    "System Extension",
-    "out-of-process"
+    "AES-128-CTR",
+    "IDS",
+    "ECDSA-256",
+    "PQ3",
+    "forward secrecy"
   ],
-  "section" : "Supporting extensions",
-  "blurb" : "App extensions enable third-party functionality within system contexts – keyboards, share sheets, content blockers, widgets – while maintaining strict security isolation. Each extension runs as a separate process from both its containing app and the host app, communicating exclusively via XPC with serialized data. Extensions receive a separate, scoped sandbox and entitlement set, limiting data access compared to a full application. System Extensions on macOS allow vendors to extend kernel functionality – such as network filtering and endpoint security – in user space, eliminating the risk profile of traditional kernel extensions and confining any bugs to a user-space process."
+  "blurb" : "iMessage provides end-to-end encryption using a per-message AES-128 encryption key wrapped with each recipient's registered public key from the Apple Identity Service. Each device generates its own encryption (RSA-1280 or EC P-256) and signing (ECDSA-256) key pair; private keys are stored in the Secure Enclave or device Keychain. Messages are signed and encrypted before leaving the sender's device – Apple's servers relay ciphertext only. The PQ3 protocol upgrade incorporates ML-KEM post-quantum key encapsulation alongside ECDH, with a Diffie-Hellman ratchet providing forward secrecy against both classical and quantum adversaries.",
+  "section" : "iMessage",
+  "date" : "2026-03-16",
+  "chapter" : "Services security"
 }
