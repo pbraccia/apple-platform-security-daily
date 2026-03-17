@@ -1,13 +1,13 @@
 {
-  "chapter" : "Services security",
+  "section" : "Secure features in the Shortcuts app",
+  "date" : "2026-03-17",
+  "blurb" : "The Shortcuts app enables user-created automation sequences that may access sensitive data and system capabilities. Each action within a shortcut that touches privacy-protected resources – Location, Contacts, Photos, Health – requires the same user-granted permissions as any other app, enforced through the TCC framework. Shortcuts imported from external sources trigger a privacy audit dialog before first run, informing users of the data categories each shortcut accesses. Shortcuts run in a sandboxed process, preventing any single action from accessing data outside its declared scope or silently exfiltrating information without user-visible consent prompts.",
+  "chapter" : "App security",
   "keywords" : [
-    "AES-128-CTR",
-    "IDS",
-    "ECDSA-256",
-    "PQ3",
-    "forward secrecy"
-  ],
-  "date" : "2026-03-16",
-  "section" : "iMessage",
-  "blurb" : "iMessage provides end-to-end encryption using a per-message AES-128 encryption key wrapped with each recipient's registered public key from the Apple Identity Service. Each device generates its own encryption (RSA-1280 or EC P-256) and signing (ECDSA-256) key pair; private keys are stored in the Secure Enclave or device Keychain. Messages are signed and encrypted before leaving the sender's device – Apple's servers relay ciphertext only. The PQ3 protocol upgrade incorporates ML-KEM post-quantum key encapsulation alongside ECDH, with a Diffie-Hellman ratchet providing forward secrecy against both classical and quantum adversaries."
+    "TCC permissions",
+    "shortcut sandbox",
+    "privacy audit",
+    "automation security",
+    "consent prompt"
+  ]
 }
