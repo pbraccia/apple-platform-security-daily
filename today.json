@@ -1,13 +1,13 @@
 {
-  "section" : "Secure features in the Shortcuts app",
-  "date" : "2026-03-17",
-  "blurb" : "The Shortcuts app enables user-created automation sequences that may access sensitive data and system capabilities. Each action within a shortcut that touches privacy-protected resources – Location, Contacts, Photos, Health – requires the same user-granted permissions as any other app, enforced through the TCC framework. Shortcuts imported from external sources trigger a privacy audit dialog before first run, informing users of the data categories each shortcut accesses. Shortcuts run in a sandboxed process, preventing any single action from accessing data outside its declared scope or silently exfiltrating information without user-visible consent prompts.",
-  "chapter" : "App security",
+  "section" : "HomeKit security",
+  "date" : "2026-03-18",
+  "blurb" : "HomeKit secures smart home device communication using the Home Accessory Protocol with Ed25519 signatures and Curve25519 ECDH for pairing and session key establishment. The Matter smart home standard uses SPAKE2+ for device commissioning, with ongoing communication secured by AES-128-CCM. Home configuration and automation data is stored in CloudKit using end-to-end encryption, accessible only to the user's enrolled devices. Remote access passes through Apple's infrastructure as ciphertext Apple cannot decrypt. Shared home access uses per-user cryptographic identities, and guest access is scoped to specific accessories via cryptographically bound access-controlled invitations.",
+  "chapter" : "Developer kit security",
   "keywords" : [
-    "TCC permissions",
-    "shortcut sandbox",
-    "privacy audit",
-    "automation security",
-    "consent prompt"
+    "HAP",
+    "Ed25519",
+    "Matter",
+    "SPAKE2+",
+    "CloudKit E2E"
   ]
 }
