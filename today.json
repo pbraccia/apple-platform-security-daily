@@ -1,13 +1,13 @@
 {
-  "section" : "HomeKit security",
-  "date" : "2026-03-18",
-  "blurb" : "HomeKit secures smart home device communication using the Home Accessory Protocol with Ed25519 signatures and Curve25519 ECDH for pairing and session key establishment. The Matter smart home standard uses SPAKE2+ for device commissioning, with ongoing communication secured by AES-128-CCM. Home configuration and automation data is stored in CloudKit using end-to-end encryption, accessible only to the user's enrolled devices. Remote access passes through Apple's infrastructure as ciphertext Apple cannot decrypt. Shared home access uses per-user cryptographic identities, and guest access is scoped to specific accessories via cryptographically bound access-controlled invitations.",
-  "chapter" : "Developer kit security",
+  "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material.",
+  "section" : "The Secure Enclave",
   "keywords" : [
-    "HAP",
-    "Ed25519",
-    "Matter",
-    "SPAKE2+",
-    "CloudKit E2E"
-  ]
+    "sepOS",
+    "SKP",
+    "UID",
+    "mailbox interface",
+    "key wrapping"
+  ],
+  "chapter" : "Hardware security and biometrics",
+  "date" : "2026-03-19"
 }
