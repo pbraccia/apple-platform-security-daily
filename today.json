@@ -1,13 +1,13 @@
 {
-  "date" : "2026-03-20",
-  "section" : "Ultra Wideband security in iOS",
-  "chapter" : "Network security",
   "keywords" : [
-    "UWB",
-    "time-of-flight",
-    "ranging session key",
-    "relay attack",
-    "car key"
+    "SRTP",
+    "AES-256",
+    "DTLS",
+    "IDS",
+    "Group FaceTime"
   ],
-  "blurb" : "Ultra Wideband radio on Apple devices enables centimeter-precise spatial ranging for passive car key entry, Find My precision finding, and directional AirDrop. UWB ranging sessions are protected by session keys derived from a prior Bluetooth pairing exchange, ensuring only previously authenticated devices can establish ranging sessions. The short range of UWB combined with physical-layer time-of-flight measurement makes relay attacks significantly harder than with Bluetooth or NFC. Car key UWB ranging uses enhanced ranging calibration data and cryptographic binding of measurements to prevent spoofing of distance values by a relay adversary."
+  "date" : "2026-03-21",
+  "section" : "FaceTime security",
+  "chapter" : "Services security",
+  "blurb" : "FaceTime audio and video calls are protected with end-to-end encryption using SRTP with AES-256 for media streams. DTLS provides key negotiation and authentication at call setup, with keys established between endpoint devices via Apple's STUN\/TURN relay infrastructure. Apple's relay servers facilitate NAT traversal but never receive or process media content – they relay only ciphertext. For Group FaceTime, each participant generates individual session keys; a per-conference key ladder distributes media decryption keys to all authorized participants. FaceTime identities are validated through IDS, binding calls to specific Apple Accounts and their registered device public keys."
 }
