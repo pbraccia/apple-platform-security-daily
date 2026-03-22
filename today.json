@@ -1,13 +1,13 @@
 {
+  "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
+  "date" : "2026-03-22",
+  "section" : "Apple Security Research Device",
   "keywords" : [
-    "SRTP",
-    "AES-256",
-    "DTLS",
-    "IDS",
-    "Group FaceTime"
+    "SRD",
+    "security research",
+    "responsible disclosure",
+    "SSH",
+    "iOS research"
   ],
-  "date" : "2026-03-21",
-  "section" : "FaceTime security",
-  "chapter" : "Services security",
-  "blurb" : "FaceTime audio and video calls are protected with end-to-end encryption using SRTP with AES-256 for media streams. DTLS provides key negotiation and authentication at call setup, with keys established between endpoint devices via Apple's STUN\/TURN relay infrastructure. Apple's relay servers facilitate NAT traversal but never receive or process media content – they relay only ciphertext. For Group FaceTime, each participant generates individual session keys; a per-conference key ladder distributes media decryption keys to all authorized participants. FaceTime identities are validated through IDS, binding calls to specific Apple Accounts and their registered device public keys."
+  "chapter" : "System security"
 }
