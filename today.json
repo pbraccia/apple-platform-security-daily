@@ -1,13 +1,13 @@
 {
-  "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
-  "date" : "2026-03-22",
-  "section" : "Apple Security Research Device",
+  "chapter" : "System security",
+  "blurb" : "BlastDoor is a tightly sandboxed service that pre-processes all incoming iMessage content before it can reach the main Messages application process. All parsing of potentially untrusted data – including attachments, rich links, and message metadata – occurs within BlastDoor's restricted process, which has severely limited access to system resources, files, and network. Even if an attacker exploits a parsing vulnerability, the impact is contained within the BlastDoor sandbox. The system also implements exponential throttling of repeated failed exploitation attempts and re-randomizes ASLR layout between processing attempts, significantly raising the cost of zero-click exploit chains.",
+  "date" : "2026-03-23",
   "keywords" : [
-    "SRD",
-    "security research",
-    "responsible disclosure",
-    "SSH",
-    "iOS research"
+    "BlastDoor",
+    "sandbox",
+    "zero-click",
+    "iMessage",
+    "exploit mitigation"
   ],
-  "chapter" : "System security"
+  "section" : "BlastDoor for Messages and IDS"
 }
