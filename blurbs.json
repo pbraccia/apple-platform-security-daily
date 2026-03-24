@@ -42,6 +42,12 @@
     "keywords": ["Express Mode", "Secure Element", "power reserve", "transit card", "contactless"]
   },
   {
+    "chapter": "Hardware security and biometrics",
+    "section": "Mac on-screen camera indicator light",
+    "blurb": "MacBook Neo combines system software and dedicated silicon elements within A18 Pro to provide additional security for the camera feed. The architecture is designed to prevent any untrusted software – even with root or kernel privileges in macOS – from engaging the camera without also visibly lighting the on-screen camera indicator light.",
+    "keywords": ["camera", "indicator light", "silicon", "privacy", "kernel"]
+  },
+  {
     "chapter": "System security",
     "section": "System security overview",
     "blurb": "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
