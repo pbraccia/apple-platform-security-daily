@@ -1,13 +1,13 @@
 {
-  "chapter" : "System security",
-  "blurb" : "BlastDoor is a tightly sandboxed service that pre-processes all incoming iMessage content before it can reach the main Messages application process. All parsing of potentially untrusted data – including attachments, rich links, and message metadata – occurs within BlastDoor's restricted process, which has severely limited access to system resources, files, and network. Even if an attacker exploits a parsing vulnerability, the impact is contained within the BlastDoor sandbox. The system also implements exponential throttling of repeated failed exploitation attempts and re-randomizes ASLR layout between processing attempts, significantly raising the cost of zero-click exploit chains.",
-  "date" : "2026-03-23",
+  "date" : "2026-03-24",
   "keywords" : [
-    "BlastDoor",
-    "sandbox",
-    "zero-click",
-    "iMessage",
-    "exploit mitigation"
+    "secure boot",
+    "SIP",
+    "Gatekeeper",
+    "XProtect",
+    "entitlements"
   ],
-  "section" : "BlastDoor for Messages and IDS"
+  "section" : "System security overview",
+  "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
+  "chapter" : "System security"
 }
