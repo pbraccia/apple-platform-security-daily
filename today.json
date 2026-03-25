@@ -1,13 +1,13 @@
 {
-  "section" : "System security overview",
-  "date" : "2026-03-24",
-  "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
-  "chapter" : "System security",
+  "date" : "2026-03-25",
   "keywords" : [
-    "secure boot",
-    "SIP",
-    "Gatekeeper",
-    "XProtect",
-    "entitlements"
-  ]
+    "hardware disconnect",
+    "microphone privacy",
+    "physical isolation",
+    "lid switch",
+    "side-channel"
+  ],
+  "chapter" : "Hardware security and biometrics",
+  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
+  "section" : "Hardware microphone disconnect"
 }
