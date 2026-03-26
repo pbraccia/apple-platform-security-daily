@@ -1,13 +1,13 @@
 {
-  "date" : "2026-03-25",
+  "blurb" : "Apple platforms implement IPv6 privacy extensions per RFC 4941, generating semantically opaque randomized Interface Identifiers for SLAAC-configured addresses rather than deriving them from hardware MAC addresses. These privacy addresses rotate periodically and upon joining new networks, preventing correlation of a device's network activity across time or location by passive observers. iOS and iPadOS use separate independent IPv6 addresses for different network services to limit cross-service correlation, and the system prefers iCloud Private Relay paths where available to reduce exposure of the device's real IP address to network observers and servers.",
+  "chapter" : "Network security",
   "keywords" : [
-    "hardware disconnect",
-    "microphone privacy",
-    "physical isolation",
-    "lid switch",
-    "side-channel"
+    "RFC 4941",
+    "SLAAC",
+    "privacy address",
+    "IPv6 rotation",
+    "iCloud Private Relay"
   ],
-  "chapter" : "Hardware security and biometrics",
-  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
-  "section" : "Hardware microphone disconnect"
+  "date" : "2026-03-26",
+  "section" : "IPv6 security"
 }
