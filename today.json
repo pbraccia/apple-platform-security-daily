@@ -1,13 +1,13 @@
 {
-  "date" : "2026-03-28",
   "keywords" : [
-    "business identity",
-    "verified badge",
-    "iMessage E2E",
-    "IDS",
-    "Apple Pay integration"
+    "HAP",
+    "Ed25519",
+    "Matter",
+    "SPAKE2+",
+    "CloudKit E2E"
   ],
-  "chapter" : "Services security",
-  "section" : "Secure Apple Messages for Business",
-  "blurb" : "Apple Messages for Business enables organizations to communicate with customers through iMessage-based channels while maintaining verifiable business identity. Business identities are authenticated by Apple through a registration and verification process, with certified businesses displayed with a verified badge in the Messages interface. Customer interactions are protected by iMessage's end-to-end encryption with an added authentication layer for the business entity. The platform integrates with Apple Pay for secure in-conversation transactions and uses the Apple Identity Service to verify both customer device identity and the legitimacy of the business messaging endpoint."
+  "section" : "HomeKit security",
+  "blurb" : "HomeKit secures smart home device communication using the Home Accessory Protocol with Ed25519 signatures and Curve25519 ECDH for pairing and session key establishment. The Matter smart home standard uses SPAKE2+ for device commissioning, with ongoing communication secured by AES-128-CCM. Home configuration and automation data is stored in CloudKit using end-to-end encryption, accessible only to the user's enrolled devices. Remote access passes through Apple's infrastructure as ciphertext Apple cannot decrypt. Shared home access uses per-user cryptographic identities, and guest access is scoped to specific accessories via cryptographically bound access-controlled invitations.",
+  "date" : "2026-03-29",
+  "chapter" : "Developer kit security"
 }
