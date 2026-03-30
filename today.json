@@ -1,13 +1,13 @@
 {
+  "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
+  "chapter" : "Network security",
+  "section" : "Bluetooth security",
+  "date" : "2026-03-30",
   "keywords" : [
-    "HAP",
-    "Ed25519",
-    "Matter",
-    "SPAKE2+",
-    "CloudKit E2E"
-  ],
-  "section" : "HomeKit security",
-  "blurb" : "HomeKit secures smart home device communication using the Home Accessory Protocol with Ed25519 signatures and Curve25519 ECDH for pairing and session key establishment. The Matter smart home standard uses SPAKE2+ for device commissioning, with ongoing communication secured by AES-128-CCM. Home configuration and automation data is stored in CloudKit using end-to-end encryption, accessible only to the user's enrolled devices. Remote access passes through Apple's infrastructure as ciphertext Apple cannot decrypt. Shared home access uses per-user cryptographic identities, and guest access is scoped to specific accessories via cryptographically bound access-controlled invitations.",
-  "date" : "2026-03-29",
-  "chapter" : "Developer kit security"
+    "ECDH P-256",
+    "AES-CCM",
+    "LE Secure Connections",
+    "BLE address randomization",
+    "CTKD"
+  ]
 }
