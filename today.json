@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
-  "chapter" : "Network security",
-  "section" : "Bluetooth security",
-  "date" : "2026-03-30",
   "keywords" : [
-    "ECDH P-256",
-    "AES-CCM",
-    "LE Secure Connections",
-    "BLE address randomization",
-    "CTKD"
-  ]
+    "app sandbox",
+    "TCC",
+    "PIE",
+    "ARC",
+    "container isolation"
+  ],
+  "chapter" : "App security",
+  "date" : "2026-03-31",
+  "blurb" : "iOS, iPadOS, and visionOS apps run in a strictly enforced UNIX-level sandbox, with each app receiving a unique container directory inaccessible to other apps. The kernel enforces mandatory access control: apps must request user permission to access location, contacts, camera, microphone, and other sensitive resources through the TCC framework. Position-Independent Executable compilation, Automatic Reference Counting, and stack canaries reduce exploitability of memory corruption vulnerabilities. Dynamic library injection is prevented by the code signing requirement; the system linker loads only Apple-signed libraries or those explicitly included in the app bundle.",
+  "section" : "App security in iOS, iPadOS, and visionOS"
 }
