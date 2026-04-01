@@ -1,13 +1,13 @@
 {
+  "section" : "Data Protection",
+  "date" : "2026-04-01",
+  "blurb" : "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage.",
+  "chapter" : "Encryption and Data Protection",
   "keywords" : [
-    "app sandbox",
-    "TCC",
-    "PIE",
-    "ARC",
-    "container isolation"
-  ],
-  "chapter" : "App security",
-  "date" : "2026-03-31",
-  "blurb" : "iOS, iPadOS, and visionOS apps run in a strictly enforced UNIX-level sandbox, with each app receiving a unique container directory inaccessible to other apps. The kernel enforces mandatory access control: apps must request user permission to access location, contacts, camera, microphone, and other sensitive resources through the TCC framework. Position-Independent Executable compilation, Automatic Reference Counting, and stack canaries reduce exploitability of memory corruption vulnerabilities. Dynamic library injection is prevented by the code signing requirement; the system linker loads only Apple-signed libraries or those explicitly included in the app bundle.",
-  "section" : "App security in iOS, iPadOS, and visionOS"
+    "protection class",
+    "class key",
+    "keybag",
+    "Effaceable Storage",
+    "NSFileProtection"
+  ]
 }
