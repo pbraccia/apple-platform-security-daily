@@ -1,13 +1,13 @@
 {
-  "section" : "Data Protection",
-  "date" : "2026-04-01",
-  "blurb" : "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage.",
-  "chapter" : "Encryption and Data Protection",
+  "chapter" : "Network security",
+  "date" : "2026-04-02",
+  "blurb" : "Apple's network security framework provides layered protections for all data in transit across Wi-Fi, cellular, Bluetooth, and USB connections. The foundation is TLS 1.2\/1.3 with App Transport Security enforcing secure connections system-wide, requiring forward-secrecy cipher suites and valid certificate chains by default. Certificate Transparency log checking and OCSP stapling prevent use of misissued certificates. The Network Extension framework enables per-app VPN, content filtering, and DNS proxying in a controlled, sandboxed manner, while allowing enterprise network policies without requiring device-level VPN profiles that inspect all traffic.",
+  "section" : "Network security overview",
   "keywords" : [
-    "protection class",
-    "class key",
-    "keybag",
-    "Effaceable Storage",
-    "NSFileProtection"
+    "TLS 1.3",
+    "ATS",
+    "Certificate Transparency",
+    "Network Extension",
+    "OCSP"
   ]
 }
