@@ -1,13 +1,13 @@
 {
   "keywords" : [
-    "Handoff",
-    "IDS",
-    "peer-to-peer Wi-Fi",
-    "BLE discovery",
-    "iCloud relay"
+    "Screen Time passcode",
+    "IDS E2E",
+    "CloudKit E2E",
+    "parental controls",
+    "usage data privacy"
   ],
-  "chapter" : "Services security",
-  "date" : "2026-04-03",
-  "blurb" : "Continuity features – Handoff, Universal Clipboard, iPhone Cellular Call Relay, SMS Forwarding, Instant Hotspot, and iPhone Mirroring – use Bluetooth Low Energy device discovery combined with end-to-end encrypted peer-to-peer Wi-Fi or iCloud relay channels. Continuity relies on the Apple Identity Service to authenticate that both devices share the same iCloud account and to exchange public keys before establishing direct encrypted connections. Data transferred between devices is encrypted using keys derived from device-specific IDS key pairs, ensuring neither Apple's servers nor third parties can access transferred content even when routed through iCloud infrastructure.",
-  "section" : "Continuity"
+  "section" : "Screen Time security",
+  "date" : "2026-04-04",
+  "chapter" : "Secure device management",
+  "blurb" : "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules."
 }
