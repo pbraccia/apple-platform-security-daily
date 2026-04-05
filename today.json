@@ -1,13 +1,13 @@
 {
+  "section" : "SiriKit security",
+  "date" : "2026-04-05",
   "keywords" : [
-    "Screen Time passcode",
-    "IDS E2E",
-    "CloudKit E2E",
-    "parental controls",
-    "usage data privacy"
+    "SiriKit",
+    "data minimization",
+    "app extension",
+    "random identifier",
+    "TCC permissions"
   ],
-  "section" : "Screen Time security",
-  "date" : "2026-04-04",
-  "chapter" : "Secure device management",
-  "blurb" : "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules."
+  "blurb" : "SiriKit integrates third-party apps into Siri using the app extension model, with strict data minimization for user privacy. Before passing personal data to an app's SiriKit extension, Siri checks the app's user-granted permission settings: if the app lacks Contacts access, Siri passes only literal text for relationship references rather than resolved contact data. Custom vocabulary submitted by SiriKit-enabled apps is associated with a random identifier rather than the user's identity, and is purged when the app is deleted or Siri integration is disabled. Only the minimal data needed for the specific user intent is forwarded to the extension process.",
+  "chapter" : "Developer kit security"
 }
