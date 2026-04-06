@@ -1,13 +1,13 @@
 {
-  "section" : "SiriKit security",
-  "date" : "2026-04-05",
+  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material.",
+  "chapter" : "Hardware security and biometrics",
+  "date" : "2026-04-06",
   "keywords" : [
-    "SiriKit",
-    "data minimization",
-    "app extension",
-    "random identifier",
-    "TCC permissions"
+    "A-series",
+    "M-series",
+    "sepOS",
+    "IOMMU",
+    "hardware isolation"
   ],
-  "blurb" : "SiriKit integrates third-party apps into Siri using the app extension model, with strict data minimization for user privacy. Before passing personal data to an app's SiriKit extension, Siri checks the app's user-granted permission settings: if the app lacks Contacts access, Siri passes only literal text for relationship references rather than resolved contact data. Custom vocabulary submitted by SiriKit-enabled apps is associated with a random identifier rather than the user's identity, and is purged when the app is deleted or Siri integration is disabled. Only the minimal data needed for the specific user intent is forwarded to the extension process.",
-  "chapter" : "Developer kit security"
+  "section" : "Apple SoC security"
 }
