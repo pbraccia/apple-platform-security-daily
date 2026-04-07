@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material.",
-  "chapter" : "Hardware security and biometrics",
-  "date" : "2026-04-06",
+  "date" : "2026-04-07",
+  "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication.",
+  "section" : "App security overview",
+  "chapter" : "App security",
   "keywords" : [
-    "A-series",
-    "M-series",
-    "sepOS",
-    "IOMMU",
-    "hardware isolation"
-  ],
-  "section" : "Apple SoC security"
+    "sandbox",
+    "entitlements",
+    "code signing",
+    "App Store review",
+    "XNU"
+  ]
 }
