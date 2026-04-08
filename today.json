@@ -1,13 +1,13 @@
 {
-  "date" : "2026-04-07",
-  "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication.",
-  "section" : "App security overview",
-  "chapter" : "App security",
+  "section" : "Hardware security overview",
+  "chapter" : "Hardware security and biometrics",
+  "date" : "2026-04-08",
   "keywords" : [
-    "sandbox",
-    "entitlements",
-    "code signing",
-    "App Store review",
-    "XNU"
-  ]
+    "AES engine",
+    "PKA",
+    "TRNG",
+    "UID key",
+    "Boot ROM"
+  ],
+  "blurb" : "Apple silicon integrates dedicated security hardware – including an AES cryptographic engine, Public Key Accelerator (PKA), True Random Number Generator (TRNG), and Secure Enclave – directly on the system-on-chip. Hardware security features such as memory encryption, secure Boot ROM, and device-unique UID keys are provisioned at manufacturing time and are permanently inaccessible to software. This silicon-rooted trust model ensures cryptographic operations and key material are physically isolated from the application processor, establishing the immutable foundation upon which all higher-level platform security protections are built."
 }
