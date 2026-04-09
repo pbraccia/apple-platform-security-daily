@@ -1,13 +1,13 @@
 {
-  "section" : "Hardware security overview",
-  "chapter" : "Hardware security and biometrics",
-  "date" : "2026-04-08",
+  "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
+  "date" : "2026-04-09",
   "keywords" : [
-    "AES engine",
-    "PKA",
-    "TRNG",
-    "UID key",
-    "Boot ROM"
+    "secure boot",
+    "SIP",
+    "Gatekeeper",
+    "XProtect",
+    "entitlements"
   ],
-  "blurb" : "Apple silicon integrates dedicated security hardware – including an AES cryptographic engine, Public Key Accelerator (PKA), True Random Number Generator (TRNG), and Secure Enclave – directly on the system-on-chip. Hardware security features such as memory encryption, secure Boot ROM, and device-unique UID keys are provisioned at manufacturing time and are permanently inaccessible to software. This silicon-rooted trust model ensures cryptographic operations and key material are physically isolated from the application processor, establishing the immutable foundation upon which all higher-level platform security protections are built."
+  "section" : "System security overview",
+  "chapter" : "System security"
 }
