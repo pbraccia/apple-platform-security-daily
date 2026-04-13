@@ -1,13 +1,13 @@
 {
-  "date" : "2026-04-12",
-  "section" : "Encryption and Data Protection overview",
-  "blurb" : "Apple's Encryption and Data Protection framework provides hardware-accelerated AES-256 encryption for all data stored on devices. Every file on NAND storage is encrypted using a unique per-file key, which is itself wrapped by a class key derived from the device UID and – for sensitive classes – the user's passcode. This key hierarchy, maintained in keybags, enables instantaneous crypto-erase by discarding the media key, and protects data when the device is locked by making class keys unavailable without passcode or biometric authentication. The Secure Enclave manages the entire key hierarchy, ensuring the OS and apps cannot access raw cryptographic material.",
+  "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material.",
   "keywords" : [
-    "per-file key",
-    "class key",
-    "keybag",
-    "AES-256",
-    "crypto-erase"
+    "sepOS",
+    "SKP",
+    "UID",
+    "mailbox interface",
+    "key wrapping"
   ],
-  "chapter" : "Encryption and Data Protection"
+  "section" : "The Secure Enclave",
+  "date" : "2026-04-13",
+  "chapter" : "Hardware security and biometrics"
 }
