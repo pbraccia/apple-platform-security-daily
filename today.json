@@ -1,13 +1,13 @@
 {
-  "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material.",
+  "section" : "Ultra Wideband security in iOS",
+  "date" : "2026-04-14",
   "keywords" : [
-    "sepOS",
-    "SKP",
-    "UID",
-    "mailbox interface",
-    "key wrapping"
+    "UWB",
+    "time-of-flight",
+    "ranging session key",
+    "relay attack",
+    "car key"
   ],
-  "section" : "The Secure Enclave",
-  "date" : "2026-04-13",
-  "chapter" : "Hardware security and biometrics"
+  "chapter" : "Network security",
+  "blurb" : "Ultra Wideband radio on Apple devices enables centimeter-precise spatial ranging for passive car key entry, Find My precision finding, and directional AirDrop. UWB ranging sessions are protected by session keys derived from a prior Bluetooth pairing exchange, ensuring only previously authenticated devices can establish ranging sessions. The short range of UWB combined with physical-layer time-of-flight measurement makes relay attacks significantly harder than with Bluetooth or NFC. Car key UWB ranging uses enhanced ranging calibration data and cryptographic binding of measurements to prevent spoofing of distance values by a relay adversary."
 }
