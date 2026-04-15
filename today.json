@@ -1,13 +1,13 @@
 {
-  "section" : "Ultra Wideband security in iOS",
-  "date" : "2026-04-14",
   "keywords" : [
-    "UWB",
-    "time-of-flight",
-    "ranging session key",
-    "relay attack",
-    "car key"
+    "watchOS",
+    "secure boot",
+    "Secure Enclave",
+    "SSA",
+    "Bluetooth pairing"
   ],
-  "chapter" : "Network security",
-  "blurb" : "Ultra Wideband radio on Apple devices enables centimeter-precise spatial ranging for passive car key entry, Find My precision finding, and directional AirDrop. UWB ranging sessions are protected by session keys derived from a prior Bluetooth pairing exchange, ensuring only previously authenticated devices can establish ranging sessions. The short range of UWB combined with physical-layer time-of-flight measurement makes relay attacks significantly harder than with Bluetooth or NFC. Car key UWB ranging uses enhanced ranging calibration data and cryptographic binding of measurements to prevent spoofing of distance values by a relay adversary."
+  "section" : "System security for watchOS",
+  "chapter" : "System security",
+  "blurb" : "watchOS implements the same hardware-rooted secure boot chain used by other Apple platforms, with each boot stage cryptographically verified before execution. The Apple Watch Secure Enclave manages biometric keys and Data Protection class keys analogously to iPhone. OTA software updates are cryptographically verified using System Software Authorization before installation. The watchOS pairing security model binds the watch cryptographically to a specific iPhone using a shared symmetric key established during pairing, ensuring that data exchanged between iPhone and Apple Watch over Bluetooth uses authenticated and encrypted channels.",
+  "date" : "2026-04-15"
 }
