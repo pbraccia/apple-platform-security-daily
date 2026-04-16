@@ -1,13 +1,13 @@
 {
   "keywords" : [
-    "watchOS",
-    "secure boot",
-    "Secure Enclave",
-    "SSA",
-    "Bluetooth pairing"
+    "WPA3",
+    "SAE",
+    "PMF",
+    "MAC randomization",
+    "OWE"
   ],
-  "section" : "System security for watchOS",
-  "chapter" : "System security",
-  "blurb" : "watchOS implements the same hardware-rooted secure boot chain used by other Apple platforms, with each boot stage cryptographically verified before execution. The Apple Watch Secure Enclave manages biometric keys and Data Protection class keys analogously to iPhone. OTA software updates are cryptographically verified using System Software Authorization before installation. The watchOS pairing security model binds the watch cryptographically to a specific iPhone using a shared symmetric key established during pairing, ensuring that data exchanged between iPhone and Apple Watch over Bluetooth uses authenticated and encrypted channels.",
-  "date" : "2026-04-15"
+  "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods.",
+  "date" : "2026-04-16",
+  "chapter" : "Network security",
+  "section" : "Wi-Fi security and privacy"
 }
