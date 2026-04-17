@@ -1,13 +1,13 @@
 {
+  "section" : "Services security overview",
+  "date" : "2026-04-17",
   "keywords" : [
-    "WPA3",
-    "SAE",
-    "PMF",
-    "MAC randomization",
-    "OWE"
+    "TLS",
+    "2FA",
+    "CloudKit E2E",
+    "certificate pinning",
+    "iCloud encryption"
   ],
-  "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods.",
-  "date" : "2026-04-16",
-  "chapter" : "Network security",
-  "section" : "Wi-Fi security and privacy"
+  "chapter" : "Services security",
+  "blurb" : "Apple services security encompasses the authentication, authorization, and encryption protections applied to iCloud, Apple Account, iMessage, FaceTime, Apple Pay, and other Apple-operated services. All service communications use TLS with certificate pinning to prevent interception. Apple Account is protected by two-factor authentication using hardware-rooted device trust. iCloud data is encrypted at rest in Apple's data centers, with end-to-end encrypted categories – expanded by Advanced Data Protection – where Apple holds no decryption keys. CloudKit end-to-end encryption uses per-record symmetric keys wrapped with device-specific keys, ensuring only the user's enrolled devices can decrypt their data."
 }
