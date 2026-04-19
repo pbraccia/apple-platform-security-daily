@@ -1,13 +1,13 @@
 {
-  "section" : "TLS security",
-  "chapter" : "Network security",
   "keywords" : [
-    "TLS 1.3",
-    "ECDHE",
-    "AES-GCM",
+    "code signing",
+    "ECDSA",
+    "S\/MIME",
     "Certificate Transparency",
-    "ATS"
+    "notarization"
   ],
-  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
-  "date" : "2026-04-18"
+  "section" : "Digital signing and encryption",
+  "chapter" : "Encryption and Data Protection",
+  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
+  "date" : "2026-04-19"
 }
