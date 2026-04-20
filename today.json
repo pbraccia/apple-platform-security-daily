@@ -1,13 +1,13 @@
 {
+  "date" : "2026-04-20",
+  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
+  "chapter" : "Hardware security and biometrics",
+  "section" : "Hardware microphone disconnect",
   "keywords" : [
-    "code signing",
-    "ECDSA",
-    "S\/MIME",
-    "Certificate Transparency",
-    "notarization"
-  ],
-  "section" : "Digital signing and encryption",
-  "chapter" : "Encryption and Data Protection",
-  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
-  "date" : "2026-04-19"
+    "hardware disconnect",
+    "microphone privacy",
+    "physical isolation",
+    "lid switch",
+    "side-channel"
+  ]
 }
