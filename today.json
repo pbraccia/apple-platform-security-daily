@@ -1,13 +1,13 @@
 {
-  "date" : "2026-04-22",
-  "section" : "SiriKit security",
-  "chapter" : "Developer kit security",
-  "blurb" : "SiriKit integrates third-party apps into Siri using the app extension model, with strict data minimization for user privacy. Before passing personal data to an app's SiriKit extension, Siri checks the app's user-granted permission settings: if the app lacks Contacts access, Siri passes only literal text for relationship references rather than resolved contact data. Custom vocabulary submitted by SiriKit-enabled apps is associated with a random identifier rather than the user's identity, and is purged when the app is deleted or Siri integration is disabled. Only the minimal data needed for the specific user intent is forwarded to the extension process.",
+  "date" : "2026-04-23",
+  "chapter" : "Encryption and Data Protection",
+  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
+  "section" : "Digital signing and encryption",
   "keywords" : [
-    "SiriKit",
-    "data minimization",
-    "app extension",
-    "random identifier",
-    "TCC permissions"
+    "code signing",
+    "ECDSA",
+    "S\/MIME",
+    "Certificate Transparency",
+    "notarization"
   ]
 }
