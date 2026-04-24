@@ -1,13 +1,13 @@
 {
-  "date" : "2026-04-23",
-  "chapter" : "Encryption and Data Protection",
-  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
-  "section" : "Digital signing and encryption",
+  "date" : "2026-04-24",
   "keywords" : [
-    "code signing",
-    "ECDSA",
-    "S\/MIME",
-    "Certificate Transparency",
-    "notarization"
-  ]
+    "RFC 4941",
+    "SLAAC",
+    "privacy address",
+    "IPv6 rotation",
+    "iCloud Private Relay"
+  ],
+  "chapter" : "Network security",
+  "blurb" : "Apple platforms implement IPv6 privacy extensions per RFC 4941, generating semantically opaque randomized Interface Identifiers for SLAAC-configured addresses rather than deriving them from hardware MAC addresses. These privacy addresses rotate periodically and upon joining new networks, preventing correlation of a device's network activity across time or location by passive observers. iOS and iPadOS use separate independent IPv6 addresses for different network services to limit cross-service correlation, and the system prefers iCloud Private Relay paths where available to reduce exposure of the device's real IP address to network observers and servers.",
+  "section" : "IPv6 security"
 }
