@@ -1,13 +1,13 @@
 {
-  "date" : "2026-04-24",
+  "date" : "2026-04-25",
+  "chapter" : "Developer kit security",
   "keywords" : [
-    "RFC 4941",
-    "SLAAC",
-    "privacy address",
-    "IPv6 rotation",
-    "iCloud Private Relay"
+    "replayd",
+    "out-of-process capture",
+    "IOSurface",
+    "XPC",
+    "broadcast extension"
   ],
-  "chapter" : "Network security",
-  "blurb" : "Apple platforms implement IPv6 privacy extensions per RFC 4941, generating semantically opaque randomized Interface Identifiers for SLAAC-configured addresses rather than deriving them from hardware MAC addresses. These privacy addresses rotate periodically and upon joining new networks, preventing correlation of a device's network activity across time or location by passive observers. iOS and iPadOS use separate independent IPv6 addresses for different network services to limit cross-service correlation, and the system prefers iCloud Private Relay paths where available to reduce exposure of the device's real IP address to network observers and servers.",
-  "section" : "IPv6 security"
+  "blurb" : "ReplayKit enables screen recording and live broadcasting by performing all capture operations within a privileged system daemon (replayd) running outside the host app's process. This architecture ensures recorded video and audio content is never directly accessible to the hosting application. User consent is collected via a system-presented permissions dialog before each recording session. Third-party broadcast services integrate through a two-process extension architecture – a UI extension for configuration and an upload extension for data handling – connected to the capture daemon via XPC, with video frames serialized as IOSurface objects to prevent raw buffer access across trust boundaries.",
+  "section" : "ReplayKit security"
 }
