@@ -1,13 +1,13 @@
 {
-  "date" : "2026-04-26",
-  "section" : "Background Security Improvements",
-  "chapter" : "System security",
+  "blurb" : "Apple platforms support enterprise-grade VPN through IKEv2\/IPsec and TLS-based protocols via the Network Extension framework, with legacy L2TP\/IPsec compatibility for older infrastructure. Per-app VPN routes only specific app traffic through the corporate tunnel, reducing unnecessary network overhead while allowing personal apps to access the internet directly. Always On VPN, configured via MDM, maintains a permanent tunnel to corporate infrastructure reconnecting transparently after network changes without user interaction. VPN configurations and credentials are stored in the device Keychain and delivered in CMS-encrypted MDM payloads, preventing credential exposure during provisioning.",
+  "date" : "2026-04-27",
+  "chapter" : "Network security",
   "keywords" : [
-    "cryptex",
-    "XProtect",
-    "rapid remediation",
-    "signed disk image",
-    "SSV"
+    "IKEv2\/IPsec",
+    "per-app VPN",
+    "Always On VPN",
+    "Network Extension",
+    "MDM provisioning"
   ],
-  "blurb" : "Background Security Improvements enable Apple to ship rapid security remediations – including XProtect signature updates, runtime mitigations, and new security policies – independently of full OS releases. The mechanism uses cryptographically signed disk images called cryptexes (Cryptographic Extensions), which are verified and mounted at boot alongside the main system volume. Cryptexes carry their own Sealed System Volume hash tree guarantees and are delivered via standard software update infrastructure without requiring a full OS upgrade, allowing Apple to address newly discovered vulnerabilities with minimal user friction."
+  "section" : "VPN security"
 }
