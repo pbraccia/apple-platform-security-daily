@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple platforms support enterprise-grade VPN through IKEv2\/IPsec and TLS-based protocols via the Network Extension framework, with legacy L2TP\/IPsec compatibility for older infrastructure. Per-app VPN routes only specific app traffic through the corporate tunnel, reducing unnecessary network overhead while allowing personal apps to access the internet directly. Always On VPN, configured via MDM, maintains a permanent tunnel to corporate infrastructure reconnecting transparently after network changes without user interaction. VPN configurations and credentials are stored in the device Keychain and delivered in CMS-encrypted MDM payloads, preventing credential exposure during provisioning.",
-  "date" : "2026-04-27",
-  "chapter" : "Network security",
+  "blurb" : "ReplayKit enables screen recording and live broadcasting by performing all capture operations within a privileged system daemon (replayd) running outside the host app's process. This architecture ensures recorded video and audio content is never directly accessible to the hosting application. User consent is collected via a system-presented permissions dialog before each recording session. Third-party broadcast services integrate through a two-process extension architecture – a UI extension for configuration and an upload extension for data handling – connected to the capture daemon via XPC, with video frames serialized as IOSurface objects to prevent raw buffer access across trust boundaries.",
+  "date" : "2026-04-28",
+  "chapter" : "Developer kit security",
   "keywords" : [
-    "IKEv2\/IPsec",
-    "per-app VPN",
-    "Always On VPN",
-    "Network Extension",
-    "MDM provisioning"
+    "replayd",
+    "out-of-process capture",
+    "IOSurface",
+    "XPC",
+    "broadcast extension"
   ],
-  "section" : "VPN security"
+  "section" : "ReplayKit security"
 }
