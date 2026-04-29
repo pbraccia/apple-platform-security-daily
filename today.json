@@ -1,13 +1,13 @@
 {
-  "blurb" : "ReplayKit enables screen recording and live broadcasting by performing all capture operations within a privileged system daemon (replayd) running outside the host app's process. This architecture ensures recorded video and audio content is never directly accessible to the hosting application. User consent is collected via a system-presented permissions dialog before each recording session. Third-party broadcast services integrate through a two-process extension architecture – a UI extension for configuration and an upload extension for data handling – connected to the capture daemon via XPC, with video frames serialized as IOSurface objects to prevent raw buffer access across trust boundaries.",
-  "date" : "2026-04-28",
-  "chapter" : "Developer kit security",
+  "date" : "2026-04-29",
   "keywords" : [
-    "replayd",
-    "out-of-process capture",
-    "IOSurface",
-    "XPC",
-    "broadcast extension"
+    "hardware disconnect",
+    "microphone privacy",
+    "physical isolation",
+    "lid switch",
+    "side-channel"
   ],
-  "section" : "ReplayKit security"
+  "chapter" : "Hardware security and biometrics",
+  "section" : "Hardware microphone disconnect",
+  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms."
 }
