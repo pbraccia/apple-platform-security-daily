@@ -1,13 +1,13 @@
 {
-  "date" : "2026-04-29",
+  "section" : "Express Cards with power reserve",
   "keywords" : [
-    "hardware disconnect",
-    "microphone privacy",
-    "physical isolation",
-    "lid switch",
-    "side-channel"
+    "Express Mode",
+    "Secure Element",
+    "power reserve",
+    "transit card",
+    "contactless"
   ],
-  "chapter" : "Hardware security and biometrics",
-  "section" : "Hardware microphone disconnect",
-  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms."
+  "date" : "2026-04-30",
+  "blurb" : "Express Cards allow Apple Pay and Apple Wallet credentials to function in a low-power mode without Face ID, Touch ID, or passcode authentication – supporting transit cards, hotel room keys, and student IDs. The Secure Element maintains a dedicated power reserve so Express Card transactions remain possible even when the iPhone battery is depleted. To prevent unauthorized large-value payments, Express Mode is restricted to specific card types that issuers explicitly configure, and Apple imposes transaction limits on eligible card categories to bound the risk of unauthorized use when authentication is bypassed.",
+  "chapter" : "Hardware security and biometrics"
 }
