@@ -1,13 +1,13 @@
 {
-  "section" : "Express Cards with power reserve",
+  "section" : "Secure features in the Notes app",
+  "chapter" : "App security",
   "keywords" : [
-    "Express Mode",
-    "Secure Element",
-    "power reserve",
-    "transit card",
-    "contactless"
+    "PBKDF2-HMAC-SHA512",
+    "Data Protection Class A",
+    "note encryption",
+    "shared notes",
+    "iCloud access control"
   ],
-  "date" : "2026-04-30",
-  "blurb" : "Express Cards allow Apple Pay and Apple Wallet credentials to function in a low-power mode without Face ID, Touch ID, or passcode authentication – supporting transit cards, hotel room keys, and student IDs. The Secure Element maintains a dedicated power reserve so Express Card transactions remain possible even when the iPhone battery is depleted. To prevent unauthorized large-value payments, Express Mode is restricted to specific card types that issuers explicitly configure, and Apple imposes transaction limits on eligible card categories to bound the risk of unauthorized use when authentication is bypassed.",
-  "chapter" : "Hardware security and biometrics"
+  "date" : "2026-05-01",
+  "blurb" : "The Notes app protects individual notes using per-note encryption keyed to a user-set password hashed with PBKDF2-HMAC-SHA512. The derived key is stored in the iOS Keychain with Data Protection Class A (CompleteWhenLocked), so locked notes cannot be accessed without device unlock plus the Notes password or biometric authentication. Shared notes enforce iCloud-based access control so only invited collaborators can view or edit content. Note content and attachments are encrypted at rest, with only ciphertext stored in the underlying database, preventing unauthorized access even if the SQLite database file is extracted from a device backup."
 }
