@@ -1,13 +1,13 @@
 {
-  "section" : "Secure features in the Notes app",
-  "chapter" : "App security",
   "keywords" : [
-    "PBKDF2-HMAC-SHA512",
-    "Data Protection Class A",
-    "note encryption",
-    "shared notes",
-    "iCloud access control"
+    "differential privacy",
+    "on-device processing",
+    "data minimization",
+    "Neural Engine",
+    "end-to-end encryption"
   ],
-  "date" : "2026-05-01",
-  "blurb" : "The Notes app protects individual notes using per-note encryption keyed to a user-set password hashed with PBKDF2-HMAC-SHA512. The derived key is stored in the iOS Keychain with Data Protection Class A (CompleteWhenLocked), so locked notes cannot be accessed without device unlock plus the Notes password or biometric authentication. Shared notes enforce iCloud-based access control so only invited collaborators can view or edit content. Note content and attachments are encrypted at rest, with only ciphertext stored in the underlying database, preventing unauthorized access even if the SQLite database file is extracted from a device backup."
+  "section" : "How Apple protects users' personal data",
+  "chapter" : "Encryption and Data Protection",
+  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
+  "date" : "2026-05-02"
 }
