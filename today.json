@@ -1,13 +1,13 @@
 {
+  "blurb" : "Apple's secure boot chain establishes a cryptographic chain of trust from immutable Boot ROM through each subsequent boot stage. On Apple silicon Macs, the Boot ROM loads and verifies the Low-Level Bootloader (LLB), which loads iBoot; on A-series devices Boot ROM loads iBoot directly. Each stage uses Apple's public key to verify a digital signature before passing control to the next. The LocalPolicy mechanism on Mac with Apple silicon encodes the user's chosen security configuration into a cryptographically signed structure managed by the Secure Enclave, ensuring only authorized operating systems and boot configurations can run.",
+  "section" : "Secure boot",
   "keywords" : [
-    "differential privacy",
-    "on-device processing",
-    "data minimization",
-    "Neural Engine",
-    "end-to-end encryption"
+    "Boot ROM",
+    "iBoot",
+    "LocalPolicy",
+    "LLB",
+    "chain of trust"
   ],
-  "section" : "How Apple protects users' personal data",
-  "chapter" : "Encryption and Data Protection",
-  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
-  "date" : "2026-05-02"
+  "chapter" : "System security",
+  "date" : "2026-05-03"
 }
