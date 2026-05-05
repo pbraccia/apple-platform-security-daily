@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple's Encryption and Data Protection framework provides hardware-accelerated AES-256 encryption for all data stored on devices. Every file on NAND storage is encrypted using a unique per-file key, which is itself wrapped by a class key derived from the device UID and – for sensitive classes – the user's passcode. This key hierarchy, maintained in keybags, enables instantaneous crypto-erase by discarding the media key, and protects data when the device is locked by making class keys unavailable without passcode or biometric authentication. The Secure Enclave manages the entire key hierarchy, ensuring the OS and apps cannot access raw cryptographic material.",
-  "chapter" : "Encryption and Data Protection",
-  "date" : "2026-05-04",
+  "date" : "2026-05-05",
+  "section" : "Lockdown Mode security",
+  "blurb" : "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac.",
   "keywords" : [
-    "per-file key",
-    "class key",
-    "keybag",
-    "AES-256",
-    "crypto-erase"
+    "Lockdown Mode",
+    "attack surface reduction",
+    "JIT disable",
+    "state-sponsored",
+    "high-risk users"
   ],
-  "section" : "Encryption and Data Protection overview"
+  "chapter" : "System security"
 }
