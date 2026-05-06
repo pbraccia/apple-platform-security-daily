@@ -1,13 +1,13 @@
 {
-  "date" : "2026-05-05",
-  "section" : "Lockdown Mode security",
-  "blurb" : "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac.",
   "keywords" : [
-    "Lockdown Mode",
-    "attack surface reduction",
-    "JIT disable",
-    "state-sponsored",
-    "high-risk users"
+    "SRTP",
+    "AES-256",
+    "DTLS",
+    "IDS",
+    "Group FaceTime"
   ],
-  "chapter" : "System security"
+  "date" : "2026-05-06",
+  "chapter" : "Services security",
+  "section" : "FaceTime security",
+  "blurb" : "FaceTime audio and video calls are protected with end-to-end encryption using SRTP with AES-256 for media streams. DTLS provides key negotiation and authentication at call setup, with keys established between endpoint devices via Apple's STUN\/TURN relay infrastructure. Apple's relay servers facilitate NAT traversal but never receive or process media content – they relay only ciphertext. For Group FaceTime, each participant generates individual session keys; a per-conference key ladder distributes media decryption keys to all authorized participants. FaceTime identities are validated through IDS, binding calls to specific Apple Accounts and their registered device public keys."
 }
