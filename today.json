@@ -1,13 +1,13 @@
 {
+  "blurb" : "Apple platforms support enterprise Single Sign-on through three complementary mechanisms. The Kerberos SSO extension integrates natively with Active Directory, obtaining TGTs using device certificates or user credentials and transparently presenting service tickets to Kerberos-protected resources. The Extensible SSO framework allows identity providers to deploy MDM-configured SSO extensions supporting SAML 2.0 and OpenID Connect for seamless authentication to web and native apps. Platform SSO on macOS binds local account authentication to enterprise identity provider credentials, with tokens issued by the IdP enabling unified corporate identity across all Mac sign-in contexts.",
+  "chapter" : "Network security",
+  "date" : "2026-05-07",
+  "section" : "Single Sign-on security",
   "keywords" : [
-    "SRTP",
-    "AES-256",
-    "DTLS",
-    "IDS",
-    "Group FaceTime"
-  ],
-  "date" : "2026-05-06",
-  "chapter" : "Services security",
-  "section" : "FaceTime security",
-  "blurb" : "FaceTime audio and video calls are protected with end-to-end encryption using SRTP with AES-256 for media streams. DTLS provides key negotiation and authentication at call setup, with keys established between endpoint devices via Apple's STUN\/TURN relay infrastructure. Apple's relay servers facilitate NAT traversal but never receive or process media content – they relay only ciphertext. For Group FaceTime, each participant generates individual session keys; a per-conference key ladder distributes media decryption keys to all authorized participants. FaceTime identities are validated through IDS, binding calls to specific Apple Accounts and their registered device public keys."
+    "Kerberos SSO",
+    "Extensible SSO",
+    "Platform SSO",
+    "SAML",
+    "OpenID Connect"
+  ]
 }
