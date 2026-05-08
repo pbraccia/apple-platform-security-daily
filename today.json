@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple platforms support enterprise Single Sign-on through three complementary mechanisms. The Kerberos SSO extension integrates natively with Active Directory, obtaining TGTs using device certificates or user credentials and transparently presenting service tickets to Kerberos-protected resources. The Extensible SSO framework allows identity providers to deploy MDM-configured SSO extensions supporting SAML 2.0 and OpenID Connect for seamless authentication to web and native apps. Platform SSO on macOS binds local account authentication to enterprise identity provider credentials, with tokens issued by the IdP enabling unified corporate identity across all Mac sign-in contexts.",
+  "date" : "2026-05-08",
   "chapter" : "Network security",
-  "date" : "2026-05-07",
-  "section" : "Single Sign-on security",
   "keywords" : [
-    "Kerberos SSO",
-    "Extensible SSO",
-    "Platform SSO",
-    "SAML",
-    "OpenID Connect"
-  ]
+    "RFC 4941",
+    "SLAAC",
+    "privacy address",
+    "IPv6 rotation",
+    "iCloud Private Relay"
+  ],
+  "section" : "IPv6 security",
+  "blurb" : "Apple platforms implement IPv6 privacy extensions per RFC 4941, generating semantically opaque randomized Interface Identifiers for SLAAC-configured addresses rather than deriving them from hardware MAC addresses. These privacy addresses rotate periodically and upon joining new networks, preventing correlation of a device's network activity across time or location by passive observers. iOS and iPadOS use separate independent IPv6 addresses for different network services to limit cross-service correlation, and the system prefers iCloud Private Relay paths where available to reduce exposure of the device's real IP address to network observers and servers."
 }
