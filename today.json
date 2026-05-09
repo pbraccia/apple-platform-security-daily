@@ -1,13 +1,13 @@
 {
-  "date" : "2026-05-08",
-  "chapter" : "Network security",
+  "chapter" : "System security",
   "keywords" : [
-    "RFC 4941",
-    "SLAAC",
-    "privacy address",
-    "IPv6 rotation",
-    "iCloud Private Relay"
+    "SSA",
+    "ECID",
+    "personalized ticket",
+    "anti-downgrade",
+    "OTA update"
   ],
-  "section" : "IPv6 security",
-  "blurb" : "Apple platforms implement IPv6 privacy extensions per RFC 4941, generating semantically opaque randomized Interface Identifiers for SLAAC-configured addresses rather than deriving them from hardware MAC addresses. These privacy addresses rotate periodically and upon joining new networks, preventing correlation of a device's network activity across time or location by passive observers. iOS and iPadOS use separate independent IPv6 addresses for different network services to limit cross-service correlation, and the system prefers iCloud Private Relay paths where available to reduce exposure of the device's real IP address to network observers and servers."
+  "blurb" : "Apple's Secure Software Authorization (SSA) prevents unauthorized or downgraded firmware from running. When updating, the device submits cryptographic measurements of the software to install plus its unique ECID to Apple's authorization servers. Apple signs only the specific software bundle for that specific device, returning a personalized ticket. Because each authorization is device-specific and version-specific, it is cryptographically impossible to replay an authorization from a different device or reinstall an older, potentially vulnerable OS version after Apple has stopped signing it.",
+  "section" : "Secure software updates",
+  "date" : "2026-05-09"
 }
