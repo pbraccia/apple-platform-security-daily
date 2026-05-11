@@ -1,13 +1,13 @@
 {
-  "chapter" : "App security",
-  "blurb" : "App code signing requires developers to obtain a signing certificate from Apple and use it to cryptographically sign all executable binaries and resources before distribution. On iOS and iPadOS, the AMFI kernel extension verifies the signature and entitlements of every app at launch, rejecting unsigned or improperly signed code. Provisioning profiles, signed by Apple, scope the capabilities an app may use and restrict which devices can run development builds. Apps distributed via the App Store are additionally signed by Apple with a distribution signature, providing an Apple-attested chain of trust from developer certificate through to device installation.",
   "keywords" : [
-    "AMFI",
-    "provisioning profile",
-    "developer certificate",
-    "distribution signature",
-    "entitlements"
+    "Boot ROM",
+    "iBoot",
+    "LocalPolicy",
+    "LLB",
+    "chain of trust"
   ],
-  "section" : "App code signing process",
-  "date" : "2026-05-10"
+  "chapter" : "System security",
+  "date" : "2026-05-11",
+  "section" : "Secure boot",
+  "blurb" : "Apple's secure boot chain establishes a cryptographic chain of trust from immutable Boot ROM through each subsequent boot stage. On Apple silicon Macs, the Boot ROM loads and verifies the Low-Level Bootloader (LLB), which loads iBoot; on A-series devices Boot ROM loads iBoot directly. Each stage uses Apple's public key to verify a digital signature before passing control to the next. The LocalPolicy mechanism on Mac with Apple silicon encodes the user's chosen security configuration into a cryptographically signed structure managed by the Secure Enclave, ensuring only authorized operating systems and boot configurations can run."
 }
