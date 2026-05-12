@@ -1,13 +1,13 @@
 {
   "keywords" : [
-    "Boot ROM",
-    "iBoot",
-    "LocalPolicy",
-    "LLB",
-    "chain of trust"
+    "A-series",
+    "M-series",
+    "sepOS",
+    "IOMMU",
+    "hardware isolation"
   ],
-  "chapter" : "System security",
-  "date" : "2026-05-11",
-  "section" : "Secure boot",
-  "blurb" : "Apple's secure boot chain establishes a cryptographic chain of trust from immutable Boot ROM through each subsequent boot stage. On Apple silicon Macs, the Boot ROM loads and verifies the Low-Level Bootloader (LLB), which loads iBoot; on A-series devices Boot ROM loads iBoot directly. Each stage uses Apple's public key to verify a digital signature before passing control to the next. The LocalPolicy mechanism on Mac with Apple silicon encodes the user's chosen security configuration into a cryptographically signed structure managed by the Secure Enclave, ensuring only authorized operating systems and boot configurations can run."
+  "chapter" : "Hardware security and biometrics",
+  "date" : "2026-05-12",
+  "section" : "Apple SoC security",
+  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material."
 }
