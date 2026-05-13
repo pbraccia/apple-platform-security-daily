@@ -1,13 +1,13 @@
 {
   "keywords" : [
-    "A-series",
-    "M-series",
-    "sepOS",
-    "IOMMU",
-    "hardware isolation"
+    "MDM protocol",
+    "APNs",
+    "CMS encryption",
+    "Managed Device Attestation",
+    "ACME"
   ],
-  "chapter" : "Hardware security and biometrics",
-  "date" : "2026-05-12",
-  "section" : "Apple SoC security",
-  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material."
+  "section" : "Device management",
+  "chapter" : "Secure device management",
+  "blurb" : "The Apple MDM protocol operates over HTTPS with TLS mutual authentication, using Apple Push Notification service to wake devices and trigger check-ins with the MDM server – no confidential data traverses APNs itself. Configuration profiles are XML or JSON structures encrypted using CMS with AES-128. Managed Device Attestation uses the Secure Enclave and ACME protocol to generate hardware-bound ECDSA keys (P-256 or P-384) that cryptographically attest device identity, OS version, and security posture to MDM servers, verified against the Apple Enterprise Attestation Root CA. This prevents compromised or impersonating devices from falsely representing their configuration or enrollment status.",
+  "date" : "2026-05-13"
 }
