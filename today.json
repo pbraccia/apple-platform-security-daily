@@ -1,13 +1,13 @@
 {
+  "blurb" : "macOS provides defense-in-depth through a suite of system security technologies. System Integrity Protection prevents root-privileged modification of protected system directories, the kernel, and kernel extensions. Gatekeeper enforces notarization requirements and signature checking on all software before first launch. XProtect provides on-device signature-based malware detection updated independently of OS releases. The AMFI framework enforces code signing and entitlement checking at the kernel level. System Extensions and DriverKit allow vendor code to run in user space rather than the kernel, limiting the impact of driver bugs on system security.",
+  "date" : "2026-05-14",
+  "chapter" : "System security",
+  "section" : "Overview of additional macOS system security capabilities",
   "keywords" : [
-    "MDM protocol",
-    "APNs",
-    "CMS encryption",
-    "Managed Device Attestation",
-    "ACME"
-  ],
-  "section" : "Device management",
-  "chapter" : "Secure device management",
-  "blurb" : "The Apple MDM protocol operates over HTTPS with TLS mutual authentication, using Apple Push Notification service to wake devices and trigger check-ins with the MDM server – no confidential data traverses APNs itself. Configuration profiles are XML or JSON structures encrypted using CMS with AES-128. Managed Device Attestation uses the Secure Enclave and ACME protocol to generate hardware-bound ECDSA keys (P-256 or P-384) that cryptographically attest device identity, OS version, and security posture to MDM servers, verified against the Apple Enterprise Attestation Root CA. This prevents compromised or impersonating devices from falsely representing their configuration or enrollment status.",
-  "date" : "2026-05-13"
+    "SIP",
+    "Gatekeeper",
+    "XProtect",
+    "notarization",
+    "DriverKit"
+  ]
 }
