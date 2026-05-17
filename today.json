@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
-  "date" : "2026-05-16",
+  "date" : "2026-05-17",
+  "chapter" : "Developer kit security",
+  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
+  "section" : "DriverKit security",
   "keywords" : [
-    "hardware disconnect",
-    "microphone privacy",
-    "physical isolation",
-    "lid switch",
-    "side-channel"
-  ],
-  "section" : "Hardware microphone disconnect",
-  "chapter" : "Hardware security and biometrics"
+    "DriverKit",
+    "user-space driver",
+    "kext replacement",
+    "IOKit",
+    "notarization"
+  ]
 }
