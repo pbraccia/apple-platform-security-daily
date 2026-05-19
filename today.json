@@ -1,13 +1,13 @@
 {
-  "chapter" : "Hardware security and biometrics",
+  "section" : "TLS security",
+  "date" : "2026-05-19",
+  "chapter" : "Network security",
+  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
   "keywords" : [
-    "hardware disconnect",
-    "microphone privacy",
-    "physical isolation",
-    "lid switch",
-    "side-channel"
-  ],
-  "date" : "2026-05-18",
-  "section" : "Hardware microphone disconnect",
-  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms."
+    "TLS 1.3",
+    "ECDHE",
+    "AES-GCM",
+    "Certificate Transparency",
+    "ATS"
+  ]
 }
