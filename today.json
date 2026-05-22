@@ -1,13 +1,13 @@
 {
+  "blurb" : "Apple developer kits apply uniform security and privacy protections to third-party applications using those frameworks. All APIs accessing sensitive hardware or user data – including ARKit, HealthKit, HomeKit, and SiriKit – require explicit user permission grants via the TCC framework. Sensitive processing occurs in system-managed processes rather than within the app's address space, limiting what a compromised app can extract. Extensions used by frameworks like ReplayKit and SiriKit run as separate processes with minimal privileges, preserving the security benefits of the extension model throughout the developer kit ecosystem while enabling powerful platform capabilities.",
+  "chapter" : "Developer kit security",
+  "date" : "2026-05-22",
   "keywords" : [
-    "camera",
-    "indicator light",
-    "silicon",
+    "TCC permissions",
+    "out-of-process",
+    "extension model",
     "privacy",
-    "kernel"
+    "sandboxing"
   ],
-  "section" : "Mac on-screen camera indicator light",
-  "date" : "2026-05-21",
-  "chapter" : "Hardware security and biometrics",
-  "blurb" : "MacBook Neo combines system software and dedicated silicon elements within A18 Pro to provide additional security for the camera feed. The architecture is designed to prevent any untrusted software – even with root or kernel privileges in macOS – from engaging the camera without also visibly lighting the on-screen camera indicator light."
+  "section" : "Developer kit security overview"
 }
