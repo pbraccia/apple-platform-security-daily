@@ -1,13 +1,13 @@
 {
-  "date" : "2026-05-23",
-  "section" : "VPN security",
-  "blurb" : "Apple platforms support enterprise-grade VPN through IKEv2\/IPsec and TLS-based protocols via the Network Extension framework, with legacy L2TP\/IPsec compatibility for older infrastructure. Per-app VPN routes only specific app traffic through the corporate tunnel, reducing unnecessary network overhead while allowing personal apps to access the internet directly. Always On VPN, configured via MDM, maintains a permanent tunnel to corporate infrastructure reconnecting transparently after network changes without user interaction. VPN configurations and credentials are stored in the device Keychain and delivered in CMS-encrypted MDM payloads, preventing credential exposure during provisioning.",
-  "chapter" : "Network security",
+  "chapter" : "Developer kit security",
   "keywords" : [
-    "IKEv2\/IPsec",
-    "per-app VPN",
-    "Always On VPN",
-    "Network Extension",
-    "MDM provisioning"
-  ]
+    "EnergyKit",
+    "home energy",
+    "TCC authorization",
+    "HomeKit infrastructure",
+    "CloudKit E2E"
+  ],
+  "section" : "EnergyKit data security",
+  "date" : "2026-05-24",
+  "blurb" : "EnergyKit provides APIs for home energy management devices – including EV chargers, solar panels, and battery storage systems – with a privacy model restricting app access to energy usage data through user-granted permissions. Energy usage data, which can reveal behavioral patterns about occupancy and daily routines, is protected under TCC-style authorization requiring explicit user consent before any app can read home energy measurements. Data from EnergyKit-connected devices flows through HomeKit infrastructure, inheriting its end-to-end encrypted CloudKit storage model, ensuring energy data never transits Apple servers in plaintext."
 }
