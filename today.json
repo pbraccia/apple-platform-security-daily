@@ -1,13 +1,13 @@
 {
-  "chapter" : "Developer kit security",
   "keywords" : [
-    "EnergyKit",
-    "home energy",
-    "TCC authorization",
-    "HomeKit infrastructure",
-    "CloudKit E2E"
+    "defense-in-depth",
+    "Secure Enclave",
+    "secure boot",
+    "encryption",
+    "sandboxing"
   ],
-  "section" : "EnergyKit data security",
-  "date" : "2026-05-24",
-  "blurb" : "EnergyKit provides APIs for home energy management devices – including EV chargers, solar panels, and battery storage systems – with a privacy model restricting app access to energy usage data through user-granted permissions. Energy usage data, which can reveal behavioral patterns about occupancy and daily routines, is protected under TCC-style authorization requiring explicit user consent before any app can read home energy measurements. Data from EnergyKit-connected devices flows through HomeKit infrastructure, inheriting its end-to-end encrypted CloudKit storage model, ensuring energy data never transits Apple servers in plaintext."
+  "blurb" : "Apple's multi-layered security architecture integrates hardware, firmware, and software protections across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Security begins at the silicon layer with the Secure Enclave and dedicated cryptographic hardware, extending through secure boot chains, runtime process isolation, encrypted data storage, and network transport protection. Each layer is designed so a compromise at one level does not undermine the others, providing defense-in-depth that protects user data whether at rest, in transit, or during processing on any Apple device.",
+  "section" : "Intro to Apple platform security",
+  "chapter" : "Apple Platform Security",
+  "date" : "2026-05-25"
 }
