@@ -1,13 +1,13 @@
 {
+  "section" : "iCloud",
+  "date" : "2026-05-26",
   "keywords" : [
-    "defense-in-depth",
-    "Secure Enclave",
-    "secure boot",
-    "encryption",
-    "sandboxing"
+    "CloudKit",
+    "end-to-end encryption",
+    "Advanced Data Protection",
+    "keybag escrow",
+    "iCloud Backup"
   ],
-  "blurb" : "Apple's multi-layered security architecture integrates hardware, firmware, and software protections across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Security begins at the silicon layer with the Secure Enclave and dedicated cryptographic hardware, extending through secure boot chains, runtime process isolation, encrypted data storage, and network transport protection. Each layer is designed so a compromise at one level does not undermine the others, providing defense-in-depth that protects user data whether at rest, in transit, or during processing on any Apple device.",
-  "section" : "Intro to Apple platform security",
-  "chapter" : "Apple Platform Security",
-  "date" : "2026-05-25"
+  "chapter" : "Services security",
+  "blurb" : "iCloud stores user data across service categories with varying encryption models. Standard data categories are encrypted at rest using keys Apple holds for service operation. End-to-end encrypted categories – including Health, iCloud Keychain, and most others under Advanced Data Protection – use keys derived exclusively from device hardware that Apple cannot access. CloudKit end-to-end encryption uses asymmetric keys generated on the user's devices, with public keys registered to Apple's Identity Service and private keys held only in device secure storage. iCloud Backup optionally backs up the Data Protection keybag, escrowed to enable account recovery."
 }
