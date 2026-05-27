@@ -1,13 +1,13 @@
 {
-  "section" : "iCloud",
-  "date" : "2026-05-26",
-  "keywords" : [
-    "CloudKit",
-    "end-to-end encryption",
-    "Advanced Data Protection",
-    "keybag escrow",
-    "iCloud Backup"
-  ],
+  "date" : "2026-05-27",
+  "section" : "Secure Apple Messages for Business",
   "chapter" : "Services security",
-  "blurb" : "iCloud stores user data across service categories with varying encryption models. Standard data categories are encrypted at rest using keys Apple holds for service operation. End-to-end encrypted categories – including Health, iCloud Keychain, and most others under Advanced Data Protection – use keys derived exclusively from device hardware that Apple cannot access. CloudKit end-to-end encryption uses asymmetric keys generated on the user's devices, with public keys registered to Apple's Identity Service and private keys held only in device secure storage. iCloud Backup optionally backs up the Data Protection keybag, escrowed to enable account recovery."
+  "blurb" : "Apple Messages for Business enables organizations to communicate with customers through iMessage-based channels while maintaining verifiable business identity. Business identities are authenticated by Apple through a registration and verification process, with certified businesses displayed with a verified badge in the Messages interface. Customer interactions are protected by iMessage's end-to-end encryption with an added authentication layer for the business entity. The platform integrates with Apple Pay for secure in-conversation transactions and uses the Apple Identity Service to verify both customer device identity and the legitimacy of the business messaging endpoint.",
+  "keywords" : [
+    "business identity",
+    "verified badge",
+    "iMessage E2E",
+    "IDS",
+    "Apple Pay integration"
+  ]
 }
