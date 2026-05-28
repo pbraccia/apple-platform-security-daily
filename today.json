@@ -1,13 +1,13 @@
 {
-  "date" : "2026-05-27",
-  "section" : "Secure Apple Messages for Business",
+  "section" : "Find My",
   "chapter" : "Services security",
-  "blurb" : "Apple Messages for Business enables organizations to communicate with customers through iMessage-based channels while maintaining verifiable business identity. Business identities are authenticated by Apple through a registration and verification process, with certified businesses displayed with a verified badge in the Messages interface. Customer interactions are protected by iMessage's end-to-end encryption with an added authentication layer for the business entity. The platform integrates with Apple Pay for secure in-conversation transactions and uses the Apple Identity Service to verify both customer device identity and the legitimacy of the business messaging endpoint.",
   "keywords" : [
-    "business identity",
-    "verified badge",
-    "iMessage E2E",
-    "IDS",
-    "Apple Pay integration"
-  ]
+    "BLE beacon",
+    "EC P-224",
+    "ECIES",
+    "ephemeral key rotation",
+    "crowd-sourced location"
+  ],
+  "date" : "2026-05-28",
+  "blurb" : "Find My uses an end-to-end encrypted crowd-sourced network to locate lost devices without revealing location data to Apple or reporting devices. Each lost device broadcasts Bluetooth Low Energy advertisements containing a rotating ephemeral public key derived from a device-specific EC P-224 key pair. Nearby devices encrypt the found device's GPS location using ECIES with the ephemeral public key and upload the encrypted report to Apple. Only the owner's device – holding the matching private key – can decrypt these location reports. Keys rotate every 15 minutes to prevent third-party tracking, ensuring privacy for both the lost device owner and the reporting bystander."
 }
