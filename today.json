@@ -1,13 +1,13 @@
 {
-  "section" : "Find My",
-  "chapter" : "Services security",
+  "chapter" : "Encryption and Data Protection",
+  "date" : "2026-05-29",
   "keywords" : [
-    "BLE beacon",
-    "EC P-224",
-    "ECIES",
-    "ephemeral key rotation",
-    "crowd-sourced location"
+    "protection class",
+    "class key",
+    "keybag",
+    "Effaceable Storage",
+    "NSFileProtection"
   ],
-  "date" : "2026-05-28",
-  "blurb" : "Find My uses an end-to-end encrypted crowd-sourced network to locate lost devices without revealing location data to Apple or reporting devices. Each lost device broadcasts Bluetooth Low Energy advertisements containing a rotating ephemeral public key derived from a device-specific EC P-224 key pair. Nearby devices encrypt the found device's GPS location using ECIES with the ephemeral public key and upload the encrypted report to Apple. Only the owner's device – holding the matching private key – can decrypt these location reports. Keys rotate every 15 minutes to prevent third-party tracking, ensuring privacy for both the lost device owner and the reporting bystander."
+  "blurb" : "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage.",
+  "section" : "Data Protection"
 }
