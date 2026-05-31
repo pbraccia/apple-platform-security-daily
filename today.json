@@ -1,13 +1,13 @@
 {
-  "chapter" : "Encryption and Data Protection",
-  "date" : "2026-05-30",
-  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
+  "blurb" : "ReplayKit enables screen recording and live broadcasting by performing all capture operations within a privileged system daemon (replayd) running outside the host app's process. This architecture ensures recorded video and audio content is never directly accessible to the hosting application. User consent is collected via a system-presented permissions dialog before each recording session. Third-party broadcast services integrate through a two-process extension architecture – a UI extension for configuration and an upload extension for data handling – connected to the capture daemon via XPC, with video frames serialized as IOSurface objects to prevent raw buffer access across trust boundaries.",
+  "chapter" : "Developer kit security",
+  "date" : "2026-05-31",
   "keywords" : [
-    "differential privacy",
-    "on-device processing",
-    "data minimization",
-    "Neural Engine",
-    "end-to-end encryption"
+    "replayd",
+    "out-of-process capture",
+    "IOSurface",
+    "XPC",
+    "broadcast extension"
   ],
-  "section" : "How Apple protects users' personal data"
+  "section" : "ReplayKit security"
 }
