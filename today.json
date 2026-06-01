@@ -1,13 +1,13 @@
 {
-  "blurb" : "ReplayKit enables screen recording and live broadcasting by performing all capture operations within a privileged system daemon (replayd) running outside the host app's process. This architecture ensures recorded video and audio content is never directly accessible to the hosting application. User consent is collected via a system-presented permissions dialog before each recording session. Third-party broadcast services integrate through a two-process extension architecture – a UI extension for configuration and an upload extension for data handling – connected to the capture daemon via XPC, with video frames serialized as IOSurface objects to prevent raw buffer access across trust boundaries.",
-  "chapter" : "Developer kit security",
-  "date" : "2026-05-31",
+  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
+  "section" : "Digital signing and encryption",
+  "date" : "2026-06-01",
   "keywords" : [
-    "replayd",
-    "out-of-process capture",
-    "IOSurface",
-    "XPC",
-    "broadcast extension"
+    "code signing",
+    "ECDSA",
+    "S\/MIME",
+    "Certificate Transparency",
+    "notarization"
   ],
-  "section" : "ReplayKit security"
+  "chapter" : "Encryption and Data Protection"
 }
