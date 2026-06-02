@@ -1,13 +1,13 @@
 {
-  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
-  "section" : "Digital signing and encryption",
-  "date" : "2026-06-01",
+  "date" : "2026-06-02",
+  "section" : "Communicating emergency information using satellites",
+  "blurb" : "Emergency SOS via Satellite allows iPhone 14 and later models to communicate with emergency services when no cellular or Wi-Fi network is available. A custom message compression algorithm transmits emergency text over the limited bandwidth of direct-to-satellite connections. Users are guided to point their device at the satellite using an on-screen pointing interface. Emergency data is routed through relay centers staffed by specialists who contact local emergency services on the user's behalf. The feature is designed as a last-resort emergency service for situations where no other communication infrastructure is reachable.",
   "keywords" : [
-    "code signing",
-    "ECDSA",
-    "S\/MIME",
-    "Certificate Transparency",
-    "notarization"
+    "Emergency SOS",
+    "satellite",
+    "message compression",
+    "relay center",
+    "iPhone 14"
   ],
-  "chapter" : "Encryption and Data Protection"
+  "chapter" : "System security"
 }
