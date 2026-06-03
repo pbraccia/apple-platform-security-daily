@@ -1,13 +1,13 @@
 {
-  "date" : "2026-06-02",
-  "section" : "Communicating emergency information using satellites",
-  "blurb" : "Emergency SOS via Satellite allows iPhone 14 and later models to communicate with emergency services when no cellular or Wi-Fi network is available. A custom message compression algorithm transmits emergency text over the limited bandwidth of direct-to-satellite connections. Users are guided to point their device at the satellite using an on-screen pointing interface. Emergency data is routed through relay centers staffed by specialists who contact local emergency services on the user's behalf. The feature is designed as a last-resort emergency service for situations where no other communication infrastructure is reachable.",
+  "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
+  "date" : "2026-06-03",
+  "section" : "System security overview",
   "keywords" : [
-    "Emergency SOS",
-    "satellite",
-    "message compression",
-    "relay center",
-    "iPhone 14"
+    "secure boot",
+    "SIP",
+    "Gatekeeper",
+    "XProtect",
+    "entitlements"
   ],
   "chapter" : "System security"
 }
