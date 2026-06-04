@@ -1,13 +1,13 @@
 {
-  "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
-  "date" : "2026-06-03",
-  "section" : "System security overview",
+  "date" : "2026-06-04",
   "keywords" : [
-    "secure boot",
-    "SIP",
-    "Gatekeeper",
-    "XProtect",
-    "entitlements"
+    "Handoff",
+    "IDS",
+    "peer-to-peer Wi-Fi",
+    "BLE discovery",
+    "iCloud relay"
   ],
-  "chapter" : "System security"
+  "chapter" : "Services security",
+  "blurb" : "Continuity features – Handoff, Universal Clipboard, iPhone Cellular Call Relay, SMS Forwarding, Instant Hotspot, and iPhone Mirroring – use Bluetooth Low Energy device discovery combined with end-to-end encrypted peer-to-peer Wi-Fi or iCloud relay channels. Continuity relies on the Apple Identity Service to authenticate that both devices share the same iCloud account and to exchange public keys before establishing direct encrypted connections. Data transferred between devices is encrypted using keys derived from device-specific IDS key pairs, ensuring neither Apple's servers nor third parties can access transferred content even when routed through iCloud infrastructure.",
+  "section" : "Continuity"
 }
