@@ -1,13 +1,13 @@
 {
-  "chapter" : "App security",
-  "date" : "2026-06-06",
   "keywords" : [
-    "TCC permissions",
-    "shortcut sandbox",
-    "privacy audit",
-    "automation security",
-    "consent prompt"
+    "ECDH P-256",
+    "AES-CCM",
+    "LE Secure Connections",
+    "BLE address randomization",
+    "CTKD"
   ],
-  "section" : "Secure features in the Shortcuts app",
-  "blurb" : "The Shortcuts app enables user-created automation sequences that may access sensitive data and system capabilities. Each action within a shortcut that touches privacy-protected resources – Location, Contacts, Photos, Health – requires the same user-granted permissions as any other app, enforced through the TCC framework. Shortcuts imported from external sources trigger a privacy audit dialog before first run, informing users of the data categories each shortcut accesses. Shortcuts run in a sandboxed process, preventing any single action from accessing data outside its declared scope or silently exfiltrating information without user-visible consent prompts."
+  "chapter" : "Network security",
+  "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
+  "date" : "2026-06-07",
+  "section" : "Bluetooth security"
 }
