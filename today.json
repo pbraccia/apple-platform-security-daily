@@ -1,13 +1,13 @@
 {
+  "date" : "2026-06-08",
+  "blurb" : "Apple silicon integrates dedicated security hardware – including an AES cryptographic engine, Public Key Accelerator (PKA), True Random Number Generator (TRNG), and Secure Enclave – directly on the system-on-chip. Hardware security features such as memory encryption, secure Boot ROM, and device-unique UID keys are provisioned at manufacturing time and are permanently inaccessible to software. This silicon-rooted trust model ensures cryptographic operations and key material are physically isolated from the application processor, establishing the immutable foundation upon which all higher-level platform security protections are built.",
   "keywords" : [
-    "ECDH P-256",
-    "AES-CCM",
-    "LE Secure Connections",
-    "BLE address randomization",
-    "CTKD"
+    "AES engine",
+    "PKA",
+    "TRNG",
+    "UID key",
+    "Boot ROM"
   ],
-  "chapter" : "Network security",
-  "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
-  "date" : "2026-06-07",
-  "section" : "Bluetooth security"
+  "chapter" : "Hardware security and biometrics",
+  "section" : "Hardware security overview"
 }
