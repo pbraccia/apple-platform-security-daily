@@ -1,13 +1,13 @@
 {
-  "date" : "2026-06-09",
-  "section" : "App security in iOS, iPadOS, and visionOS",
-  "chapter" : "App security",
   "keywords" : [
-    "app sandbox",
-    "TCC",
-    "PIE",
-    "ARC",
-    "container isolation"
+    "Apple Configurator",
+    "supervised device",
+    "USB provisioning",
+    "Activation Lock",
+    "Apple Business Manager"
   ],
-  "blurb" : "iOS, iPadOS, and visionOS apps run in a strictly enforced UNIX-level sandbox, with each app receiving a unique container directory inaccessible to other apps. The kernel enforces mandatory access control: apps must request user permission to access location, contacts, camera, microphone, and other sensitive resources through the TCC framework. Position-Independent Executable compilation, Automatic Reference Counting, and stack canaries reduce exploitability of memory corruption vulnerabilities. Dynamic library injection is prevented by the code signing requirement; the system linker loads only Apple-signed libraries or those explicitly included in the app bundle."
+  "date" : "2026-06-10",
+  "blurb" : "Apple Configurator for Mac enables administrators to configure, supervise, and restore iPad, iPhone, and Apple TV devices in bulk over USB without internet access on the target devices. For Mac and Apple Vision Pro restore operations, the required OS update files are downloaded from Apple servers over TLS and installed directly, with the file deleted after use to prevent unauthorized re-use. Devices enrolled via Apple Configurator can be added to Apple School Manager or Apple Business Manager, gaining supervised status and mandatory device management enrollment while still enforcing Activation Lock requirements that apply during normal nontethered activation.",
+  "chapter" : "Secure device management",
+  "section" : "Apple Configurator security"
 }
