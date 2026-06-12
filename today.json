@@ -1,13 +1,13 @@
 {
-  "date" : "2026-06-11",
-  "chapter" : "Network security",
-  "blurb" : "Ultra Wideband radio on Apple devices enables centimeter-precise spatial ranging for passive car key entry, Find My precision finding, and directional AirDrop. UWB ranging sessions are protected by session keys derived from a prior Bluetooth pairing exchange, ensuring only previously authenticated devices can establish ranging sessions. The short range of UWB combined with physical-layer time-of-flight measurement makes relay attacks significantly harder than with Bluetooth or NFC. Car key UWB ranging uses enhanced ranging calibration data and cryptographic binding of measurements to prevent spoofing of distance values by a relay adversary.",
+  "date" : "2026-06-12",
+  "section" : "Operating system integrity",
+  "chapter" : "System security",
+  "blurb" : "At runtime, Apple operating systems enforce multiple layers of OS integrity protection. Kernel Integrity Protection (KIP) on Apple silicon prevents unauthorized modification of kernel code and data at runtime. Code signing is required for all executable code, with AMFI verifying developer signatures and Apple-issued entitlements before allowing code to execute. Address Space Layout Randomization (ASLR), non-executable memory pages, and Pointer Authentication Codes (PAC) defend against memory corruption exploitation. On macOS, System Integrity Protection restricts root-level modification of protected system directories, maintaining OS integrity even if an attacker obtains administrative privileges.",
   "keywords" : [
-    "UWB",
-    "time-of-flight",
-    "ranging session key",
-    "relay attack",
-    "car key"
-  ],
-  "section" : "Ultra Wideband security in iOS"
+    "KIP",
+    "PAC",
+    "ASLR",
+    "SIP",
+    "AMFI"
+  ]
 }
