@@ -1,13 +1,13 @@
 {
-  "date" : "2026-06-12",
-  "section" : "Operating system integrity",
-  "chapter" : "System security",
-  "blurb" : "At runtime, Apple operating systems enforce multiple layers of OS integrity protection. Kernel Integrity Protection (KIP) on Apple silicon prevents unauthorized modification of kernel code and data at runtime. Code signing is required for all executable code, with AMFI verifying developer signatures and Apple-issued entitlements before allowing code to execute. Address Space Layout Randomization (ASLR), non-executable memory pages, and Pointer Authentication Codes (PAC) defend against memory corruption exploitation. On macOS, System Integrity Protection restricts root-level modification of protected system directories, maintaining OS integrity even if an attacker obtains administrative privileges.",
+  "section" : "SiriKit security",
+  "chapter" : "Developer kit security",
+  "blurb" : "SiriKit integrates third-party apps into Siri using the app extension model, with strict data minimization for user privacy. Before passing personal data to an app's SiriKit extension, Siri checks the app's user-granted permission settings: if the app lacks Contacts access, Siri passes only literal text for relationship references rather than resolved contact data. Custom vocabulary submitted by SiriKit-enabled apps is associated with a random identifier rather than the user's identity, and is purged when the app is deleted or Siri integration is disabled. Only the minimal data needed for the specific user intent is forwarded to the extension process.",
+  "date" : "2026-06-13",
   "keywords" : [
-    "KIP",
-    "PAC",
-    "ASLR",
-    "SIP",
-    "AMFI"
+    "SiriKit",
+    "data minimization",
+    "app extension",
+    "random identifier",
+    "TCC permissions"
   ]
 }
