@@ -1,13 +1,13 @@
 {
-  "section" : "Background Security Improvements",
-  "date" : "2026-06-14",
-  "blurb" : "Background Security Improvements enable Apple to ship rapid security remediations – including XProtect signature updates, runtime mitigations, and new security policies – independently of full OS releases. The mechanism uses cryptographically signed disk images called cryptexes (Cryptographic Extensions), which are verified and mounted at boot alongside the main system volume. Cryptexes carry their own Sealed System Volume hash tree guarantees and are delivered via standard software update infrastructure without requiring a full OS upgrade, allowing Apple to address newly discovered vulnerabilities with minimal user friction.",
   "keywords" : [
-    "cryptex",
-    "XProtect",
-    "rapid remediation",
-    "signed disk image",
-    "SSV"
+    "sandbox",
+    "entitlements",
+    "code signing",
+    "App Store review",
+    "XNU"
   ],
-  "chapter" : "System security"
+  "section" : "App security overview",
+  "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication.",
+  "chapter" : "App security",
+  "date" : "2026-06-15"
 }
