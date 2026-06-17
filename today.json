@@ -1,13 +1,13 @@
 {
+  "section" : "Express Cards with power reserve",
+  "blurb" : "Express Cards allow Apple Pay and Apple Wallet credentials to function in a low-power mode without Face ID, Touch ID, or passcode authentication – supporting transit cards, hotel room keys, and student IDs. The Secure Element maintains a dedicated power reserve so Express Card transactions remain possible even when the iPhone battery is depleted. To prevent unauthorized large-value payments, Express Mode is restricted to specific card types that issuers explicitly configure, and Apple imposes transaction limits on eligible card categories to bound the risk of unauthorized use when authentication is bypassed.",
+  "chapter" : "Hardware security and biometrics",
+  "date" : "2026-06-17",
   "keywords" : [
-    "Handoff",
-    "IDS",
-    "peer-to-peer Wi-Fi",
-    "BLE discovery",
-    "iCloud relay"
-  ],
-  "blurb" : "Continuity features – Handoff, Universal Clipboard, iPhone Cellular Call Relay, SMS Forwarding, Instant Hotspot, and iPhone Mirroring – use Bluetooth Low Energy device discovery combined with end-to-end encrypted peer-to-peer Wi-Fi or iCloud relay channels. Continuity relies on the Apple Identity Service to authenticate that both devices share the same iCloud account and to exchange public keys before establishing direct encrypted connections. Data transferred between devices is encrypted using keys derived from device-specific IDS key pairs, ensuring neither Apple's servers nor third parties can access transferred content even when routed through iCloud infrastructure.",
-  "chapter" : "Services security",
-  "date" : "2026-06-16",
-  "section" : "Continuity"
+    "Express Mode",
+    "Secure Element",
+    "power reserve",
+    "transit card",
+    "contactless"
+  ]
 }
