@@ -1,13 +1,13 @@
 {
-  "date" : "2026-06-18",
-  "chapter" : "Services security",
-  "blurb" : "iCloud stores user data across service categories with varying encryption models. Standard data categories are encrypted at rest using keys Apple holds for service operation. End-to-end encrypted categories – including Health, iCloud Keychain, and most others under Advanced Data Protection – use keys derived exclusively from device hardware that Apple cannot access. CloudKit end-to-end encryption uses asymmetric keys generated on the user's devices, with public keys registered to Apple's Identity Service and private keys held only in device secure storage. iCloud Backup optionally backs up the Data Protection keybag, escrowed to enable account recovery.",
+  "section" : "Bluetooth security",
+  "date" : "2026-06-19",
+  "chapter" : "Network security",
+  "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
   "keywords" : [
-    "CloudKit",
-    "end-to-end encryption",
-    "Advanced Data Protection",
-    "keybag escrow",
-    "iCloud Backup"
-  ],
-  "section" : "iCloud"
+    "ECDH P-256",
+    "AES-CCM",
+    "LE Secure Connections",
+    "BLE address randomization",
+    "CTKD"
+  ]
 }
