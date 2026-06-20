@@ -1,13 +1,13 @@
 {
-  "section" : "Bluetooth security",
-  "date" : "2026-06-19",
-  "chapter" : "Network security",
-  "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
+  "date" : "2026-06-20",
   "keywords" : [
-    "ECDH P-256",
-    "AES-CCM",
-    "LE Secure Connections",
-    "BLE address randomization",
-    "CTKD"
-  ]
+    "secure boot",
+    "SIP",
+    "Gatekeeper",
+    "XProtect",
+    "entitlements"
+  ],
+  "chapter" : "System security",
+  "section" : "System security overview",
+  "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable."
 }
