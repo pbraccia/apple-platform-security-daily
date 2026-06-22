@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
-  "chapter" : "Network security",
-  "section" : "TLS security",
+  "section" : "Apple Pay",
+  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
+  "chapter" : "Services security",
+  "date" : "2026-06-22",
   "keywords" : [
-    "TLS 1.3",
-    "ECDHE",
-    "AES-GCM",
-    "Certificate Transparency",
-    "ATS"
-  ],
-  "date" : "2026-06-21"
+    "Device Account Number",
+    "Secure Element",
+    "payment cryptogram",
+    "NFC controller",
+    "EMVCo"
+  ]
 }
