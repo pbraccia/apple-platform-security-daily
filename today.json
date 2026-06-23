@@ -1,13 +1,13 @@
 {
-  "section" : "Apple Pay",
-  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
-  "chapter" : "Services security",
-  "date" : "2026-06-22",
+  "date" : "2026-06-23",
+  "chapter" : "Developer kit security",
+  "section" : "WidgetKit security",
   "keywords" : [
-    "Device Account Number",
-    "Secure Element",
-    "payment cryptogram",
-    "NFC controller",
-    "EMVCo"
-  ]
+    "NSFileProtectionComplete",
+    "Lock Screen widget",
+    "Always On",
+    "redacted callback",
+    "Data Protection entitlement"
+  ],
+  "blurb" : "WidgetKit enables app widgets and Apple Watch complications that may display sensitive information in prominent locations including the Lock Screen and Always On display. Developers apply Data Protection entitlements to widget extensions – using NSFileProtectionComplete or NSFileProtectionCompleteUnlessOpen – causing WidgetKit to render placeholder content instead of actual data when the device is locked. Users can independently configure Lock Screen widget visibility in Settings. On Apple Watch, Hide Sensitive Complications globally redacts complication data during Always On mode. Developers must implement the redacted(reason:) callback to supply appropriate placeholder views for privacy-sensitive widget content."
 }
