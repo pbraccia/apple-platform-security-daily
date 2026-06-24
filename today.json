@@ -1,13 +1,13 @@
 {
-  "date" : "2026-06-23",
-  "chapter" : "Developer kit security",
-  "section" : "WidgetKit security",
+  "chapter" : "System security",
+  "blurb" : "BlastDoor is a tightly sandboxed service that pre-processes all incoming iMessage content before it can reach the main Messages application process. All parsing of potentially untrusted data – including attachments, rich links, and message metadata – occurs within BlastDoor's restricted process, which has severely limited access to system resources, files, and network. Even if an attacker exploits a parsing vulnerability, the impact is contained within the BlastDoor sandbox. The system also implements exponential throttling of repeated failed exploitation attempts and re-randomizes ASLR layout between processing attempts, significantly raising the cost of zero-click exploit chains.",
   "keywords" : [
-    "NSFileProtectionComplete",
-    "Lock Screen widget",
-    "Always On",
-    "redacted callback",
-    "Data Protection entitlement"
+    "BlastDoor",
+    "sandbox",
+    "zero-click",
+    "iMessage",
+    "exploit mitigation"
   ],
-  "blurb" : "WidgetKit enables app widgets and Apple Watch complications that may display sensitive information in prominent locations including the Lock Screen and Always On display. Developers apply Data Protection entitlements to widget extensions – using NSFileProtectionComplete or NSFileProtectionCompleteUnlessOpen – causing WidgetKit to render placeholder content instead of actual data when the device is locked. Users can independently configure Lock Screen widget visibility in Settings. On Apple Watch, Hide Sensitive Complications globally redacts complication data during Always On mode. Developers must implement the redacted(reason:) callback to supply appropriate placeholder views for privacy-sensitive widget content."
+  "section" : "BlastDoor for Messages and IDS",
+  "date" : "2026-06-24"
 }
