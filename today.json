@@ -1,13 +1,13 @@
 {
-  "chapter" : "System security",
-  "blurb" : "BlastDoor is a tightly sandboxed service that pre-processes all incoming iMessage content before it can reach the main Messages application process. All parsing of potentially untrusted data – including attachments, rich links, and message metadata – occurs within BlastDoor's restricted process, which has severely limited access to system resources, files, and network. Even if an attacker exploits a parsing vulnerability, the impact is contained within the BlastDoor sandbox. The system also implements exponential throttling of repeated failed exploitation attempts and re-randomizes ASLR layout between processing attempts, significantly raising the cost of zero-click exploit chains.",
+  "chapter" : "Hardware security and biometrics",
   "keywords" : [
-    "BlastDoor",
-    "sandbox",
-    "zero-click",
-    "iMessage",
-    "exploit mitigation"
+    "hardware disconnect",
+    "microphone privacy",
+    "physical isolation",
+    "lid switch",
+    "side-channel"
   ],
-  "section" : "BlastDoor for Messages and IDS",
-  "date" : "2026-06-24"
+  "date" : "2026-06-25",
+  "section" : "Hardware microphone disconnect",
+  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms."
 }
