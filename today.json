@@ -1,13 +1,13 @@
 {
-  "chapter" : "Hardware security and biometrics",
+  "chapter" : "App security",
+  "date" : "2026-06-26",
+  "blurb" : "App extensions enable third-party functionality within system contexts – keyboards, share sheets, content blockers, widgets – while maintaining strict security isolation. Each extension runs as a separate process from both its containing app and the host app, communicating exclusively via XPC with serialized data. Extensions receive a separate, scoped sandbox and entitlement set, limiting data access compared to a full application. System Extensions on macOS allow vendors to extend kernel functionality – such as network filtering and endpoint security – in user space, eliminating the risk profile of traditional kernel extensions and confining any bugs to a user-space process.",
+  "section" : "Supporting extensions",
   "keywords" : [
-    "hardware disconnect",
-    "microphone privacy",
-    "physical isolation",
-    "lid switch",
-    "side-channel"
-  ],
-  "date" : "2026-06-25",
-  "section" : "Hardware microphone disconnect",
-  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms."
+    "app extension",
+    "XPC",
+    "sandboxing",
+    "System Extension",
+    "out-of-process"
+  ]
 }
