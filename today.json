@@ -1,13 +1,13 @@
 {
-  "chapter" : "Network security",
   "keywords" : [
-    "BLE discovery",
-    "contact hash",
-    "peer-to-peer Wi-Fi",
-    "TLS mutual auth",
-    "AirDrop"
+    "protection class",
+    "class key",
+    "keybag",
+    "Effaceable Storage",
+    "NSFileProtection"
   ],
-  "blurb" : "AirDrop uses Bluetooth Low Energy for device discovery and peer-to-peer Wi-Fi for file transfer, with TLS providing mutual authentication and encryption for the data transfer channel. Discovery employs hash-based contact matching: devices advertise a hash of their phone number and email address, and a receiving device checks whether the sender's hash matches any of its contacts. In Contacts Only mode, mutual authentication requires both parties to be in each other's contacts before identity is revealed. AirDrop transfers occur over an isolated peer-to-peer Wi-Fi network requiring no internet connection or access point association.",
-  "date" : "2026-06-27",
-  "section" : "AirDrop security"
+  "date" : "2026-06-28",
+  "section" : "Data Protection",
+  "chapter" : "Encryption and Data Protection",
+  "blurb" : "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage."
 }
