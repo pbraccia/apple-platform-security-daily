@@ -1,13 +1,13 @@
 {
   "keywords" : [
-    "protection class",
-    "class key",
-    "keybag",
-    "Effaceable Storage",
-    "NSFileProtection"
+    "AMFI",
+    "provisioning profile",
+    "developer certificate",
+    "distribution signature",
+    "entitlements"
   ],
-  "date" : "2026-06-28",
-  "section" : "Data Protection",
-  "chapter" : "Encryption and Data Protection",
-  "blurb" : "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage."
+  "section" : "App code signing process",
+  "chapter" : "App security",
+  "date" : "2026-06-29",
+  "blurb" : "App code signing requires developers to obtain a signing certificate from Apple and use it to cryptographically sign all executable binaries and resources before distribution. On iOS and iPadOS, the AMFI kernel extension verifies the signature and entitlements of every app at launch, rejecting unsigned or improperly signed code. Provisioning profiles, signed by Apple, scope the capabilities an app may use and restrict which devices can run development builds. Apps distributed via the App Store are additionally signed by Apple with a distribution signature, providing an Apple-attested chain of trust from developer certificate through to device installation."
 }
