@@ -1,13 +1,13 @@
 {
-  "date" : "2026-06-30",
-  "chapter" : "System security",
+  "chapter" : "Hardware security and biometrics",
+  "date" : "2026-07-01",
   "keywords" : [
-    "SSA",
-    "ECID",
-    "personalized ticket",
-    "anti-downgrade",
-    "OTA update"
+    "A-series",
+    "M-series",
+    "sepOS",
+    "IOMMU",
+    "hardware isolation"
   ],
-  "blurb" : "Apple's Secure Software Authorization (SSA) prevents unauthorized or downgraded firmware from running. When updating, the device submits cryptographic measurements of the software to install plus its unique ECID to Apple's authorization servers. Apple signs only the specific software bundle for that specific device, returning a personalized ticket. Because each authorization is device-specific and version-specific, it is cryptographically impossible to replay an authorization from a different device or reinstall an older, potentially vulnerable OS version after Apple has stopped signing it.",
-  "section" : "Secure software updates"
+  "section" : "Apple SoC security",
+  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material."
 }
