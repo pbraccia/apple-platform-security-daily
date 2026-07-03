@@ -1,13 +1,13 @@
 {
-  "chapter" : "Apple Platform Security",
   "keywords" : [
-    "defense-in-depth",
-    "Secure Enclave",
-    "secure boot",
-    "encryption",
-    "sandboxing"
+    "SIP",
+    "Gatekeeper",
+    "XProtect",
+    "notarization",
+    "DriverKit"
   ],
-  "blurb" : "Apple's multi-layered security architecture integrates hardware, firmware, and software protections across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Security begins at the silicon layer with the Secure Enclave and dedicated cryptographic hardware, extending through secure boot chains, runtime process isolation, encrypted data storage, and network transport protection. Each layer is designed so a compromise at one level does not undermine the others, providing defense-in-depth that protects user data whether at rest, in transit, or during processing on any Apple device.",
-  "section" : "Intro to Apple platform security",
-  "date" : "2026-07-02"
+  "date" : "2026-07-03",
+  "chapter" : "System security",
+  "section" : "Overview of additional macOS system security capabilities",
+  "blurb" : "macOS provides defense-in-depth through a suite of system security technologies. System Integrity Protection prevents root-privileged modification of protected system directories, the kernel, and kernel extensions. Gatekeeper enforces notarization requirements and signature checking on all software before first launch. XProtect provides on-device signature-based malware detection updated independently of OS releases. The AMFI framework enforces code signing and entitlement checking at the kernel level. System Extensions and DriverKit allow vendor code to run in user space rather than the kernel, limiting the impact of driver bugs on system security."
 }
