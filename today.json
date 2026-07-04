@@ -1,13 +1,13 @@
 {
+  "blurb" : "Find My uses an end-to-end encrypted crowd-sourced network to locate lost devices without revealing location data to Apple or reporting devices. Each lost device broadcasts Bluetooth Low Energy advertisements containing a rotating ephemeral public key derived from a device-specific EC P-224 key pair. Nearby devices encrypt the found device's GPS location using ECIES with the ephemeral public key and upload the encrypted report to Apple. Only the owner's device – holding the matching private key – can decrypt these location reports. Keys rotate every 15 minutes to prevent third-party tracking, ensuring privacy for both the lost device owner and the reporting bystander.",
+  "section" : "Find My",
+  "date" : "2026-07-04",
   "keywords" : [
-    "SIP",
-    "Gatekeeper",
-    "XProtect",
-    "notarization",
-    "DriverKit"
+    "BLE beacon",
+    "EC P-224",
+    "ECIES",
+    "ephemeral key rotation",
+    "crowd-sourced location"
   ],
-  "date" : "2026-07-03",
-  "chapter" : "System security",
-  "section" : "Overview of additional macOS system security capabilities",
-  "blurb" : "macOS provides defense-in-depth through a suite of system security technologies. System Integrity Protection prevents root-privileged modification of protected system directories, the kernel, and kernel extensions. Gatekeeper enforces notarization requirements and signature checking on all software before first launch. XProtect provides on-device signature-based malware detection updated independently of OS releases. The AMFI framework enforces code signing and entitlement checking at the kernel level. System Extensions and DriverKit allow vendor code to run in user space rather than the kernel, limiting the impact of driver bugs on system security."
+  "chapter" : "Services security"
 }
