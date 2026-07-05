@@ -1,13 +1,13 @@
 {
-  "blurb" : "Find My uses an end-to-end encrypted crowd-sourced network to locate lost devices without revealing location data to Apple or reporting devices. Each lost device broadcasts Bluetooth Low Energy advertisements containing a rotating ephemeral public key derived from a device-specific EC P-224 key pair. Nearby devices encrypt the found device's GPS location using ECIES with the ephemeral public key and upload the encrypted report to Apple. Only the owner's device – holding the matching private key – can decrypt these location reports. Keys rotate every 15 minutes to prevent third-party tracking, ensuring privacy for both the lost device owner and the reporting bystander.",
-  "section" : "Find My",
-  "date" : "2026-07-04",
+  "section" : "BlastDoor for Messages and IDS",
+  "blurb" : "BlastDoor is a tightly sandboxed service that pre-processes all incoming iMessage content before it can reach the main Messages application process. All parsing of potentially untrusted data – including attachments, rich links, and message metadata – occurs within BlastDoor's restricted process, which has severely limited access to system resources, files, and network. Even if an attacker exploits a parsing vulnerability, the impact is contained within the BlastDoor sandbox. The system also implements exponential throttling of repeated failed exploitation attempts and re-randomizes ASLR layout between processing attempts, significantly raising the cost of zero-click exploit chains.",
   "keywords" : [
-    "BLE beacon",
-    "EC P-224",
-    "ECIES",
-    "ephemeral key rotation",
-    "crowd-sourced location"
+    "BlastDoor",
+    "sandbox",
+    "zero-click",
+    "iMessage",
+    "exploit mitigation"
   ],
-  "chapter" : "Services security"
+  "chapter" : "System security",
+  "date" : "2026-07-05"
 }
