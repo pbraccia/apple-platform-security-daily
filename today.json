@@ -1,13 +1,13 @@
 {
+  "blurb" : "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO\/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
   "keywords" : [
-    "DriverKit",
-    "user-space driver",
-    "kext replacement",
-    "IOKit",
-    "notarization"
+    "car key",
+    "CCC standard",
+    "ISO\/IEC 18013-5",
+    "UWB",
+    "selective disclosure"
   ],
-  "chapter" : "Developer kit security",
-  "date" : "2026-07-06",
-  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
-  "section" : "DriverKit security"
+  "chapter" : "Services security",
+  "date" : "2026-07-07",
+  "section" : "Using Apple Wallet"
 }
