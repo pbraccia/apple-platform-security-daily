@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO\/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
+  "section" : "Hardware security overview",
+  "blurb" : "Apple silicon integrates dedicated security hardware – including an AES cryptographic engine, Public Key Accelerator (PKA), True Random Number Generator (TRNG), and Secure Enclave – directly on the system-on-chip. Hardware security features such as memory encryption, secure Boot ROM, and device-unique UID keys are provisioned at manufacturing time and are permanently inaccessible to software. This silicon-rooted trust model ensures cryptographic operations and key material are physically isolated from the application processor, establishing the immutable foundation upon which all higher-level platform security protections are built.",
   "keywords" : [
-    "car key",
-    "CCC standard",
-    "ISO\/IEC 18013-5",
-    "UWB",
-    "selective disclosure"
+    "AES engine",
+    "PKA",
+    "TRNG",
+    "UID key",
+    "Boot ROM"
   ],
-  "chapter" : "Services security",
-  "date" : "2026-07-07",
-  "section" : "Using Apple Wallet"
+  "chapter" : "Hardware security and biometrics",
+  "date" : "2026-07-08"
 }
