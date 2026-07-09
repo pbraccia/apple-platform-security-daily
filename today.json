@@ -1,13 +1,13 @@
 {
-  "section" : "Hardware security overview",
-  "blurb" : "Apple silicon integrates dedicated security hardware – including an AES cryptographic engine, Public Key Accelerator (PKA), True Random Number Generator (TRNG), and Secure Enclave – directly on the system-on-chip. Hardware security features such as memory encryption, secure Boot ROM, and device-unique UID keys are provisioned at manufacturing time and are permanently inaccessible to software. This silicon-rooted trust model ensures cryptographic operations and key material are physically isolated from the application processor, establishing the immutable foundation upon which all higher-level platform security protections are built.",
   "keywords" : [
-    "AES engine",
-    "PKA",
-    "TRNG",
-    "UID key",
-    "Boot ROM"
+    "differential privacy",
+    "on-device processing",
+    "data minimization",
+    "Neural Engine",
+    "end-to-end encryption"
   ],
-  "chapter" : "Hardware security and biometrics",
-  "date" : "2026-07-08"
+  "chapter" : "Encryption and Data Protection",
+  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
+  "section" : "How Apple protects users' personal data",
+  "date" : "2026-07-09"
 }
