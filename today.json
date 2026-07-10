@@ -1,13 +1,13 @@
 {
+  "section" : "Apple Pay",
   "keywords" : [
-    "differential privacy",
-    "on-device processing",
-    "data minimization",
-    "Neural Engine",
-    "end-to-end encryption"
+    "Device Account Number",
+    "Secure Element",
+    "payment cryptogram",
+    "NFC controller",
+    "EMVCo"
   ],
-  "chapter" : "Encryption and Data Protection",
-  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
-  "section" : "How Apple protects users' personal data",
-  "date" : "2026-07-09"
+  "chapter" : "Services security",
+  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
+  "date" : "2026-07-10"
 }
