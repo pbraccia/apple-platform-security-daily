@@ -1,13 +1,13 @@
 {
-  "section" : "Apple Pay",
+  "section" : "ARKit security",
+  "chapter" : "Developer kit security",
+  "blurb" : "ARKit enables augmented reality experiences using the device camera, motion sensors, and LiDAR scanner, with privacy protections enforced at the framework level. Camera access requires explicit user authorization through TCC, and raw camera frames are processed by a system-managed ARKit service rather than being directly exposed to third-party app code. World map data, scene geometry, and tracked feature points are processed and retained on-device with no automatic transmission to Apple or third-party servers. The face tracking API for TrueDepth camera data carries additional entitlement requirements, restricting access to approved use cases and preventing misuse for covert biometric identification.",
   "keywords" : [
-    "Device Account Number",
-    "Secure Element",
-    "payment cryptogram",
-    "NFC controller",
-    "EMVCo"
+    "TCC camera permission",
+    "on-device processing",
+    "TrueDepth entitlement",
+    "world tracking",
+    "LiDAR"
   ],
-  "chapter" : "Services security",
-  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
-  "date" : "2026-07-10"
+  "date" : "2026-07-11"
 }
