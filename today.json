@@ -1,13 +1,13 @@
 {
-  "section" : "ARKit security",
-  "chapter" : "Developer kit security",
-  "blurb" : "ARKit enables augmented reality experiences using the device camera, motion sensors, and LiDAR scanner, with privacy protections enforced at the framework level. Camera access requires explicit user authorization through TCC, and raw camera frames are processed by a system-managed ARKit service rather than being directly exposed to third-party app code. World map data, scene geometry, and tracked feature points are processed and retained on-device with no automatic transmission to Apple or third-party servers. The face tracking API for TrueDepth camera data carries additional entitlement requirements, restricting access to approved use cases and preventing misuse for covert biometric identification.",
+  "date" : "2026-07-12",
   "keywords" : [
-    "TCC camera permission",
-    "on-device processing",
-    "TrueDepth entitlement",
-    "world tracking",
-    "LiDAR"
+    "RFC 4941",
+    "SLAAC",
+    "privacy address",
+    "IPv6 rotation",
+    "iCloud Private Relay"
   ],
-  "date" : "2026-07-11"
+  "blurb" : "Apple platforms implement IPv6 privacy extensions per RFC 4941, generating semantically opaque randomized Interface Identifiers for SLAAC-configured addresses rather than deriving them from hardware MAC addresses. These privacy addresses rotate periodically and upon joining new networks, preventing correlation of a device's network activity across time or location by passive observers. iOS and iPadOS use separate independent IPv6 addresses for different network services to limit cross-service correlation, and the system prefers iCloud Private Relay paths where available to reduce exposure of the device's real IP address to network observers and servers.",
+  "section" : "IPv6 security",
+  "chapter" : "Network security"
 }
