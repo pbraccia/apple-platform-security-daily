@@ -1,13 +1,13 @@
 {
-  "date" : "2026-07-13",
   "chapter" : "Developer kit security",
-  "blurb" : "ARKit enables augmented reality experiences using the device camera, motion sensors, and LiDAR scanner, with privacy protections enforced at the framework level. Camera access requires explicit user authorization through TCC, and raw camera frames are processed by a system-managed ARKit service rather than being directly exposed to third-party app code. World map data, scene geometry, and tracked feature points are processed and retained on-device with no automatic transmission to Apple or third-party servers. The face tracking API for TrueDepth camera data carries additional entitlement requirements, restricting access to approved use cases and preventing misuse for covert biometric identification.",
-  "section" : "ARKit security",
+  "section" : "DriverKit security",
   "keywords" : [
-    "TCC camera permission",
-    "on-device processing",
-    "TrueDepth entitlement",
-    "world tracking",
-    "LiDAR"
-  ]
+    "DriverKit",
+    "user-space driver",
+    "kext replacement",
+    "IOKit",
+    "notarization"
+  ],
+  "date" : "2026-07-14",
+  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code."
 }
