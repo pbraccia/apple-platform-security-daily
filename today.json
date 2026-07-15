@@ -1,13 +1,13 @@
 {
-  "chapter" : "Developer kit security",
-  "section" : "DriverKit security",
+  "section" : "Firewall security in macOS",
   "keywords" : [
-    "DriverKit",
-    "user-space driver",
-    "kext replacement",
-    "IOKit",
-    "notarization"
+    "application firewall",
+    "stealth mode",
+    "pf packet filter",
+    "incoming connections",
+    "per-app rules"
   ],
-  "date" : "2026-07-14",
-  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code."
+  "date" : "2026-07-15",
+  "blurb" : "macOS includes an application-level firewall controlling incoming network connections on a per-application basis, independent of port or protocol. Signed App Store applications are automatically trusted; other applications prompt the user for allow\/deny authorization when first attempting to accept incoming connections. A stealth mode option prevents the Mac from responding to network probe requests from scanners. macOS also provides access to the pf packet filter for low-level network traffic filtering and port blocking, configurable via command line or third-party firewall applications for advanced network policies in enterprise deployments.",
+  "chapter" : "Network security"
 }
