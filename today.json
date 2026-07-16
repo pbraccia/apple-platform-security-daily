@@ -1,13 +1,13 @@
 {
-  "section" : "Firewall security in macOS",
+  "section" : "App security in macOS",
+  "blurb" : "macOS app security extends the App Sandbox and Hardened Runtime frameworks to protect against malware and privilege escalation. Apps with the App Sandbox entitlement are restricted to a defined container and must declare entitlements to access any external resources. The Hardened Runtime prevents code injection, dynamic library hijacking, and debugging by untrusted tools. Gatekeeper checks notarization status and developer code signatures at first launch, quarantining non-compliant apps. The TCC framework requires user consent for access to sensitive data categories including Documents, Desktop, Contacts, Calendar, Photos, and Microphone.",
+  "chapter" : "App security",
   "keywords" : [
-    "application firewall",
-    "stealth mode",
-    "pf packet filter",
-    "incoming connections",
-    "per-app rules"
+    "App Sandbox",
+    "Hardened Runtime",
+    "Gatekeeper",
+    "TCC",
+    "notarization"
   ],
-  "date" : "2026-07-15",
-  "blurb" : "macOS includes an application-level firewall controlling incoming network connections on a per-application basis, independent of port or protocol. Signed App Store applications are automatically trusted; other applications prompt the user for allow\/deny authorization when first attempting to accept incoming connections. A stealth mode option prevents the Mac from responding to network probe requests from scanners. macOS also provides access to the pf packet filter for low-level network traffic filtering and port blocking, configurable via command line or third-party firewall applications for advanced network policies in enterprise deployments.",
-  "chapter" : "Network security"
+  "date" : "2026-07-16"
 }
