@@ -1,13 +1,13 @@
 {
-  "section" : "App security in macOS",
-  "blurb" : "macOS app security extends the App Sandbox and Hardened Runtime frameworks to protect against malware and privilege escalation. Apps with the App Sandbox entitlement are restricted to a defined container and must declare entitlements to access any external resources. The Hardened Runtime prevents code injection, dynamic library hijacking, and debugging by untrusted tools. Gatekeeper checks notarization status and developer code signatures at first launch, quarantining non-compliant apps. The TCC framework requires user consent for access to sensitive data categories including Documents, Desktop, Contacts, Calendar, Photos, and Microphone.",
-  "chapter" : "App security",
+  "section" : "Lockdown Mode security",
+  "date" : "2026-07-17",
   "keywords" : [
-    "App Sandbox",
-    "Hardened Runtime",
-    "Gatekeeper",
-    "TCC",
-    "notarization"
+    "Lockdown Mode",
+    "attack surface reduction",
+    "JIT disable",
+    "state-sponsored",
+    "high-risk users"
   ],
-  "date" : "2026-07-16"
+  "chapter" : "System security",
+  "blurb" : "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac."
 }
