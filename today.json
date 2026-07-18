@@ -1,13 +1,13 @@
 {
-  "section" : "Lockdown Mode security",
-  "date" : "2026-07-17",
-  "keywords" : [
-    "Lockdown Mode",
-    "attack surface reduction",
-    "JIT disable",
-    "state-sponsored",
-    "high-risk users"
-  ],
   "chapter" : "System security",
-  "blurb" : "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac."
+  "blurb" : "watchOS implements the same hardware-rooted secure boot chain used by other Apple platforms, with each boot stage cryptographically verified before execution. The Apple Watch Secure Enclave manages biometric keys and Data Protection class keys analogously to iPhone. OTA software updates are cryptographically verified using System Software Authorization before installation. The watchOS pairing security model binds the watch cryptographically to a specific iPhone using a shared symmetric key established during pairing, ensuring that data exchanged between iPhone and Apple Watch over Bluetooth uses authenticated and encrypted channels.",
+  "section" : "System security for watchOS",
+  "keywords" : [
+    "watchOS",
+    "secure boot",
+    "Secure Enclave",
+    "SSA",
+    "Bluetooth pairing"
+  ],
+  "date" : "2026-07-18"
 }
