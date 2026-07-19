@@ -1,13 +1,13 @@
 {
-  "chapter" : "System security",
-  "blurb" : "watchOS implements the same hardware-rooted secure boot chain used by other Apple platforms, with each boot stage cryptographically verified before execution. The Apple Watch Secure Enclave manages biometric keys and Data Protection class keys analogously to iPhone. OTA software updates are cryptographically verified using System Software Authorization before installation. The watchOS pairing security model binds the watch cryptographically to a specific iPhone using a shared symmetric key established during pairing, ensuring that data exchanged between iPhone and Apple Watch over Bluetooth uses authenticated and encrypted channels.",
-  "section" : "System security for watchOS",
+  "section" : "TLS security",
+  "date" : "2026-07-19",
+  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
+  "chapter" : "Network security",
   "keywords" : [
-    "watchOS",
-    "secure boot",
-    "Secure Enclave",
-    "SSA",
-    "Bluetooth pairing"
-  ],
-  "date" : "2026-07-18"
+    "TLS 1.3",
+    "ECDHE",
+    "AES-GCM",
+    "Certificate Transparency",
+    "ATS"
+  ]
 }
