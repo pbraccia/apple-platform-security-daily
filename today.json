@@ -1,13 +1,13 @@
 {
-  "section" : "TLS security",
-  "date" : "2026-07-19",
-  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
   "chapter" : "Network security",
+  "section" : "Wi-Fi security and privacy",
+  "date" : "2026-07-20",
+  "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods.",
   "keywords" : [
-    "TLS 1.3",
-    "ECDHE",
-    "AES-GCM",
-    "Certificate Transparency",
-    "ATS"
+    "WPA3",
+    "SAE",
+    "PMF",
+    "MAC randomization",
+    "OWE"
   ]
 }
