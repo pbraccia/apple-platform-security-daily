@@ -1,13 +1,13 @@
 {
-  "chapter" : "Network security",
-  "section" : "Wi-Fi security and privacy",
-  "date" : "2026-07-20",
-  "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods.",
+  "chapter" : "Services security",
+  "date" : "2026-07-21",
+  "blurb" : "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO\/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
+  "section" : "Using Apple Wallet",
   "keywords" : [
-    "WPA3",
-    "SAE",
-    "PMF",
-    "MAC randomization",
-    "OWE"
+    "car key",
+    "CCC standard",
+    "ISO\/IEC 18013-5",
+    "UWB",
+    "selective disclosure"
   ]
 }
