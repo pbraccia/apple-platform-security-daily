@@ -1,13 +1,13 @@
 {
-  "chapter" : "Services security",
-  "date" : "2026-07-21",
-  "blurb" : "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO\/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
-  "section" : "Using Apple Wallet",
+  "date" : "2026-07-22",
+  "chapter" : "System security",
+  "section" : "Apple Security Research Device",
   "keywords" : [
-    "car key",
-    "CCC standard",
-    "ISO\/IEC 18013-5",
-    "UWB",
-    "selective disclosure"
-  ]
+    "SRD",
+    "security research",
+    "responsible disclosure",
+    "SSH",
+    "iOS research"
+  ],
+  "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement."
 }
