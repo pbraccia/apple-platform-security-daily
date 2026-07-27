@@ -1,13 +1,13 @@
 {
-  "blurb" : "EnergyKit provides APIs for home energy management devices – including EV chargers, solar panels, and battery storage systems – with a privacy model restricting app access to energy usage data through user-granted permissions. Energy usage data, which can reveal behavioral patterns about occupancy and daily routines, is protected under TCC-style authorization requiring explicit user consent before any app can read home energy measurements. Data from EnergyKit-connected devices flows through HomeKit infrastructure, inheriting its end-to-end encrypted CloudKit storage model, ensuring energy data never transits Apple servers in plaintext.",
-  "date" : "2026-07-26",
+  "date" : "2026-07-27",
+  "section" : "Apple Security Research Device",
+  "chapter" : "System security",
   "keywords" : [
-    "EnergyKit",
-    "home energy",
-    "TCC authorization",
-    "HomeKit infrastructure",
-    "CloudKit E2E"
+    "SRD",
+    "security research",
+    "responsible disclosure",
+    "SSH",
+    "iOS research"
   ],
-  "chapter" : "Developer kit security",
-  "section" : "EnergyKit data security"
+  "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement."
 }
