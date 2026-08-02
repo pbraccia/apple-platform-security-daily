@@ -1,13 +1,13 @@
 {
-  "blurb" : "Find My uses an end-to-end encrypted crowd-sourced network to locate lost devices without revealing location data to Apple or reporting devices. Each lost device broadcasts Bluetooth Low Energy advertisements containing a rotating ephemeral public key derived from a device-specific EC P-224 key pair. Nearby devices encrypt the found device's GPS location using ECIES with the ephemeral public key and upload the encrypted report to Apple. Only the owner's device – holding the matching private key – can decrypt these location reports. Keys rotate every 15 minutes to prevent third-party tracking, ensuring privacy for both the lost device owner and the reporting bystander.",
-  "date" : "2026-08-01",
-  "chapter" : "Services security",
   "keywords" : [
-    "BLE beacon",
-    "EC P-224",
-    "ECIES",
-    "ephemeral key rotation",
-    "crowd-sourced location"
+    "Lockdown Mode",
+    "attack surface reduction",
+    "JIT disable",
+    "state-sponsored",
+    "high-risk users"
   ],
-  "section" : "Find My"
+  "date" : "2026-08-02",
+  "section" : "Lockdown Mode security",
+  "blurb" : "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac.",
+  "chapter" : "System security"
 }
