@@ -1,13 +1,13 @@
 {
-  "section" : "Digital signing and encryption",
-  "date" : "2026-08-03",
   "keywords" : [
-    "code signing",
-    "ECDSA",
-    "S\/MIME",
-    "Certificate Transparency",
-    "notarization"
+    "TCC camera permission",
+    "on-device processing",
+    "TrueDepth entitlement",
+    "world tracking",
+    "LiDAR"
   ],
-  "chapter" : "Encryption and Data Protection",
-  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain."
+  "blurb" : "ARKit enables augmented reality experiences using the device camera, motion sensors, and LiDAR scanner, with privacy protections enforced at the framework level. Camera access requires explicit user authorization through TCC, and raw camera frames are processed by a system-managed ARKit service rather than being directly exposed to third-party app code. World map data, scene geometry, and tracked feature points are processed and retained on-device with no automatic transmission to Apple or third-party servers. The face tracking API for TrueDepth camera data carries additional entitlement requirements, restricting access to approved use cases and preventing misuse for covert biometric identification.",
+  "chapter" : "Developer kit security",
+  "section" : "ARKit security",
+  "date" : "2026-08-04"
 }
