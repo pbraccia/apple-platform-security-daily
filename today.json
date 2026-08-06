@@ -1,13 +1,13 @@
 {
+  "blurb" : "Device passcodes are the foundation of iOS, iPadOS, and watchOS data security. A user's passcode is combined with the device's hardware UID using PBKDF2-AES tangling performed exclusively in the Secure Enclave, producing a passcode-derived key (PDK) that wraps Data Protection class keys. This tangling ensures brute-force attacks must occur on the specific device, subject to mandatory hardware-enforced delays between attempts that escalate from milliseconds to hours. The secure nonvolatile storage component provides anti-replay protection, preventing backup-and-restore techniques from defeating attempt counters. Devices can be configured to erase after ten failed attempts.",
+  "chapter" : "Encryption and Data Protection",
+  "date" : "2026-08-06",
+  "section" : "Passcodes and passwords",
   "keywords" : [
-    "Device Account Number",
-    "Secure Element",
-    "payment cryptogram",
-    "NFC controller",
-    "EMVCo"
-  ],
-  "section" : "Apple Pay",
-  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
-  "chapter" : "Services security",
-  "date" : "2026-08-05"
+    "PBKDF2",
+    "PDK",
+    "UID tangling",
+    "anti-replay",
+    "attempt throttling"
+  ]
 }
