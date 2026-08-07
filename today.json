@@ -1,13 +1,13 @@
 {
-  "blurb" : "Device passcodes are the foundation of iOS, iPadOS, and watchOS data security. A user's passcode is combined with the device's hardware UID using PBKDF2-AES tangling performed exclusively in the Secure Enclave, producing a passcode-derived key (PDK) that wraps Data Protection class keys. This tangling ensures brute-force attacks must occur on the specific device, subject to mandatory hardware-enforced delays between attempts that escalate from milliseconds to hours. The secure nonvolatile storage component provides anti-replay protection, preventing backup-and-restore techniques from defeating attempt counters. Devices can be configured to erase after ten failed attempts.",
-  "chapter" : "Encryption and Data Protection",
-  "date" : "2026-08-06",
-  "section" : "Passcodes and passwords",
   "keywords" : [
-    "PBKDF2",
-    "PDK",
-    "UID tangling",
-    "anti-replay",
-    "attempt throttling"
-  ]
+    "PQ3",
+    "ML-KEM",
+    "post-quantum",
+    "HKDF ratchet",
+    "iMessage"
+  ],
+  "blurb" : "Apple has deployed quantum-resistant cryptography in iMessage through the PQ3 protocol, combining classical elliptic-curve key agreement with ML-KEM (Module Lattice-based Key Encapsulation Mechanism), a NIST-standardized post-quantum algorithm. PQ3 provides Level 3 post-quantum security – the highest of any widely deployed messaging protocol – using HKDF-based ratcheting so future cryptographically-relevant quantum computers cannot retroactively decrypt past messages. The hybrid classical-plus-post-quantum approach ensures protection against both current classical cryptanalysis and anticipated future quantum attacks, with additional quantum-secure algorithms being progressively integrated into iCloud Keychain and other Apple security services.",
+  "chapter" : "Encryption and Data Protection",
+  "section" : "Quantum-secure cryptography with Apple devices",
+  "date" : "2026-08-07"
 }
