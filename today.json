@@ -1,13 +1,13 @@
 {
+  "chapter" : "Developer kit security",
+  "section" : "NFC & SE Platform security",
+  "date" : "2026-08-08",
   "keywords" : [
-    "PQ3",
-    "ML-KEM",
-    "post-quantum",
-    "HKDF ratchet",
-    "iMessage"
+    "Secure Element",
+    "applet",
+    "Security Domain",
+    "NFC controller",
+    "transaction authorization"
   ],
-  "blurb" : "Apple has deployed quantum-resistant cryptography in iMessage through the PQ3 protocol, combining classical elliptic-curve key agreement with ML-KEM (Module Lattice-based Key Encapsulation Mechanism), a NIST-standardized post-quantum algorithm. PQ3 provides Level 3 post-quantum security – the highest of any widely deployed messaging protocol – using HKDF-based ratcheting so future cryptographically-relevant quantum computers cannot retroactively decrypt past messages. The hybrid classical-plus-post-quantum approach ensures protection against both current classical cryptanalysis and anticipated future quantum attacks, with additional quantum-secure algorithms being progressively integrated into iCloud Keychain and other Apple security services.",
-  "chapter" : "Encryption and Data Protection",
-  "section" : "Quantum-secure cryptography with Apple devices",
-  "date" : "2026-08-07"
+  "blurb" : "The NFC & SE Platform allows developers to deploy custom Secure Element applets for NFC-based transactions, with a mandatory security review pipeline before device deployment. Applets must pass evaluation by an accredited third-party security laboratory and Apple review before being signed and hosted for installation. Each applet is installed in an isolated Security Domain preventing inter-applet data access. Transaction authorization requires biometric or passcode authentication gated through the Secure Enclave, with transaction data routed exclusively through the NFC controller to the Secure Element – never exposed to the application processor or iOS."
 }
