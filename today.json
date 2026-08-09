@@ -1,13 +1,13 @@
 {
-  "chapter" : "Developer kit security",
-  "section" : "NFC & SE Platform security",
-  "date" : "2026-08-08",
+  "date" : "2026-08-09",
+  "section" : "Device management",
+  "blurb" : "The Apple MDM protocol operates over HTTPS with TLS mutual authentication, using Apple Push Notification service to wake devices and trigger check-ins with the MDM server – no confidential data traverses APNs itself. Configuration profiles are XML or JSON structures encrypted using CMS with AES-128. Managed Device Attestation uses the Secure Enclave and ACME protocol to generate hardware-bound ECDSA keys (P-256 or P-384) that cryptographically attest device identity, OS version, and security posture to MDM servers, verified against the Apple Enterprise Attestation Root CA. This prevents compromised or impersonating devices from falsely representing their configuration or enrollment status.",
+  "chapter" : "Secure device management",
   "keywords" : [
-    "Secure Element",
-    "applet",
-    "Security Domain",
-    "NFC controller",
-    "transaction authorization"
-  ],
-  "blurb" : "The NFC & SE Platform allows developers to deploy custom Secure Element applets for NFC-based transactions, with a mandatory security review pipeline before device deployment. Applets must pass evaluation by an accredited third-party security laboratory and Apple review before being signed and hosted for installation. Each applet is installed in an isolated Security Domain preventing inter-applet data access. Transaction authorization requires biometric or passcode authentication gated through the Secure Enclave, with transaction data routed exclusively through the NFC controller to the Secure Element – never exposed to the application processor or iOS."
+    "MDM protocol",
+    "APNs",
+    "CMS encryption",
+    "Managed Device Attestation",
+    "ACME"
+  ]
 }
