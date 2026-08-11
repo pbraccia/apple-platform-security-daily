@@ -1,13 +1,13 @@
 {
-  "date" : "2026-08-10",
-  "blurb" : "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage.",
-  "section" : "Data Protection",
-  "chapter" : "Encryption and Data Protection",
+  "chapter" : "Developer kit security",
+  "blurb" : "Apple developer kits apply uniform security and privacy protections to third-party applications using those frameworks. All APIs accessing sensitive hardware or user data – including ARKit, HealthKit, HomeKit, and SiriKit – require explicit user permission grants via the TCC framework. Sensitive processing occurs in system-managed processes rather than within the app's address space, limiting what a compromised app can extract. Extensions used by frameworks like ReplayKit and SiriKit run as separate processes with minimal privileges, preserving the security benefits of the extension model throughout the developer kit ecosystem while enabling powerful platform capabilities.",
   "keywords" : [
-    "protection class",
-    "class key",
-    "keybag",
-    "Effaceable Storage",
-    "NSFileProtection"
-  ]
+    "TCC permissions",
+    "out-of-process",
+    "extension model",
+    "privacy",
+    "sandboxing"
+  ],
+  "date" : "2026-08-11",
+  "section" : "Developer kit security overview"
 }
