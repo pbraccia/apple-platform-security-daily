@@ -1,13 +1,13 @@
 {
-  "chapter" : "Developer kit security",
-  "blurb" : "Apple developer kits apply uniform security and privacy protections to third-party applications using those frameworks. All APIs accessing sensitive hardware or user data – including ARKit, HealthKit, HomeKit, and SiriKit – require explicit user permission grants via the TCC framework. Sensitive processing occurs in system-managed processes rather than within the app's address space, limiting what a compromised app can extract. Extensions used by frameworks like ReplayKit and SiriKit run as separate processes with minimal privileges, preserving the security benefits of the extension model throughout the developer kit ecosystem while enabling powerful platform capabilities.",
   "keywords" : [
-    "TCC permissions",
-    "out-of-process",
-    "extension model",
-    "privacy",
-    "sandboxing"
+    "code signing",
+    "ECDSA",
+    "S\/MIME",
+    "Certificate Transparency",
+    "notarization"
   ],
-  "date" : "2026-08-11",
-  "section" : "Developer kit security overview"
+  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
+  "chapter" : "Encryption and Data Protection",
+  "date" : "2026-08-12",
+  "section" : "Digital signing and encryption"
 }
