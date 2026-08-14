@@ -1,13 +1,13 @@
 {
-  "date" : "2026-08-13",
-  "blurb" : "Apple platforms implement IPv6 privacy extensions per RFC 4941, generating semantically opaque randomized Interface Identifiers for SLAAC-configured addresses rather than deriving them from hardware MAC addresses. These privacy addresses rotate periodically and upon joining new networks, preventing correlation of a device's network activity across time or location by passive observers. iOS and iPadOS use separate independent IPv6 addresses for different network services to limit cross-service correlation, and the system prefers iCloud Private Relay paths where available to reduce exposure of the device's real IP address to network observers and servers.",
+  "date" : "2026-08-14",
   "keywords" : [
-    "RFC 4941",
-    "SLAAC",
-    "privacy address",
-    "IPv6 rotation",
-    "iCloud Private Relay"
+    "watchOS",
+    "secure boot",
+    "Secure Enclave",
+    "SSA",
+    "Bluetooth pairing"
   ],
-  "section" : "IPv6 security",
-  "chapter" : "Network security"
+  "chapter" : "System security",
+  "section" : "System security for watchOS",
+  "blurb" : "watchOS implements the same hardware-rooted secure boot chain used by other Apple platforms, with each boot stage cryptographically verified before execution. The Apple Watch Secure Enclave manages biometric keys and Data Protection class keys analogously to iPhone. OTA software updates are cryptographically verified using System Software Authorization before installation. The watchOS pairing security model binds the watch cryptographically to a specific iPhone using a shared symmetric key established during pairing, ensuring that data exchanged between iPhone and Apple Watch over Bluetooth uses authenticated and encrypted channels."
 }
