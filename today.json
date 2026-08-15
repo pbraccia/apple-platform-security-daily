@@ -1,13 +1,13 @@
 {
-  "date" : "2026-08-14",
   "keywords" : [
-    "watchOS",
-    "secure boot",
-    "Secure Enclave",
-    "SSA",
-    "Bluetooth pairing"
+    "hardware disconnect",
+    "microphone privacy",
+    "physical isolation",
+    "lid switch",
+    "side-channel"
   ],
-  "chapter" : "System security",
-  "section" : "System security for watchOS",
-  "blurb" : "watchOS implements the same hardware-rooted secure boot chain used by other Apple platforms, with each boot stage cryptographically verified before execution. The Apple Watch Secure Enclave manages biometric keys and Data Protection class keys analogously to iPhone. OTA software updates are cryptographically verified using System Software Authorization before installation. The watchOS pairing security model binds the watch cryptographically to a specific iPhone using a shared symmetric key established during pairing, ensuring that data exchanged between iPhone and Apple Watch over Bluetooth uses authenticated and encrypted channels."
+  "date" : "2026-08-15",
+  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
+  "chapter" : "Hardware security and biometrics",
+  "section" : "Hardware microphone disconnect"
 }
