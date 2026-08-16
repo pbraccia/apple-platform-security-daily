@@ -1,13 +1,13 @@
 {
+  "chapter" : "Network security",
   "keywords" : [
-    "hardware disconnect",
-    "microphone privacy",
-    "physical isolation",
-    "lid switch",
-    "side-channel"
+    "application firewall",
+    "stealth mode",
+    "pf packet filter",
+    "incoming connections",
+    "per-app rules"
   ],
-  "date" : "2026-08-15",
-  "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
-  "chapter" : "Hardware security and biometrics",
-  "section" : "Hardware microphone disconnect"
+  "section" : "Firewall security in macOS",
+  "blurb" : "macOS includes an application-level firewall controlling incoming network connections on a per-application basis, independent of port or protocol. Signed App Store applications are automatically trusted; other applications prompt the user for allow\/deny authorization when first attempting to accept incoming connections. A stealth mode option prevents the Mac from responding to network probe requests from scanners. macOS also provides access to the pf packet filter for low-level network traffic filtering and port blocking, configurable via command line or third-party firewall applications for advanced network policies in enterprise deployments.",
+  "date" : "2026-08-16"
 }
