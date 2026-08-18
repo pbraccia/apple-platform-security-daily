@@ -1,13 +1,13 @@
 {
-  "chapter" : "Developer kit security",
-  "section" : "DriverKit security",
-  "date" : "2026-08-17",
-  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
+  "date" : "2026-08-18",
+  "blurb" : "macOS app security extends the App Sandbox and Hardened Runtime frameworks to protect against malware and privilege escalation. Apps with the App Sandbox entitlement are restricted to a defined container and must declare entitlements to access any external resources. The Hardened Runtime prevents code injection, dynamic library hijacking, and debugging by untrusted tools. Gatekeeper checks notarization status and developer code signatures at first launch, quarantining non-compliant apps. The TCC framework requires user consent for access to sensitive data categories including Documents, Desktop, Contacts, Calendar, Photos, and Microphone.",
   "keywords" : [
-    "DriverKit",
-    "user-space driver",
-    "kext replacement",
-    "IOKit",
+    "App Sandbox",
+    "Hardened Runtime",
+    "Gatekeeper",
+    "TCC",
     "notarization"
-  ]
+  ],
+  "section" : "App security in macOS",
+  "chapter" : "App security"
 }
