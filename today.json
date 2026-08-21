@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
   "keywords" : [
-    "ECDH P-256",
-    "AES-CCM",
-    "LE Secure Connections",
-    "BLE address randomization",
-    "CTKD"
+    "code signing",
+    "ECDSA",
+    "S\/MIME",
+    "Certificate Transparency",
+    "notarization"
   ],
-  "date" : "2026-08-20",
-  "chapter" : "Network security",
-  "section" : "Bluetooth security"
+  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
+  "chapter" : "Encryption and Data Protection",
+  "date" : "2026-08-21",
+  "section" : "Digital signing and encryption"
 }
