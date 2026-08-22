@@ -1,13 +1,13 @@
 {
-  "keywords" : [
-    "code signing",
-    "ECDSA",
-    "S\/MIME",
-    "Certificate Transparency",
-    "notarization"
-  ],
-  "blurb" : "Digital signing and encryption underpin trust throughout Apple platforms. All executable code must be signed with a certificate issued by Apple through its developer program; the XNU kernel enforces code signing at execution time via AMFI. Firmware, OS images, and boot components use RSA or ECDSA signatures verified during the boot chain. For user data, S\/MIME support in Mail enables signed and encrypted email using standard PKI certificates. Apple enforces Certificate Transparency to detect misissued TLS certificates, and all App Store submissions are re-signed by Apple after notarization to provide an Apple-attested distribution chain.",
+  "blurb" : "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage.",
+  "date" : "2026-08-22",
   "chapter" : "Encryption and Data Protection",
-  "date" : "2026-08-21",
-  "section" : "Digital signing and encryption"
+  "section" : "Data Protection",
+  "keywords" : [
+    "protection class",
+    "class key",
+    "keybag",
+    "Effaceable Storage",
+    "NSFileProtection"
+  ]
 }
