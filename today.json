@@ -1,13 +1,13 @@
 {
-  "blurb" : "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage.",
-  "date" : "2026-08-22",
-  "chapter" : "Encryption and Data Protection",
-  "section" : "Data Protection",
+  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
+  "date" : "2026-08-23",
+  "section" : "Apple Pay",
+  "chapter" : "Services security",
   "keywords" : [
-    "protection class",
-    "class key",
-    "keybag",
-    "Effaceable Storage",
-    "NSFileProtection"
+    "Device Account Number",
+    "Secure Element",
+    "payment cryptogram",
+    "NFC controller",
+    "EMVCo"
   ]
 }
