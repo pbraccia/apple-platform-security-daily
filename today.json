@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
-  "date" : "2026-08-23",
-  "section" : "Apple Pay",
-  "chapter" : "Services security",
+  "date" : "2026-08-24",
+  "chapter" : "System security",
+  "section" : "Secure software updates",
+  "blurb" : "Apple's Secure Software Authorization (SSA) prevents unauthorized or downgraded firmware from running. When updating, the device submits cryptographic measurements of the software to install plus its unique ECID to Apple's authorization servers. Apple signs only the specific software bundle for that specific device, returning a personalized ticket. Because each authorization is device-specific and version-specific, it is cryptographically impossible to replay an authorization from a different device or reinstall an older, potentially vulnerable OS version after Apple has stopped signing it.",
   "keywords" : [
-    "Device Account Number",
-    "Secure Element",
-    "payment cryptogram",
-    "NFC controller",
-    "EMVCo"
+    "SSA",
+    "ECID",
+    "personalized ticket",
+    "anti-downgrade",
+    "OTA update"
   ]
 }
