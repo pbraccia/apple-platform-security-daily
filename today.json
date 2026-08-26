@@ -1,13 +1,13 @@
 {
-  "section" : "Background Security Improvements",
-  "date" : "2026-08-25",
   "chapter" : "System security",
+  "blurb" : "Apple's Secure Software Authorization (SSA) prevents unauthorized or downgraded firmware from running. When updating, the device submits cryptographic measurements of the software to install plus its unique ECID to Apple's authorization servers. Apple signs only the specific software bundle for that specific device, returning a personalized ticket. Because each authorization is device-specific and version-specific, it is cryptographically impossible to replay an authorization from a different device or reinstall an older, potentially vulnerable OS version after Apple has stopped signing it.",
   "keywords" : [
-    "cryptex",
-    "XProtect",
-    "rapid remediation",
-    "signed disk image",
-    "SSV"
+    "SSA",
+    "ECID",
+    "personalized ticket",
+    "anti-downgrade",
+    "OTA update"
   ],
-  "blurb" : "Background Security Improvements enable Apple to ship rapid security remediations – including XProtect signature updates, runtime mitigations, and new security policies – independently of full OS releases. The mechanism uses cryptographically signed disk images called cryptexes (Cryptographic Extensions), which are verified and mounted at boot alongside the main system volume. Cryptexes carry their own Sealed System Volume hash tree guarantees and are delivered via standard software update infrastructure without requiring a full OS upgrade, allowing Apple to address newly discovered vulnerabilities with minimal user friction."
+  "date" : "2026-08-26",
+  "section" : "Secure software updates"
 }
