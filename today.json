@@ -1,13 +1,13 @@
 {
-  "chapter" : "System security",
-  "blurb" : "Apple's Secure Software Authorization (SSA) prevents unauthorized or downgraded firmware from running. When updating, the device submits cryptographic measurements of the software to install plus its unique ECID to Apple's authorization servers. Apple signs only the specific software bundle for that specific device, returning a personalized ticket. Because each authorization is device-specific and version-specific, it is cryptographically impossible to replay an authorization from a different device or reinstall an older, potentially vulnerable OS version after Apple has stopped signing it.",
+  "blurb" : "Continuity features – Handoff, Universal Clipboard, iPhone Cellular Call Relay, SMS Forwarding, Instant Hotspot, and iPhone Mirroring – use Bluetooth Low Energy device discovery combined with end-to-end encrypted peer-to-peer Wi-Fi or iCloud relay channels. Continuity relies on the Apple Identity Service to authenticate that both devices share the same iCloud account and to exchange public keys before establishing direct encrypted connections. Data transferred between devices is encrypted using keys derived from device-specific IDS key pairs, ensuring neither Apple's servers nor third parties can access transferred content even when routed through iCloud infrastructure.",
+  "section" : "Continuity",
+  "chapter" : "Services security",
   "keywords" : [
-    "SSA",
-    "ECID",
-    "personalized ticket",
-    "anti-downgrade",
-    "OTA update"
+    "Handoff",
+    "IDS",
+    "peer-to-peer Wi-Fi",
+    "BLE discovery",
+    "iCloud relay"
   ],
-  "date" : "2026-08-26",
-  "section" : "Secure software updates"
+  "date" : "2026-08-27"
 }
