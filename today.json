@@ -1,13 +1,13 @@
 {
-  "blurb" : "Continuity features – Handoff, Universal Clipboard, iPhone Cellular Call Relay, SMS Forwarding, Instant Hotspot, and iPhone Mirroring – use Bluetooth Low Energy device discovery combined with end-to-end encrypted peer-to-peer Wi-Fi or iCloud relay channels. Continuity relies on the Apple Identity Service to authenticate that both devices share the same iCloud account and to exchange public keys before establishing direct encrypted connections. Data transferred between devices is encrypted using keys derived from device-specific IDS key pairs, ensuring neither Apple's servers nor third parties can access transferred content even when routed through iCloud infrastructure.",
-  "section" : "Continuity",
-  "chapter" : "Services security",
+  "section" : "Lockdown Mode security",
+  "date" : "2026-08-28",
+  "chapter" : "System security",
   "keywords" : [
-    "Handoff",
-    "IDS",
-    "peer-to-peer Wi-Fi",
-    "BLE discovery",
-    "iCloud relay"
+    "Lockdown Mode",
+    "attack surface reduction",
+    "JIT disable",
+    "state-sponsored",
+    "high-risk users"
   ],
-  "date" : "2026-08-27"
+  "blurb" : "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac."
 }
