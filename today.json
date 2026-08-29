@@ -1,13 +1,13 @@
 {
-  "section" : "Lockdown Mode security",
-  "date" : "2026-08-28",
-  "chapter" : "System security",
   "keywords" : [
-    "Lockdown Mode",
-    "attack surface reduction",
-    "JIT disable",
-    "state-sponsored",
-    "high-risk users"
+    "replayd",
+    "out-of-process capture",
+    "IOSurface",
+    "XPC",
+    "broadcast extension"
   ],
-  "blurb" : "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac."
+  "date" : "2026-08-29",
+  "blurb" : "ReplayKit enables screen recording and live broadcasting by performing all capture operations within a privileged system daemon (replayd) running outside the host app's process. This architecture ensures recorded video and audio content is never directly accessible to the hosting application. User consent is collected via a system-presented permissions dialog before each recording session. Third-party broadcast services integrate through a two-process extension architecture – a UI extension for configuration and an upload extension for data handling – connected to the capture daemon via XPC, with video frames serialized as IOSurface objects to prevent raw buffer access across trust boundaries.",
+  "section" : "ReplayKit security",
+  "chapter" : "Developer kit security"
 }
