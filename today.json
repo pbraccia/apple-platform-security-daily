@@ -1,13 +1,13 @@
 {
-  "chapter" : "System security",
-  "date" : "2026-08-31",
-  "section" : "Lockdown Mode security",
-  "blurb" : "Lockdown Mode is an extreme optional protection designed for individuals at heightened risk of sophisticated state-sponsored cyberattacks. When enabled, it dramatically reduces the attack surface by disabling most message attachment types and link previews, blocking FaceTime calls from unknown contacts, preventing wired connections to accessories when the device is locked, and disabling installation of configuration profiles. Web content is also restricted from executing complex JavaScript via the JIT compiler. Lockdown Mode trades functionality for the highest available attack-surface reduction on iPhone, iPad, and Mac.",
   "keywords" : [
-    "Lockdown Mode",
-    "attack surface reduction",
-    "JIT disable",
-    "state-sponsored",
-    "high-risk users"
-  ]
+    "EnergyKit",
+    "home energy",
+    "TCC authorization",
+    "HomeKit infrastructure",
+    "CloudKit E2E"
+  ],
+  "chapter" : "Developer kit security",
+  "date" : "2026-09-01",
+  "blurb" : "EnergyKit provides APIs for home energy management devices – including EV chargers, solar panels, and battery storage systems – with a privacy model restricting app access to energy usage data through user-granted permissions. Energy usage data, which can reveal behavioral patterns about occupancy and daily routines, is protected under TCC-style authorization requiring explicit user consent before any app can read home energy measurements. Data from EnergyKit-connected devices flows through HomeKit infrastructure, inheriting its end-to-end encrypted CloudKit storage model, ensuring energy data never transits Apple servers in plaintext.",
+  "section" : "EnergyKit data security"
 }
