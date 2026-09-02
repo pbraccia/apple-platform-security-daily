@@ -1,13 +1,13 @@
 {
+  "section" : "Passcodes and passwords",
   "keywords" : [
-    "EnergyKit",
-    "home energy",
-    "TCC authorization",
-    "HomeKit infrastructure",
-    "CloudKit E2E"
+    "PBKDF2",
+    "PDK",
+    "UID tangling",
+    "anti-replay",
+    "attempt throttling"
   ],
-  "chapter" : "Developer kit security",
-  "date" : "2026-09-01",
-  "blurb" : "EnergyKit provides APIs for home energy management devices – including EV chargers, solar panels, and battery storage systems – with a privacy model restricting app access to energy usage data through user-granted permissions. Energy usage data, which can reveal behavioral patterns about occupancy and daily routines, is protected under TCC-style authorization requiring explicit user consent before any app can read home energy measurements. Data from EnergyKit-connected devices flows through HomeKit infrastructure, inheriting its end-to-end encrypted CloudKit storage model, ensuring energy data never transits Apple servers in plaintext.",
-  "section" : "EnergyKit data security"
+  "chapter" : "Encryption and Data Protection",
+  "blurb" : "Device passcodes are the foundation of iOS, iPadOS, and watchOS data security. A user's passcode is combined with the device's hardware UID using PBKDF2-AES tangling performed exclusively in the Secure Enclave, producing a passcode-derived key (PDK) that wraps Data Protection class keys. This tangling ensures brute-force attacks must occur on the specific device, subject to mandatory hardware-enforced delays between attempts that escalate from milliseconds to hours. The secure nonvolatile storage component provides anti-replay protection, preventing backup-and-restore techniques from defeating attempt counters. Devices can be configured to erase after ten failed attempts.",
+  "date" : "2026-09-02"
 }
