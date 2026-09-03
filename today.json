@@ -1,13 +1,13 @@
 {
-  "section" : "Passcodes and passwords",
+  "date" : "2026-09-03",
+  "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
+  "section" : "System security overview",
+  "chapter" : "System security",
   "keywords" : [
-    "PBKDF2",
-    "PDK",
-    "UID tangling",
-    "anti-replay",
-    "attempt throttling"
-  ],
-  "chapter" : "Encryption and Data Protection",
-  "blurb" : "Device passcodes are the foundation of iOS, iPadOS, and watchOS data security. A user's passcode is combined with the device's hardware UID using PBKDF2-AES tangling performed exclusively in the Secure Enclave, producing a passcode-derived key (PDK) that wraps Data Protection class keys. This tangling ensures brute-force attacks must occur on the specific device, subject to mandatory hardware-enforced delays between attempts that escalate from milliseconds to hours. The secure nonvolatile storage component provides anti-replay protection, preventing backup-and-restore techniques from defeating attempt counters. Devices can be configured to erase after ten failed attempts.",
-  "date" : "2026-09-02"
+    "secure boot",
+    "SIP",
+    "Gatekeeper",
+    "XProtect",
+    "entitlements"
+  ]
 }
