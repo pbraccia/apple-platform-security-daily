@@ -1,13 +1,13 @@
 {
-  "date" : "2026-09-04",
-  "chapter" : "Hardware security and biometrics",
+  "chapter" : "Network security",
+  "blurb" : "Wi-Fi password sharing securely transmits a Wi-Fi network password from one Apple device to another belonging to a contact in the user's address book. The process uses Bluetooth Low Energy for proximity detection and the Apple Identity Service to verify that the requesting device belongs to a known contact. The password is transmitted through an end-to-end encrypted iCloud channel between the two devices, not over the local Wi-Fi network or Bluetooth radio. No Wi-Fi password data is processed by Apple servers – the transaction is peer-to-peer through iCloud's end-to-end encrypted infrastructure, verified via IDS key exchange.",
   "keywords" : [
-    "A-series",
-    "M-series",
-    "sepOS",
-    "IOMMU",
-    "hardware isolation"
+    "IDS verification",
+    "BLE proximity",
+    "iCloud E2E",
+    "password sharing",
+    "contact verification"
   ],
-  "section" : "Apple SoC security",
-  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material."
+  "section" : "Wi-Fi password sharing security",
+  "date" : "2026-09-05"
 }
