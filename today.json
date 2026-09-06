@@ -1,13 +1,13 @@
 {
-  "chapter" : "Network security",
-  "blurb" : "Wi-Fi password sharing securely transmits a Wi-Fi network password from one Apple device to another belonging to a contact in the user's address book. The process uses Bluetooth Low Energy for proximity detection and the Apple Identity Service to verify that the requesting device belongs to a known contact. The password is transmitted through an end-to-end encrypted iCloud channel between the two devices, not over the local Wi-Fi network or Bluetooth radio. No Wi-Fi password data is processed by Apple servers – the transaction is peer-to-peer through iCloud's end-to-end encrypted infrastructure, verified via IDS key exchange.",
+  "chapter" : "Services security",
+  "blurb" : "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO\/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
+  "date" : "2026-09-06",
+  "section" : "Using Apple Wallet",
   "keywords" : [
-    "IDS verification",
-    "BLE proximity",
-    "iCloud E2E",
-    "password sharing",
-    "contact verification"
-  ],
-  "section" : "Wi-Fi password sharing security",
-  "date" : "2026-09-05"
+    "car key",
+    "CCC standard",
+    "ISO\/IEC 18013-5",
+    "UWB",
+    "selective disclosure"
+  ]
 }
