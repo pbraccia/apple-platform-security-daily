@@ -1,13 +1,13 @@
 {
-  "section" : "Ultra Wideband security in iOS",
-  "blurb" : "Ultra Wideband radio on Apple devices enables centimeter-precise spatial ranging for passive car key entry, Find My precision finding, and directional AirDrop. UWB ranging sessions are protected by session keys derived from a prior Bluetooth pairing exchange, ensuring only previously authenticated devices can establish ranging sessions. The short range of UWB combined with physical-layer time-of-flight measurement makes relay attacks significantly harder than with Bluetooth or NFC. Car key UWB ranging uses enhanced ranging calibration data and cryptographic binding of measurements to prevent spoofing of distance values by a relay adversary.",
-  "date" : "2026-09-07",
   "keywords" : [
-    "UWB",
-    "time-of-flight",
-    "ranging session key",
-    "relay attack",
-    "car key"
+    "differential privacy",
+    "on-device processing",
+    "data minimization",
+    "Neural Engine",
+    "end-to-end encryption"
   ],
-  "chapter" : "Network security"
+  "date" : "2026-09-08",
+  "chapter" : "Encryption and Data Protection",
+  "section" : "How Apple protects users' personal data",
+  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion."
 }
