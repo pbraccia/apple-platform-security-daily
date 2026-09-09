@@ -1,13 +1,13 @@
 {
+  "section" : "Intro to Apple platform security",
   "keywords" : [
-    "differential privacy",
-    "on-device processing",
-    "data minimization",
-    "Neural Engine",
-    "end-to-end encryption"
+    "defense-in-depth",
+    "Secure Enclave",
+    "secure boot",
+    "encryption",
+    "sandboxing"
   ],
-  "date" : "2026-09-08",
-  "chapter" : "Encryption and Data Protection",
-  "section" : "How Apple protects users' personal data",
-  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion."
+  "chapter" : "Apple Platform Security",
+  "blurb" : "Apple's multi-layered security architecture integrates hardware, firmware, and software protections across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Security begins at the silicon layer with the Secure Enclave and dedicated cryptographic hardware, extending through secure boot chains, runtime process isolation, encrypted data storage, and network transport protection. Each layer is designed so a compromise at one level does not undermine the others, providing defense-in-depth that protects user data whether at rest, in transit, or during processing on any Apple device.",
+  "date" : "2026-09-09"
 }
