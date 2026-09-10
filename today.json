@@ -1,13 +1,13 @@
 {
-  "section" : "Intro to Apple platform security",
+  "chapter" : "Services security",
+  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
+  "date" : "2026-09-10",
   "keywords" : [
-    "defense-in-depth",
-    "Secure Enclave",
-    "secure boot",
-    "encryption",
-    "sandboxing"
+    "Device Account Number",
+    "Secure Element",
+    "payment cryptogram",
+    "NFC controller",
+    "EMVCo"
   ],
-  "chapter" : "Apple Platform Security",
-  "blurb" : "Apple's multi-layered security architecture integrates hardware, firmware, and software protections across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Security begins at the silicon layer with the Secure Enclave and dedicated cryptographic hardware, extending through secure boot chains, runtime process isolation, encrypted data storage, and network transport protection. Each layer is designed so a compromise at one level does not undermine the others, providing defense-in-depth that protects user data whether at rest, in transit, or during processing on any Apple device.",
-  "date" : "2026-09-09"
+  "section" : "Apple Pay"
 }
