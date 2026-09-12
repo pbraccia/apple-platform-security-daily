@@ -1,13 +1,13 @@
 {
-  "blurb" : "Device passcodes are the foundation of iOS, iPadOS, and watchOS data security. A user's passcode is combined with the device's hardware UID using PBKDF2-AES tangling performed exclusively in the Secure Enclave, producing a passcode-derived key (PDK) that wraps Data Protection class keys. This tangling ensures brute-force attacks must occur on the specific device, subject to mandatory hardware-enforced delays between attempts that escalate from milliseconds to hours. The secure nonvolatile storage component provides anti-replay protection, preventing backup-and-restore techniques from defeating attempt counters. Devices can be configured to erase after ten failed attempts.",
   "keywords" : [
-    "PBKDF2",
-    "PDK",
-    "UID tangling",
-    "anti-replay",
-    "attempt throttling"
+    "SSV",
+    "Merkle hash tree",
+    "SHA-256",
+    "read-only mount",
+    "OS integrity"
   ],
-  "date" : "2026-09-11",
-  "section" : "Passcodes and passwords",
-  "chapter" : "Encryption and Data Protection"
+  "section" : "Signed system volume security",
+  "chapter" : "System security",
+  "date" : "2026-09-12",
+  "blurb" : "The Signed System Volume (SSV) on macOS seals the entire operating system volume with a SHA-256-based Merkle hash tree, rooting the tree in a hash embedded in the signed boot manifest. Every file read from the system volume is verified against this tree by the kernel at the time of access; any tampered or corrupted file causes an immediate read error. The SSV mount is read-only and separate from the data volume, ensuring system files can never be modified at runtime. This architecture, combined with secure boot, provides end-to-end OS integrity from installation through every subsequent use."
 }
