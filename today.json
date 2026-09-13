@@ -1,13 +1,13 @@
 {
+  "chapter" : "Network security",
   "keywords" : [
-    "SSV",
-    "Merkle hash tree",
-    "SHA-256",
-    "read-only mount",
-    "OS integrity"
+    "Kerberos SSO",
+    "Extensible SSO",
+    "Platform SSO",
+    "SAML",
+    "OpenID Connect"
   ],
-  "section" : "Signed system volume security",
-  "chapter" : "System security",
-  "date" : "2026-09-12",
-  "blurb" : "The Signed System Volume (SSV) on macOS seals the entire operating system volume with a SHA-256-based Merkle hash tree, rooting the tree in a hash embedded in the signed boot manifest. Every file read from the system volume is verified against this tree by the kernel at the time of access; any tampered or corrupted file causes an immediate read error. The SSV mount is read-only and separate from the data volume, ensuring system files can never be modified at runtime. This architecture, combined with secure boot, provides end-to-end OS integrity from installation through every subsequent use."
+  "blurb" : "Apple platforms support enterprise Single Sign-on through three complementary mechanisms. The Kerberos SSO extension integrates natively with Active Directory, obtaining TGTs using device certificates or user credentials and transparently presenting service tickets to Kerberos-protected resources. The Extensible SSO framework allows identity providers to deploy MDM-configured SSO extensions supporting SAML 2.0 and OpenID Connect for seamless authentication to web and native apps. Platform SSO on macOS binds local account authentication to enterprise identity provider credentials, with tokens issued by the IdP enabling unified corporate identity across all Mac sign-in contexts.",
+  "section" : "Single Sign-on security",
+  "date" : "2026-09-13"
 }
