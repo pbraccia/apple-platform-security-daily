@@ -1,13 +1,13 @@
 {
   "chapter" : "Network security",
   "keywords" : [
-    "Kerberos SSO",
-    "Extensible SSO",
-    "Platform SSO",
-    "SAML",
-    "OpenID Connect"
+    "WPA3",
+    "SAE",
+    "PMF",
+    "MAC randomization",
+    "OWE"
   ],
-  "blurb" : "Apple platforms support enterprise Single Sign-on through three complementary mechanisms. The Kerberos SSO extension integrates natively with Active Directory, obtaining TGTs using device certificates or user credentials and transparently presenting service tickets to Kerberos-protected resources. The Extensible SSO framework allows identity providers to deploy MDM-configured SSO extensions supporting SAML 2.0 and OpenID Connect for seamless authentication to web and native apps. Platform SSO on macOS binds local account authentication to enterprise identity provider credentials, with tokens issued by the IdP enabling unified corporate identity across all Mac sign-in contexts.",
-  "section" : "Single Sign-on security",
-  "date" : "2026-09-13"
+  "section" : "Wi-Fi security and privacy",
+  "date" : "2026-09-14",
+  "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods."
 }
