@@ -1,13 +1,13 @@
 {
-  "chapter" : "Network security",
+  "section" : "Device management",
+  "chapter" : "Secure device management",
+  "blurb" : "The Apple MDM protocol operates over HTTPS with TLS mutual authentication, using Apple Push Notification service to wake devices and trigger check-ins with the MDM server – no confidential data traverses APNs itself. Configuration profiles are XML or JSON structures encrypted using CMS with AES-128. Managed Device Attestation uses the Secure Enclave and ACME protocol to generate hardware-bound ECDSA keys (P-256 or P-384) that cryptographically attest device identity, OS version, and security posture to MDM servers, verified against the Apple Enterprise Attestation Root CA. This prevents compromised or impersonating devices from falsely representing their configuration or enrollment status.",
   "keywords" : [
-    "WPA3",
-    "SAE",
-    "PMF",
-    "MAC randomization",
-    "OWE"
+    "MDM protocol",
+    "APNs",
+    "CMS encryption",
+    "Managed Device Attestation",
+    "ACME"
   ],
-  "section" : "Wi-Fi security and privacy",
-  "date" : "2026-09-14",
-  "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods."
+  "date" : "2026-09-15"
 }
