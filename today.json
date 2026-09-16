@@ -1,13 +1,13 @@
 {
-  "section" : "Device management",
-  "chapter" : "Secure device management",
-  "blurb" : "The Apple MDM protocol operates over HTTPS with TLS mutual authentication, using Apple Push Notification service to wake devices and trigger check-ins with the MDM server – no confidential data traverses APNs itself. Configuration profiles are XML or JSON structures encrypted using CMS with AES-128. Managed Device Attestation uses the Secure Enclave and ACME protocol to generate hardware-bound ECDSA keys (P-256 or P-384) that cryptographically attest device identity, OS version, and security posture to MDM servers, verified against the Apple Enterprise Attestation Root CA. This prevents compromised or impersonating devices from falsely representing their configuration or enrollment status.",
+  "date" : "2026-09-16",
+  "chapter" : "System security",
+  "blurb" : "Apple's secure boot chain establishes a cryptographic chain of trust from immutable Boot ROM through each subsequent boot stage. On Apple silicon Macs, the Boot ROM loads and verifies the Low-Level Bootloader (LLB), which loads iBoot; on A-series devices Boot ROM loads iBoot directly. Each stage uses Apple's public key to verify a digital signature before passing control to the next. The LocalPolicy mechanism on Mac with Apple silicon encodes the user's chosen security configuration into a cryptographically signed structure managed by the Secure Enclave, ensuring only authorized operating systems and boot configurations can run.",
   "keywords" : [
-    "MDM protocol",
-    "APNs",
-    "CMS encryption",
-    "Managed Device Attestation",
-    "ACME"
+    "Boot ROM",
+    "iBoot",
+    "LocalPolicy",
+    "LLB",
+    "chain of trust"
   ],
-  "date" : "2026-09-15"
+  "section" : "Secure boot"
 }
