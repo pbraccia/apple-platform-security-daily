@@ -1,13 +1,13 @@
 {
-  "date" : "2026-09-16",
-  "chapter" : "System security",
-  "blurb" : "Apple's secure boot chain establishes a cryptographic chain of trust from immutable Boot ROM through each subsequent boot stage. On Apple silicon Macs, the Boot ROM loads and verifies the Low-Level Bootloader (LLB), which loads iBoot; on A-series devices Boot ROM loads iBoot directly. Each stage uses Apple's public key to verify a digital signature before passing control to the next. The LocalPolicy mechanism on Mac with Apple silicon encodes the user's chosen security configuration into a cryptographically signed structure managed by the Secure Enclave, ensuring only authorized operating systems and boot configurations can run.",
+  "blurb" : "iMessage provides end-to-end encryption using a per-message AES-128 encryption key wrapped with each recipient's registered public key from the Apple Identity Service. Each device generates its own encryption (RSA-1280 or EC P-256) and signing (ECDSA-256) key pair; private keys are stored in the Secure Enclave or device Keychain. Messages are signed and encrypted before leaving the sender's device – Apple's servers relay ciphertext only. The PQ3 protocol upgrade incorporates ML-KEM post-quantum key encapsulation alongside ECDH, with a Diffie-Hellman ratchet providing forward secrecy against both classical and quantum adversaries.",
+  "date" : "2026-09-17",
+  "chapter" : "Services security",
   "keywords" : [
-    "Boot ROM",
-    "iBoot",
-    "LocalPolicy",
-    "LLB",
-    "chain of trust"
+    "AES-128-CTR",
+    "IDS",
+    "ECDSA-256",
+    "PQ3",
+    "forward secrecy"
   ],
-  "section" : "Secure boot"
+  "section" : "iMessage"
 }
