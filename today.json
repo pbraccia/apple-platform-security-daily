@@ -1,13 +1,13 @@
 {
-  "section" : "Secure Apple Messages for Business",
-  "chapter" : "Services security",
   "keywords" : [
-    "business identity",
-    "verified badge",
-    "iMessage E2E",
-    "IDS",
-    "Apple Pay integration"
+    "DriverKit",
+    "user-space driver",
+    "kext replacement",
+    "IOKit",
+    "notarization"
   ],
-  "date" : "2026-09-19",
-  "blurb" : "Apple Messages for Business enables organizations to communicate with customers through iMessage-based channels while maintaining verifiable business identity. Business identities are authenticated by Apple through a registration and verification process, with certified businesses displayed with a verified badge in the Messages interface. Customer interactions are protected by iMessage's end-to-end encryption with an added authentication layer for the business entity. The platform integrates with Apple Pay for secure in-conversation transactions and uses the Apple Identity Service to verify both customer device identity and the legitimacy of the business messaging endpoint."
+  "chapter" : "Developer kit security",
+  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
+  "date" : "2026-09-20",
+  "section" : "DriverKit security"
 }
