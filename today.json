@@ -1,13 +1,13 @@
 {
-  "date" : "2026-09-23",
-  "chapter" : "Developer kit security",
-  "blurb" : "The NFC & SE Platform allows developers to deploy custom Secure Element applets for NFC-based transactions, with a mandatory security review pipeline before device deployment. Applets must pass evaluation by an accredited third-party security laboratory and Apple review before being signed and hosted for installation. Each applet is installed in an isolated Security Domain preventing inter-applet data access. Transaction authorization requires biometric or passcode authentication gated through the Secure Enclave, with transaction data routed exclusively through the NFC controller to the Secure Element – never exposed to the application processor or iOS.",
-  "section" : "NFC & SE Platform security",
+  "section" : "Encryption and Data Protection overview",
+  "blurb" : "Apple's Encryption and Data Protection framework provides hardware-accelerated AES-256 encryption for all data stored on devices. Every file on NAND storage is encrypted using a unique per-file key, which is itself wrapped by a class key derived from the device UID and – for sensitive classes – the user's passcode. This key hierarchy, maintained in keybags, enables instantaneous crypto-erase by discarding the media key, and protects data when the device is locked by making class keys unavailable without passcode or biometric authentication. The Secure Enclave manages the entire key hierarchy, ensuring the OS and apps cannot access raw cryptographic material.",
   "keywords" : [
-    "Secure Element",
-    "applet",
-    "Security Domain",
-    "NFC controller",
-    "transaction authorization"
-  ]
+    "per-file key",
+    "class key",
+    "keybag",
+    "AES-256",
+    "crypto-erase"
+  ],
+  "date" : "2026-09-24",
+  "chapter" : "Encryption and Data Protection"
 }
