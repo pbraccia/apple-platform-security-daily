@@ -1,13 +1,13 @@
 {
-  "section" : "Encryption and Data Protection overview",
-  "blurb" : "Apple's Encryption and Data Protection framework provides hardware-accelerated AES-256 encryption for all data stored on devices. Every file on NAND storage is encrypted using a unique per-file key, which is itself wrapped by a class key derived from the device UID and – for sensitive classes – the user's passcode. This key hierarchy, maintained in keybags, enables instantaneous crypto-erase by discarding the media key, and protects data when the device is locked by making class keys unavailable without passcode or biometric authentication. The Secure Enclave manages the entire key hierarchy, ensuring the OS and apps cannot access raw cryptographic material.",
+  "chapter" : "Network security",
   "keywords" : [
-    "per-file key",
-    "class key",
-    "keybag",
-    "AES-256",
-    "crypto-erase"
+    "TLS 1.3",
+    "ECDHE",
+    "AES-GCM",
+    "Certificate Transparency",
+    "ATS"
   ],
-  "date" : "2026-09-24",
-  "chapter" : "Encryption and Data Protection"
+  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
+  "section" : "TLS security",
+  "date" : "2026-09-25"
 }
