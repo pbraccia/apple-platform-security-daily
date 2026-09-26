@@ -1,13 +1,13 @@
 {
-  "chapter" : "Network security",
+  "section" : "Firewall security in macOS",
   "keywords" : [
-    "TLS 1.3",
-    "ECDHE",
-    "AES-GCM",
-    "Certificate Transparency",
-    "ATS"
+    "application firewall",
+    "stealth mode",
+    "pf packet filter",
+    "incoming connections",
+    "per-app rules"
   ],
-  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
-  "section" : "TLS security",
-  "date" : "2026-09-25"
+  "blurb" : "macOS includes an application-level firewall controlling incoming network connections on a per-application basis, independent of port or protocol. Signed App Store applications are automatically trusted; other applications prompt the user for allow\/deny authorization when first attempting to accept incoming connections. A stealth mode option prevents the Mac from responding to network probe requests from scanners. macOS also provides access to the pf packet filter for low-level network traffic filtering and port blocking, configurable via command line or third-party firewall applications for advanced network policies in enterprise deployments.",
+  "chapter" : "Network security",
+  "date" : "2026-09-26"
 }
