@@ -1,13 +1,13 @@
 {
-  "section" : "Firewall security in macOS",
+  "section" : "The Secure Enclave",
   "keywords" : [
-    "application firewall",
-    "stealth mode",
-    "pf packet filter",
-    "incoming connections",
-    "per-app rules"
+    "sepOS",
+    "SKP",
+    "UID",
+    "mailbox interface",
+    "key wrapping"
   ],
-  "blurb" : "macOS includes an application-level firewall controlling incoming network connections on a per-application basis, independent of port or protocol. Signed App Store applications are automatically trusted; other applications prompt the user for allow\/deny authorization when first attempting to accept incoming connections. A stealth mode option prevents the Mac from responding to network probe requests from scanners. macOS also provides access to the pf packet filter for low-level network traffic filtering and port blocking, configurable via command line or third-party firewall applications for advanced network policies in enterprise deployments.",
-  "chapter" : "Network security",
-  "date" : "2026-09-26"
+  "date" : "2026-09-27",
+  "chapter" : "Hardware security and biometrics",
+  "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material."
 }
