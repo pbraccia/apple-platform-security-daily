@@ -1,13 +1,13 @@
 {
-  "chapter" : "Developer kit security",
   "keywords" : [
-    "DriverKit",
-    "user-space driver",
-    "kext replacement",
-    "IOKit",
-    "notarization"
+    "sandbox",
+    "entitlements",
+    "code signing",
+    "App Store review",
+    "XNU"
   ],
-  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
-  "section" : "DriverKit security",
-  "date" : "2026-09-29"
+  "chapter" : "App security",
+  "section" : "App security overview",
+  "date" : "2026-09-30",
+  "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication."
 }
