@@ -1,13 +1,13 @@
 {
+  "blurb" : "Apple's Secure Software Authorization (SSA) prevents unauthorized or downgraded firmware from running. When updating, the device submits cryptographic measurements of the software to install plus its unique ECID to Apple's authorization servers. Apple signs only the specific software bundle for that specific device, returning a personalized ticket. Because each authorization is device-specific and version-specific, it is cryptographically impossible to replay an authorization from a different device or reinstall an older, potentially vulnerable OS version after Apple has stopped signing it.",
   "keywords" : [
-    "sandbox",
-    "entitlements",
-    "code signing",
-    "App Store review",
-    "XNU"
+    "SSA",
+    "ECID",
+    "personalized ticket",
+    "anti-downgrade",
+    "OTA update"
   ],
-  "chapter" : "App security",
-  "section" : "App security overview",
-  "date" : "2026-09-30",
-  "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication."
+  "chapter" : "System security",
+  "section" : "Secure software updates",
+  "date" : "2026-10-01"
 }
