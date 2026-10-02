@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple's Secure Software Authorization (SSA) prevents unauthorized or downgraded firmware from running. When updating, the device submits cryptographic measurements of the software to install plus its unique ECID to Apple's authorization servers. Apple signs only the specific software bundle for that specific device, returning a personalized ticket. Because each authorization is device-specific and version-specific, it is cryptographically impossible to replay an authorization from a different device or reinstall an older, potentially vulnerable OS version after Apple has stopped signing it.",
+  "blurb" : "Express Cards allow Apple Pay and Apple Wallet credentials to function in a low-power mode without Face ID, Touch ID, or passcode authentication – supporting transit cards, hotel room keys, and student IDs. The Secure Element maintains a dedicated power reserve so Express Card transactions remain possible even when the iPhone battery is depleted. To prevent unauthorized large-value payments, Express Mode is restricted to specific card types that issuers explicitly configure, and Apple imposes transaction limits on eligible card categories to bound the risk of unauthorized use when authentication is bypassed.",
+  "chapter" : "Hardware security and biometrics",
+  "section" : "Express Cards with power reserve",
   "keywords" : [
-    "SSA",
-    "ECID",
-    "personalized ticket",
-    "anti-downgrade",
-    "OTA update"
+    "Express Mode",
+    "Secure Element",
+    "power reserve",
+    "transit card",
+    "contactless"
   ],
-  "chapter" : "System security",
-  "section" : "Secure software updates",
-  "date" : "2026-10-01"
+  "date" : "2026-10-02"
 }
