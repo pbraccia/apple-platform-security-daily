@@ -1,13 +1,13 @@
 {
-  "blurb" : "Express Cards allow Apple Pay and Apple Wallet credentials to function in a low-power mode without Face ID, Touch ID, or passcode authentication – supporting transit cards, hotel room keys, and student IDs. The Secure Element maintains a dedicated power reserve so Express Card transactions remain possible even when the iPhone battery is depleted. To prevent unauthorized large-value payments, Express Mode is restricted to specific card types that issuers explicitly configure, and Apple imposes transaction limits on eligible card categories to bound the risk of unauthorized use when authentication is bypassed.",
-  "chapter" : "Hardware security and biometrics",
-  "section" : "Express Cards with power reserve",
+  "section" : "The Secure Enclave",
   "keywords" : [
-    "Express Mode",
-    "Secure Element",
-    "power reserve",
-    "transit card",
-    "contactless"
+    "sepOS",
+    "SKP",
+    "UID",
+    "mailbox interface",
+    "key wrapping"
   ],
-  "date" : "2026-10-02"
+  "date" : "2026-10-03",
+  "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material.",
+  "chapter" : "Hardware security and biometrics"
 }
