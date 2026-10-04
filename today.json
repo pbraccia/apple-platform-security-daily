@@ -1,13 +1,13 @@
 {
-  "section" : "The Secure Enclave",
+  "section" : "App code signing process",
   "keywords" : [
-    "sepOS",
-    "SKP",
-    "UID",
-    "mailbox interface",
-    "key wrapping"
+    "AMFI",
+    "provisioning profile",
+    "developer certificate",
+    "distribution signature",
+    "entitlements"
   ],
-  "date" : "2026-10-03",
-  "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material.",
-  "chapter" : "Hardware security and biometrics"
+  "date" : "2026-10-04",
+  "chapter" : "App security",
+  "blurb" : "App code signing requires developers to obtain a signing certificate from Apple and use it to cryptographically sign all executable binaries and resources before distribution. On iOS and iPadOS, the AMFI kernel extension verifies the signature and entitlements of every app at launch, rejecting unsigned or improperly signed code. Provisioning profiles, signed by Apple, scope the capabilities an app may use and restrict which devices can run development builds. Apps distributed via the App Store are additionally signed by Apple with a distribution signature, providing an Apple-attested chain of trust from developer certificate through to device installation."
 }
