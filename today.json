@@ -1,13 +1,13 @@
 {
-  "section" : "App code signing process",
+  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
+  "date" : "2026-10-05",
+  "section" : "DriverKit security",
   "keywords" : [
-    "AMFI",
-    "provisioning profile",
-    "developer certificate",
-    "distribution signature",
-    "entitlements"
+    "DriverKit",
+    "user-space driver",
+    "kext replacement",
+    "IOKit",
+    "notarization"
   ],
-  "date" : "2026-10-04",
-  "chapter" : "App security",
-  "blurb" : "App code signing requires developers to obtain a signing certificate from Apple and use it to cryptographically sign all executable binaries and resources before distribution. On iOS and iPadOS, the AMFI kernel extension verifies the signature and entitlements of every app at launch, rejecting unsigned or improperly signed code. Provisioning profiles, signed by Apple, scope the capabilities an app may use and restrict which devices can run development builds. Apps distributed via the App Store are additionally signed by Apple with a distribution signature, providing an Apple-attested chain of trust from developer certificate through to device installation."
+  "chapter" : "Developer kit security"
 }
