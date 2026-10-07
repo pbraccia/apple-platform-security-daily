@@ -1,13 +1,13 @@
 {
-  "date" : "2026-10-06",
-  "section" : "The Secure Enclave",
-  "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material.",
+  "date" : "2026-10-07",
+  "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
   "keywords" : [
-    "sepOS",
-    "SKP",
-    "UID",
-    "mailbox interface",
-    "key wrapping"
+    "SRD",
+    "security research",
+    "responsible disclosure",
+    "SSH",
+    "iOS research"
   ],
-  "chapter" : "Hardware security and biometrics"
+  "section" : "Apple Security Research Device",
+  "chapter" : "System security"
 }
