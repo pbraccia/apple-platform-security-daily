@@ -1,13 +1,13 @@
 {
-  "date" : "2026-10-07",
-  "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
+  "chapter" : "System security",
+  "blurb" : "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
+  "date" : "2026-10-08",
+  "section" : "Device pairing and connection security",
   "keywords" : [
-    "SRD",
-    "security research",
-    "responsible disclosure",
-    "SSH",
-    "iOS research"
-  ],
-  "section" : "Apple Security Research Device",
-  "chapter" : "System security"
+    "pairing record",
+    "USB Restricted Mode",
+    "RSA-2048",
+    "trust dialog",
+    "accessory"
+  ]
 }
