@@ -1,13 +1,13 @@
 {
-  "chapter" : "System security",
-  "blurb" : "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
-  "date" : "2026-10-08",
-  "section" : "Device pairing and connection security",
+  "section" : "Apple Pay",
+  "date" : "2026-10-09",
+  "chapter" : "Services security",
+  "blurb" : "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo\/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
   "keywords" : [
-    "pairing record",
-    "USB Restricted Mode",
-    "RSA-2048",
-    "trust dialog",
-    "accessory"
+    "Device Account Number",
+    "Secure Element",
+    "payment cryptogram",
+    "NFC controller",
+    "EMVCo"
   ]
 }
