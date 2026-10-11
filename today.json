@@ -1,13 +1,13 @@
 {
-  "section" : "FileVault",
+  "chapter" : "App security",
+  "section" : "Supporting extensions",
+  "blurb" : "App extensions enable third-party functionality within system contexts – keyboards, share sheets, content blockers, widgets – while maintaining strict security isolation. Each extension runs as a separate process from both its containing app and the host app, communicating exclusively via XPC with serialized data. Extensions receive a separate, scoped sandbox and entitlement set, limiting data access compared to a full application. System Extensions on macOS allow vendors to extend kernel functionality – such as network filtering and endpoint security – in user space, eliminating the risk profile of traditional kernel extensions and confining any bugs to a user-space process.",
   "keywords" : [
-    "FileVault",
-    "XTS-AES-128",
-    "Secure Enclave",
-    "recovery key",
-    "full-disk encryption"
+    "app extension",
+    "XPC",
+    "sandboxing",
+    "System Extension",
+    "out-of-process"
   ],
-  "chapter" : "Encryption and Data Protection",
-  "blurb" : "FileVault provides full-volume encryption for macOS using XTS-AES-128 with a 256-bit key applied to the entire startup volume including user data and system files. On Macs with Apple silicon, the Secure Enclave manages FileVault keys, providing hardware-rooted protection analogous to iOS Data Protection; the SSD controller performs real-time encryption with no performance penalty. Recovery options include an iCloud-escrowed recovery key, a personal recovery key generated at setup, or an institutional recovery key managed via MDM. Instant wipe is achieved by discarding the volume encryption key, rendering all data cryptographically inaccessible.",
-  "date" : "2026-10-10"
+  "date" : "2026-10-11"
 }
