@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple platforms support TLS 1.2 and 1.3 with forward-secrecy cipher suites mandated by App Transport Security. Preferred cipher suites include ECDHE with AES-256-GCM, AES-128-GCM, and ChaCha20-Poly1305, with SHA-2 family hash functions for integrity. SSLv3, RC4, and 3DES are explicitly disabled. Certificate validation includes full chain verification to trusted roots, OCSP stapling for revocation checking, and Certificate Transparency enforcement requiring signed certificate timestamps from qualified CT logs. ATS additionally requires a minimum RSA key size of 2048 bits or ECC keys of at least 256 bits, blocking weak legacy configurations.",
-  "chapter" : "Network security",
-  "section" : "TLS security",
+  "blurb" : "SiriKit integrates third-party apps into Siri using the app extension model, with strict data minimization for user privacy. Before passing personal data to an app's SiriKit extension, Siri checks the app's user-granted permission settings: if the app lacks Contacts access, Siri passes only literal text for relationship references rather than resolved contact data. Custom vocabulary submitted by SiriKit-enabled apps is associated with a random identifier rather than the user's identity, and is purged when the app is deleted or Siri integration is disabled. Only the minimal data needed for the specific user intent is forwarded to the extension process.",
+  "chapter" : "Developer kit security",
+  "section" : "SiriKit security",
+  "date" : "2026-10-13",
   "keywords" : [
-    "TLS 1.3",
-    "ECDHE",
-    "AES-GCM",
-    "Certificate Transparency",
-    "ATS"
-  ],
-  "date" : "2026-10-12"
+    "SiriKit",
+    "data minimization",
+    "app extension",
+    "random identifier",
+    "TCC permissions"
+  ]
 }
