@@ -1,13 +1,13 @@
 {
-  "section" : "Secure device management overview",
-  "blurb" : "Apple platforms support enterprise device management through a comprehensive MDM framework enabling organizations to enroll, configure, and manage Apple devices at scale across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Managed devices support remote enforcement of passcode complexity policies, content restrictions, Wi-Fi and VPN configuration deployment, app installation and removal, and remote wipe. Three enrollment modalities address different scenarios: User Enrollment for BYOD with cryptographic data separation, Device Enrollment for organization-managed devices, and Automated Device Enrollment for zero-touch supervised provisioning of corporate-owned devices.",
-  "chapter" : "Secure device management",
-  "date" : "2026-10-15",
+  "chapter" : "Developer kit security",
+  "section" : "HomeKit security",
+  "date" : "2026-10-16",
   "keywords" : [
-    "MDM",
-    "User Enrollment",
-    "Device Enrollment",
-    "ADE",
-    "remote wipe"
-  ]
+    "HAP",
+    "Ed25519",
+    "Matter",
+    "SPAKE2+",
+    "CloudKit E2E"
+  ],
+  "blurb" : "HomeKit secures smart home device communication using the Home Accessory Protocol with Ed25519 signatures and Curve25519 ECDH for pairing and session key establishment. The Matter smart home standard uses SPAKE2+ for device commissioning, with ongoing communication secured by AES-128-CCM. Home configuration and automation data is stored in CloudKit using end-to-end encryption, accessible only to the user's enrolled devices. Remote access passes through Apple's infrastructure as ciphertext Apple cannot decrypt. Shared home access uses per-user cryptographic identities, and guest access is scoped to specific accessories via cryptographically bound access-controlled invitations."
 }
