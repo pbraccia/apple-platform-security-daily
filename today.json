@@ -1,13 +1,13 @@
 {
-  "chapter" : "Developer kit security",
-  "section" : "HomeKit security",
-  "date" : "2026-10-16",
+  "chapter" : "Encryption and Data Protection",
+  "date" : "2026-10-17",
+  "section" : "FileVault",
   "keywords" : [
-    "HAP",
-    "Ed25519",
-    "Matter",
-    "SPAKE2+",
-    "CloudKit E2E"
+    "FileVault",
+    "XTS-AES-128",
+    "Secure Enclave",
+    "recovery key",
+    "full-disk encryption"
   ],
-  "blurb" : "HomeKit secures smart home device communication using the Home Accessory Protocol with Ed25519 signatures and Curve25519 ECDH for pairing and session key establishment. The Matter smart home standard uses SPAKE2+ for device commissioning, with ongoing communication secured by AES-128-CCM. Home configuration and automation data is stored in CloudKit using end-to-end encryption, accessible only to the user's enrolled devices. Remote access passes through Apple's infrastructure as ciphertext Apple cannot decrypt. Shared home access uses per-user cryptographic identities, and guest access is scoped to specific accessories via cryptographically bound access-controlled invitations."
+  "blurb" : "FileVault provides full-volume encryption for macOS using XTS-AES-128 with a 256-bit key applied to the entire startup volume including user data and system files. On Macs with Apple silicon, the Secure Enclave manages FileVault keys, providing hardware-rooted protection analogous to iOS Data Protection; the SSD controller performs real-time encryption with no performance penalty. Recovery options include an iCloud-escrowed recovery key, a personal recovery key generated at setup, or an institutional recovery key managed via MDM. Instant wipe is achieved by discarding the volume encryption key, rendering all data cryptographically inaccessible."
 }
