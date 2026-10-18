@@ -1,13 +1,13 @@
 {
-  "chapter" : "Encryption and Data Protection",
-  "date" : "2026-10-17",
-  "section" : "FileVault",
+  "section" : "Device pairing and connection security",
+  "chapter" : "System security",
+  "date" : "2026-10-18",
+  "blurb" : "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
   "keywords" : [
-    "FileVault",
-    "XTS-AES-128",
-    "Secure Enclave",
-    "recovery key",
-    "full-disk encryption"
-  ],
-  "blurb" : "FileVault provides full-volume encryption for macOS using XTS-AES-128 with a 256-bit key applied to the entire startup volume including user data and system files. On Macs with Apple silicon, the Secure Enclave manages FileVault keys, providing hardware-rooted protection analogous to iOS Data Protection; the SSD controller performs real-time encryption with no performance penalty. Recovery options include an iCloud-escrowed recovery key, a personal recovery key generated at setup, or an institutional recovery key managed via MDM. Instant wipe is achieved by discarding the volume encryption key, rendering all data cryptographically inaccessible."
+    "pairing record",
+    "USB Restricted Mode",
+    "RSA-2048",
+    "trust dialog",
+    "accessory"
+  ]
 }
