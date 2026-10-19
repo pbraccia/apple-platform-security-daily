@@ -1,13 +1,13 @@
 {
-  "section" : "Device pairing and connection security",
-  "chapter" : "System security",
-  "date" : "2026-10-18",
-  "blurb" : "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
+  "date" : "2026-10-19",
+  "chapter" : "Hardware security and biometrics",
   "keywords" : [
-    "pairing record",
-    "USB Restricted Mode",
-    "RSA-2048",
-    "trust dialog",
-    "accessory"
-  ]
+    "A-series",
+    "M-series",
+    "sepOS",
+    "IOMMU",
+    "hardware isolation"
+  ],
+  "section" : "Apple SoC security",
+  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material."
 }
