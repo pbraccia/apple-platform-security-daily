@@ -1,13 +1,13 @@
 {
-  "date" : "2026-10-19",
-  "chapter" : "Hardware security and biometrics",
+  "date" : "2026-10-20",
+  "section" : "How Apple protects users' personal data",
+  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
+  "chapter" : "Encryption and Data Protection",
   "keywords" : [
-    "A-series",
-    "M-series",
-    "sepOS",
-    "IOMMU",
-    "hardware isolation"
-  ],
-  "section" : "Apple SoC security",
-  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material."
+    "differential privacy",
+    "on-device processing",
+    "data minimization",
+    "Neural Engine",
+    "end-to-end encryption"
+  ]
 }
