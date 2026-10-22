@@ -1,13 +1,13 @@
 {
-  "chapter" : "Hardware security and biometrics",
-  "section" : "The Secure Enclave",
+  "chapter" : "Network security",
+  "date" : "2026-10-22",
   "keywords" : [
-    "sepOS",
-    "SKP",
-    "UID",
-    "mailbox interface",
-    "key wrapping"
+    "WPA3",
+    "SAE",
+    "PMF",
+    "MAC randomization",
+    "OWE"
   ],
-  "date" : "2026-10-21",
-  "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material."
+  "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods.",
+  "section" : "Wi-Fi security and privacy"
 }
