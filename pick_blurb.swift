@@ -62,10 +62,11 @@ let index = order[dayInCycle]
 var todayEntry: [String: Any] = ["date": todayString]
 for (key, value) in blurbs[index] { todayEntry[key] = value }
 
-// Write to today.json
+// Write to today.json. Sorting the keys keeps the file identical between runs on the
+// same day, otherwise Swift puts them in a random order and git sees a change.
 let outputData = try JSONSerialization.data(
     withJSONObject: todayEntry,
-    options: [.prettyPrinted]
+    options: [.prettyPrinted, .sortedKeys]
 )
 try outputData.write(to: cwd.appendingPathComponent("today.json"))
 

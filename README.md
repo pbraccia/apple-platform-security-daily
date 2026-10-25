@@ -8,11 +8,11 @@ Built for display on [TRMNL](https://usetrmnl.com) devices, but `today.json` is 
 
 ## How it works
 
-Each day at midnight UTC, a Github action runs a Swift script that selects the day's topic. The workflow deterministically selects an entry from [`blurbs.json`](blurbs.json) by mapping a hash of the current date to a blurb index number, then writes its contents to [`today.json`](today.json). One blurb exists for each section in the [Apple Platform Security Guide](https://support.apple.com/guide/security/welcome/web).
+Each day at midnight UTC, a Github action runs a Swift script that selects the day's topic from [`blurbs.json`](blurbs.json) and writes it to [`today.json`](today.json). The script works through every blurb once in a shuffled order, then reshuffles and starts over, so you won't see a repeat until you've seen them all. The order is fixed for any given date, so re-running it on the same day gives the same result. One blurb exists for each section in the [Apple Platform Security Guide](https://support.apple.com/guide/security/welcome/web).
 
 - **[`today.json`](today.json)** – the current day's entry
 - **[`blurbs.json`](blurbs.json)** – the collection of entries covering each section in the guide, including its relevant `chapter`, `section`, and some `keywords`
-- **[`pick_blurb.swift`](pick_blurb.swift)** – Swift script that hashes today's date, maps it to an index, and writes the selected blurb to `today.json`
+- **[`pick_blurb.swift`](pick_blurb.swift)** – Swift script that picks today's blurb from the shuffled rotation and writes it to `today.json`. Pass a date (e.g. `swift pick_blurb.swift 2027-01-01`) to see what that day would show
 - **[`.github/workflows/daily-blurb.yml`](.github/workflows/daily-blurb.yml)** – runs the script daily and commits the output
 
 
