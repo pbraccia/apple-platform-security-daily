@@ -2,7 +2,7 @@
 
 A daily selection of interesting Apple Platform Security topics, in JSON format.
 
-*Based on the [Apple Platform Security Guide](https://support.apple.com/guide/security/welcome/web) (March 2026 edition)*
+*Based on the [Apple Platform Security Guide](https://support.apple.com/guide/security/welcome/web) (August 2026 edition)*
 
 Built for display on [TRMNL](https://usetrmnl.com) devices, but `today.json` and `week.json` are just JSON – you can use them however you'd like.
 
