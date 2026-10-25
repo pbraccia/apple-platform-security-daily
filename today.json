@@ -1,13 +1,13 @@
 {
-  "chapter" : "Developer kit security",
   "keywords" : [
-    "EnergyKit",
-    "home energy",
-    "TCC authorization",
-    "HomeKit infrastructure",
-    "CloudKit E2E"
+    "BLE beacon",
+    "EC P-224",
+    "ECIES",
+    "ephemeral key rotation",
+    "crowd-sourced location"
   ],
-  "date" : "2026-10-24",
-  "section" : "EnergyKit data security",
-  "blurb" : "EnergyKit provides APIs for home energy management devices – including EV chargers, solar panels, and battery storage systems – with a privacy model restricting app access to energy usage data through user-granted permissions. Energy usage data, which can reveal behavioral patterns about occupancy and daily routines, is protected under TCC-style authorization requiring explicit user consent before any app can read home energy measurements. Data from EnergyKit-connected devices flows through HomeKit infrastructure, inheriting its end-to-end encrypted CloudKit storage model, ensuring energy data never transits Apple servers in plaintext."
+  "blurb" : "Find My uses an end-to-end encrypted crowd-sourced network to locate lost devices without revealing location data to Apple or reporting devices. Each lost device broadcasts Bluetooth Low Energy advertisements containing a rotating ephemeral public key derived from a device-specific EC P-224 key pair. Nearby devices encrypt the found device's GPS location using ECIES with the ephemeral public key and upload the encrypted report to Apple. Only the owner's device – holding the matching private key – can decrypt these location reports. Keys rotate every 15 minutes to prevent third-party tracking, ensuring privacy for both the lost device owner and the reporting bystander.",
+  "chapter" : "Services security",
+  "date" : "2026-10-25",
+  "section" : "Find My"
 }
