@@ -1,13 +1,13 @@
 {
-  "blurb" : "At runtime, Apple operating systems enforce multiple layers of OS integrity protection. Kernel Integrity Protection (KIP) on Apple silicon prevents unauthorized modification of kernel code and data at runtime. Code signing is required for all executable code, with AMFI verifying developer signatures and Apple-issued entitlements before allowing code to execute. Address Space Layout Randomization (ASLR), non-executable memory pages, and Pointer Authentication Codes (PAC) defend against memory corruption exploitation. On macOS, System Integrity Protection restricts root-level modification of protected system directories, maintaining OS integrity even if an attacker obtains administrative privileges.",
-  "chapter" : "System security",
+  "blurb" : "Apple Wallet stores supported passes, keys, IDs, and cards using device-bound credentials and authentication policies appropriate to each item. Access credentials can use the Secure Element, NFC, Bluetooth, Ultra Wideband, or device-to-reader protocols, with Face ID, Touch ID, Optic ID, or a passcode required where appropriate. For IDs, Wallet supports selective disclosure and encrypted presentation sessions so a reader can request only needed attributes. Apple designs these flows to reduce unnecessary sharing while keeping credentials difficult to clone or replay.",
+  "chapter" : "Services security",
   "date" : "2026-10-25",
   "keywords" : [
-    "KIP",
-    "PAC",
-    "ASLR",
-    "SIP",
-    "AMFI"
+    "Apple Wallet",
+    "Secure Element",
+    "digital ID",
+    "NFC",
+    "selective disclosure"
   ],
-  "section" : "Operating system integrity"
+  "section" : "Using Apple Wallet"
 }

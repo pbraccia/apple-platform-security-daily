@@ -8,10 +8,10 @@ Built for display on [TRMNL](https://usetrmnl.com) devices, but `today.json` and
 
 ## How it works
 
-Each day just after midnight UTC, a Github action runs a Swift script that selects the day's topic from [`blurbs.json`](blurbs.json) and writes it to [`today.json`](today.json). It also writes [`week.json`](week.json), with the entries for yesterday through two weeks out, so a TRMNL can show the topic for its own local date instead of the UTC one. The script works through every blurb once in a shuffled order, then reshuffles and starts over, so you won't see a repeat until you've seen them all. The order is fixed for any given date, so re-running it on the same day gives the same result. One blurb exists for each section in the [Apple Platform Security Guide](https://support.apple.com/guide/security/welcome/web).
+Each day just after midnight UTC, a Github action runs a Swift script that selects the day's topic from [`blurbs.json`](blurbs.json) and writes it to [`today.json`](today.json). It also writes [`week.json`](week.json), with yesterday plus the seven-day period beginning today. This lets each TRMNL select its local date and provides several days of fallback coverage if the daily workflow is delayed or fails. The script works through every blurb once in a shuffled order, then reshuffles and starts over, so you won't see a repeat until you've seen them all. The order is fixed for any given date, so re-running it on the same day gives the same result. One blurb exists for each section in the [Apple Platform Security Guide](https://support.apple.com/guide/security/welcome/web).
 
 - **[`today.json`](today.json)** – the current day's entry (UTC)
-- **[`week.json`](week.json)** – yesterday through two weeks out, as `{"days": [...]}`. This is what the TRMNL recipe reads
+- **[`week.json`](week.json)** – yesterday plus today and the next six days, as `{"days": [...]}`. This is what the TRMNL recipe reads
 - **[`blurbs.json`](blurbs.json)** – the collection of entries covering each section in the guide, including its relevant `chapter`, `section`, and some `keywords`
 - **[`pick_blurb.swift`](pick_blurb.swift)** – Swift script that picks each day's blurb from the shuffled rotation and writes `today.json` and `week.json`. Pass a date (e.g. `swift pick_blurb.swift 2027-01-01`) to see what that day would show
 - **[`.github/workflows/daily-blurb.yml`](.github/workflows/daily-blurb.yml)** – runs the script daily and commits the output
