@@ -1,13 +1,13 @@
 {
+  "blurb" : "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules.",
+  "section" : "Screen Time security",
+  "chapter" : "Secure device management",
   "keywords" : [
-    "BLE beacon",
-    "EC P-224",
-    "ECIES",
-    "ephemeral key rotation",
-    "crowd-sourced location"
+    "Screen Time passcode",
+    "IDS E2E",
+    "CloudKit E2E",
+    "parental controls",
+    "usage data privacy"
   ],
-  "blurb" : "Find My uses an end-to-end encrypted crowd-sourced network to locate lost devices without revealing location data to Apple or reporting devices. Each lost device broadcasts Bluetooth Low Energy advertisements containing a rotating ephemeral public key derived from a device-specific EC P-224 key pair. Nearby devices encrypt the found device's GPS location using ECIES with the ephemeral public key and upload the encrypted report to Apple. Only the owner's device – holding the matching private key – can decrypt these location reports. Keys rotate every 15 minutes to prevent third-party tracking, ensuring privacy for both the lost device owner and the reporting bystander.",
-  "chapter" : "Services security",
-  "date" : "2026-10-25",
-  "section" : "Find My"
+  "date" : "2026-10-25"
 }
