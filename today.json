@@ -1,13 +1,13 @@
 {
-  "blurb" : "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules.",
-  "chapter" : "Secure device management",
+  "blurb" : "At runtime, Apple operating systems enforce multiple layers of OS integrity protection. Kernel Integrity Protection (KIP) on Apple silicon prevents unauthorized modification of kernel code and data at runtime. Code signing is required for all executable code, with AMFI verifying developer signatures and Apple-issued entitlements before allowing code to execute. Address Space Layout Randomization (ASLR), non-executable memory pages, and Pointer Authentication Codes (PAC) defend against memory corruption exploitation. On macOS, System Integrity Protection restricts root-level modification of protected system directories, maintaining OS integrity even if an attacker obtains administrative privileges.",
+  "chapter" : "System security",
   "date" : "2026-10-25",
   "keywords" : [
-    "Screen Time passcode",
-    "IDS E2E",
-    "CloudKit E2E",
-    "parental controls",
-    "usage data privacy"
+    "KIP",
+    "PAC",
+    "ASLR",
+    "SIP",
+    "AMFI"
   ],
-  "section" : "Screen Time security"
+  "section" : "Operating system integrity"
 }
