@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
-      - name: Write today's blurb to today.json and the next two weeks to week.json
+      - name: Write the daily blurb files
         run: swift pick_blurb.swift
 
       - name: Commit and push

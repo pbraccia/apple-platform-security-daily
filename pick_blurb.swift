@@ -1,8 +1,8 @@
 import Foundation
 
-// Get a string of today's UTC date. Pass a date like 2027-01-01 to see what that day would show.
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
+// Get a string of today's UTC date
+let dateFormatter = ISO8601DateFormatter()
+dateFormatter.formatOptions = [.withFullDate]
 dateFormatter.timeZone = TimeZone(identifier: "UTC")!
 
 var date = Date()
@@ -16,9 +16,8 @@ let cwd = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
 let blurbsData = try Data(contentsOf: cwd.appendingPathComponent("blurbs.json"))
 let blurbs = try JSONSerialization.jsonObject(with: blurbsData) as! [[String: Any]]
 
-// A small random number generator that always gives the same numbers for the same seed.
-// (SplitMix64 - the constants come from the original algorithm.)
-struct SeededGenerator {
+// A small deterministic random number generator (SplitMix64)
+struct SeededGenerator: RandomNumberGenerator {
     var state: UInt64
 
     mutating func next() -> UInt64 {
@@ -30,58 +29,54 @@ struct SeededGenerator {
     }
 }
 
-// Shuffle the blurb indexes the same way every time for a given seed.
-// We do the shuffle ourselves because Swift's built-in one isn't guaranteed
-// to stay the same between Swift versions.
-func shuffledIndexes(seed: Int) -> [Int] {
-    var generator = SeededGenerator(state: UInt64(seed))
-    var indexes = Array(blurbs.indices)
-    for i in stride(from: indexes.count - 1, to: 0, by: -1) {
-        let j = Int(generator.next() % UInt64(i + 1))
-        indexes.swapAt(i, j)
-    }
-    return indexes
+// Shuffle the blurb indexes using the current cycle number
+func shuffledIndexes(forCycle cycle: Int) -> [Int] {
+    var generator = SeededGenerator(state: UInt64(cycle))
+    return Array(blurbs.indices).shuffled(using: &generator)
 }
 
-// Go through every blurb once, in a shuffled order, before starting over with a new order.
-// Each pass is one "cycle" that lasts as many days as there are blurbs.
-func blurbIndex(forDay daysSince1970: Int) -> Int {
-    let cycle = daysSince1970 / blurbs.count
-    let dayInCycle = daysSince1970 % blurbs.count
+var utcCalendar = Calendar(identifier: .gregorian)
+utcCalendar.timeZone = dateFormatter.timeZone
+let epoch = Date(timeIntervalSince1970: 0)
 
-    var order = shuffledIndexes(seed: cycle)
+// Go through every blurb once, in a shuffled order, before starting over with a new order.
+func blurbIndex(forDay day: Int) -> Int {
+    let (cycle, dayInCycle) = day.quotientAndRemainder(dividingBy: blurbs.count)
+    var order = shuffledIndexes(forCycle: cycle)
 
     // Don't let a new cycle start with the same blurb the last one ended on
-    if cycle > 0 && order.first == shuffledIndexes(seed: cycle - 1).last {
+    if cycle > 0 && order.first == shuffledIndexes(forCycle: cycle - 1).last {
         order.swapAt(0, 1)
     }
 
     return order[dayInCycle]
 }
 
-// The blurb for a given day, with its date added
-func entry(forDay daysSince1970: Int) -> [String: Any] {
-    let day = Date(timeIntervalSince1970: Double(daysSince1970) * 24 * 60 * 60)
-    var entry: [String: Any] = ["date": dateFormatter.string(from: day)]
-    for (key, value) in blurbs[blurbIndex(forDay: daysSince1970)] { entry[key] = value }
+func entry(forDay day: Int) -> [String: Any] {
+    let entryDate = utcCalendar.date(byAdding: .day, value: day, to: epoch)!
+    var entry: [String: Any] = ["date": dateFormatter.string(from: entryDate)]
+    for (key, value) in blurbs[blurbIndex(forDay: day)] { entry[key] = value }
     return entry
 }
 
-// Sorting the keys keeps each file identical between runs on the same day,
-// otherwise Swift puts them in a random order and git sees a change.
+// Sorting the keys keeps the files identical between runs on the same day.
 func write(_ object: Any, to fileName: String) throws {
     let data = try JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted, .sortedKeys])
     try data.write(to: cwd.appendingPathComponent(fileName))
 }
 
-let today = Int(date.timeIntervalSince1970 / (24 * 60 * 60))
+let today = utcCalendar.dateComponents(
+    [.day],
+    from: epoch,
+    to: utcCalendar.startOfDay(for: date)
+).day!
 
 // today.json: just today's blurb (UTC)
 try write(entry(forDay: today), to: "today.json")
 
-// week.json: yesterday through the next two weeks, so each TRMNL can show the blurb
-// for its own local date. Yesterday is there for time zones that are still behind UTC.
-let days = (today - 1...today + 14).map { entry(forDay: $0) }
+// Include yesterday for time zones behind UTC and a week starting today so the
+// display keeps working through short delays or failures in the daily workflow.
+let days = (today - 1...today + 6).map { entry(forDay: $0) }
 try write(["days": days], to: "week.json")
 
 let todayIndex = blurbIndex(forDay: today)
