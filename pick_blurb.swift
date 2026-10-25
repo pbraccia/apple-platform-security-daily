@@ -45,29 +45,44 @@ func shuffledIndexes(seed: Int) -> [Int] {
 
 // Go through every blurb once, in a shuffled order, before starting over with a new order.
 // Each pass is one "cycle" that lasts as many days as there are blurbs.
-let daysSince1970 = Int(date.timeIntervalSince1970 / (24 * 60 * 60))
-let cycle = daysSince1970 / blurbs.count
-let dayInCycle = daysSince1970 % blurbs.count
+func blurbIndex(forDay daysSince1970: Int) -> Int {
+    let cycle = daysSince1970 / blurbs.count
+    let dayInCycle = daysSince1970 % blurbs.count
 
-var order = shuffledIndexes(seed: cycle)
+    var order = shuffledIndexes(seed: cycle)
 
-// Don't let a new cycle start with the same blurb the last one ended on
-if cycle > 0 && order.first == shuffledIndexes(seed: cycle - 1).last {
-    order.swapAt(0, 1)
+    // Don't let a new cycle start with the same blurb the last one ended on
+    if cycle > 0 && order.first == shuffledIndexes(seed: cycle - 1).last {
+        order.swapAt(0, 1)
+    }
+
+    return order[dayInCycle]
 }
 
-let index = order[dayInCycle]
+// The blurb for a given day, with its date added
+func entry(forDay daysSince1970: Int) -> [String: Any] {
+    let day = Date(timeIntervalSince1970: Double(daysSince1970) * 24 * 60 * 60)
+    var entry: [String: Any] = ["date": dateFormatter.string(from: day)]
+    for (key, value) in blurbs[blurbIndex(forDay: daysSince1970)] { entry[key] = value }
+    return entry
+}
 
-// Merge the date field into the selected entry
-var todayEntry: [String: Any] = ["date": todayString]
-for (key, value) in blurbs[index] { todayEntry[key] = value }
+// Sorting the keys keeps each file identical between runs on the same day,
+// otherwise Swift puts them in a random order and git sees a change.
+func write(_ object: Any, to fileName: String) throws {
+    let data = try JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted, .sortedKeys])
+    try data.write(to: cwd.appendingPathComponent(fileName))
+}
 
-// Write to today.json. Sorting the keys keeps the file identical between runs on the
-// same day, otherwise Swift puts them in a random order and git sees a change.
-let outputData = try JSONSerialization.data(
-    withJSONObject: todayEntry,
-    options: [.prettyPrinted, .sortedKeys]
-)
-try outputData.write(to: cwd.appendingPathComponent("today.json"))
+let today = Int(date.timeIntervalSince1970 / (24 * 60 * 60))
 
-print("\(todayString) → index \(index): \(blurbs[index]["section"] ?? "unknown")")
+// today.json: just today's blurb (UTC)
+try write(entry(forDay: today), to: "today.json")
+
+// week.json: yesterday through the next two weeks, so each TRMNL can show the blurb
+// for its own local date. Yesterday is there for time zones that are still behind UTC.
+let days = (today - 1...today + 14).map { entry(forDay: $0) }
+try write(["days": days], to: "week.json")
+
+let todayIndex = blurbIndex(forDay: today)
+print("\(todayString) → index \(todayIndex): \(blurbs[todayIndex]["section"] ?? "unknown")")

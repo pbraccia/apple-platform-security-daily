@@ -2,7 +2,7 @@ name: Update Daily Blurb
 
 on:
   schedule:
-    - cron: '0 0 * * *'   # midnight UTC every day
+    - cron: '37 0 * * *'  # just after midnight UTC (runs on the hour get delayed the most)
   workflow_dispatch:        # allow manual trigger from GitHub UI
 
 permissions:
@@ -15,17 +15,17 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Select and write today's blurb to today.json
+      - name: Write today's blurb to today.json and the next two weeks to week.json
         run: swift pick_blurb.swift
 
-      - name: Commit and push today.json
+      - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add today.json
+          git add today.json week.json
           # If it already ran today (e.g. a manual re-run), there's nothing new to commit
           if git diff --cached --quiet; then
-            echo "today.json hasn't changed, skipping commit"
+            echo "Nothing has changed, skipping commit"
             exit 0
           fi
           git commit -m "Update daily blurb: $(date -u +%Y-%m-%d)"
