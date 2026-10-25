@@ -2,8 +2,8 @@
   {
     "chapter": "Apple Platform Security",
     "section": "Intro to Apple platform security",
-    "blurb": "Apple's multi-layered security architecture integrates hardware, firmware, and software protections across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Security begins at the silicon layer with the Secure Enclave and dedicated cryptographic hardware, extending through secure boot chains, runtime process isolation, encrypted data storage, and network transport protection. Each layer is designed so a compromise at one level does not undermine the others, providing defense-in-depth that protects user data whether at rest, in transit, or during processing on any Apple device.",
-    "keywords": ["defense-in-depth", "Secure Enclave", "secure boot", "encryption", "sandboxing"]
+    "blurb": "Apple builds security into its hardware, software, and services so that protections reinforce one another across its platforms. Apple-designed silicon and security hardware help protect the operating system and apps; signed software, sandboxing, encryption, and secure updates protect the device and its data; and services support protected communications, payments, and account access. Many safeguards, including device encryption and biometric authentication, are enabled by default so users and organisations can benefit from them without extensive configuration.",
+    "keywords": ["defense in depth", "Apple silicon", "secure updates", "encryption", "biometrics"]
   },
   {
     "chapter": "Hardware security and biometrics",
@@ -104,8 +104,8 @@
   {
     "chapter": "System security",
     "section": "Overview of additional macOS system security capabilities",
-    "blurb": "macOS provides defense-in-depth through a suite of system security technologies. System Integrity Protection prevents root-privileged modification of protected system directories, the kernel, and kernel extensions. Gatekeeper enforces notarization requirements and signature checking on all software before first launch. XProtect provides on-device signature-based malware detection updated independently of OS releases. The AMFI framework enforces code signing and entitlement checking at the kernel level. System Extensions and DriverKit allow vendor code to run in user space rather than the kernel, limiting the impact of driver bugs on system security.",
-    "keywords": ["SIP", "Gatekeeper", "XProtect", "notarization", "DriverKit"]
+    "blurb": "macOS combines its broad hardware support and flexible computing model with layered platform protections. Signed system volumes, System Integrity Protection, trust caches, secure boot, and code signing help establish and preserve the integrity of system software. Other controls protect peripheral processors, DMA-capable devices, firmware, and kernel extensions, while Rosetta 2 keeps translated Intel code tied to its original signed executable. These protections can be configured for specialised development and enterprise needs without removing the platform's underlying security model.",
+    "keywords": ["macOS", "System Integrity Protection", "trust cache", "secure boot", "Rosetta 2"]
   },
   {
     "chapter": "System security",
@@ -152,8 +152,8 @@
   {
     "chapter": "Encryption and Data Protection",
     "section": "Data Protection",
-    "blurb": "iOS and iPadOS Data Protection assigns every file and keychain item a protection class determining when its class key is available. Class A (Complete) keys are available only when the device is unlocked; Class B (CompleteUnlessOpen) keys remain available for files opened before lock; Class C (CompleteUntilFirstUserAuthentication) keys persist in memory after first unlock until reboot; Class D (NoProtection) keys derive from the UID alone. Each per-file key is encrypted with the applicable class key, itself wrapped with a combination of the hardware UID and user passcode-derived key, maintained in a keybag stored in Effaceable Storage.",
-    "keywords": ["protection class", "class key", "keybag", "Effaceable Storage", "NSFileProtection"]
+    "blurb": "Data Protection encrypts files with a hierarchy of keys and assigns each file a protection class that determines when its contents can be accessed. The Secure Enclave helps protect the class keys with hardware-bound material, while a device passcode contributes to the key hierarchy and can be required after restart or lock. This design lets apps mark sensitive data for stronger protection, supports fast cryptographic erasure, and keeps protected file contents unavailable when the conditions for their class are not met.",
+    "keywords": ["Data Protection", "Secure Enclave", "protection classes", "class keys", "passcode"]
   },
   {
     "chapter": "Encryption and Data Protection",
@@ -194,8 +194,8 @@
   {
     "chapter": "App security",
     "section": "App security in macOS",
-    "blurb": "macOS app security extends the App Sandbox and Hardened Runtime frameworks to protect against malware and privilege escalation. Apps with the App Sandbox entitlement are restricted to a defined container and must declare entitlements to access any external resources. The Hardened Runtime prevents code injection, dynamic library hijacking, and debugging by untrusted tools. Gatekeeper checks notarization status and developer code signatures at first launch, quarantining non-compliant apps. The TCC framework requires user consent for access to sensitive data categories including Documents, Desktop, Contacts, Calendar, Photos, and Microphone.",
-    "keywords": ["App Sandbox", "Hardened Runtime", "Gatekeeper", "TCC", "notarization"]
+    "blurb": "macOS uses code signing, notarisation, Gatekeeper, runtime protections, and malware detection to help users run trusted software while preserving the flexibility of the Mac. In macOS 26.4, Terminal paste protection warns less-experienced users before commands copied from common attack-vector apps are executed, while XProtect can inspect activity resulting from pasted terminal commands and block known malicious sources or behaviour. AppleScript scanning adds another layer against scripts commonly used in social-engineering campaigns.",
+    "keywords": ["Gatekeeper", "notarisation", "XProtect", "Terminal", "AppleScript"]
   },
   {
     "chapter": "App security",
@@ -230,8 +230,8 @@
   {
     "chapter": "Services security",
     "section": "iCloud",
-    "blurb": "iCloud stores user data across service categories with varying encryption models. Standard data categories are encrypted at rest using keys Apple holds for service operation. End-to-end encrypted categories – including Health, iCloud Keychain, and most others under Advanced Data Protection – use keys derived exclusively from device hardware that Apple cannot access. CloudKit end-to-end encryption uses asymmetric keys generated on the user's devices, with public keys registered to Apple's Identity Service and private keys held only in device secure storage. iCloud Backup optionally backs up the Data Protection keybag, escrowed to enable account recovery.",
-    "keywords": ["CloudKit", "end-to-end encryption", "Advanced Data Protection", "keybag escrow", "iCloud Backup"]
+    "blurb": "iCloud protects account data with encryption in transit and at rest, account authentication, and service-specific security designs. Depending on the data type and a user's settings, Apple may hold the keys needed to operate a service or the data may be end-to-end encrypted so only trusted devices can decrypt it. Features such as Advanced Data Protection extend end-to-end encryption to more categories of iCloud data, while recovery, sharing, backup, and web access are designed to balance availability with user control and privacy.",
+    "keywords": ["iCloud", "end-to-end encryption", "Advanced Data Protection", "Apple Account", "recovery"]
   },
   {
     "chapter": "Services security",
@@ -242,14 +242,14 @@
   {
     "chapter": "Services security",
     "section": "Apple Pay",
-    "blurb": "Apple Pay replaces payment card numbers with a Device Account Number (DAN) provisioned directly to the Secure Element – a certified EMVCo/PCI-DSS hardware security module. The real card PAN is never stored on device or transmitted to merchants. Each transaction generates a unique payment cryptogram using the DAN plus a transaction-specific nonce, making each authorization one-time-use and replay-resistant. The NFC controller exclusively routes payment data to and from the Secure Element, never exposing it to the application processor or iOS. Face ID or Touch ID gates every transaction, providing biometric confirmation of user intent before the Secure Element executes the payment.",
-    "keywords": ["Device Account Number", "Secure Element", "payment cryptogram", "NFC controller", "EMVCo"]
+    "blurb": "Apple Pay is designed so a device, merchant, and payment network can complete a transaction without exposing a customer's card number to the merchant. The Secure Element stores payment credentials and creates payment-specific cryptograms, while Face ID, Touch ID, Optic ID, or a passcode authorises use when required. Device account numbers, tokenisation, and transaction-specific security values help limit the value of intercepted payment data. Tap to Pay on iPhone extends this model to contactless acceptance using the iPhone's built-in NFC capabilities.",
+    "keywords": ["Apple Pay", "Secure Element", "tokenisation", "NFC", "Tap to Pay"]
   },
   {
     "chapter": "Services security",
     "section": "Using Apple Wallet",
-    "blurb": "Apple Wallet consolidates payment cards, car keys, transit passes, access credentials, and government-issued IDs into a unified secure framework backed by the Secure Element and Secure Enclave. Car keys conform to the Car Connectivity Consortium standard using ECKA-DH key agreement and Ultra Wideband for passive entry ranging. Digital IDs implement ISO/IEC 18013-5 mobile driving license presentation, allowing selective disclosure of only requested attributes to verifying readers. Each credential type uses hardware-backed cryptographic operations and requires user authentication before presentation, preventing unauthorized use even if the device is compromised.",
-    "keywords": ["car key", "CCC standard", "ISO/IEC 18013-5", "UWB", "selective disclosure"]
+    "blurb": "Apple Wallet stores supported passes, keys, IDs, and cards using device-bound credentials and authentication policies appropriate to each item. Access credentials can use the Secure Element, NFC, Bluetooth, Ultra Wideband, or device-to-reader protocols, with Face ID, Touch ID, Optic ID, or a passcode required where appropriate. For IDs, Wallet supports selective disclosure and encrypted presentation sessions so a reader can request only needed attributes. Apple designs these flows to reduce unnecessary sharing while keeping credentials difficult to clone or replay.",
+    "keywords": ["Apple Wallet", "Secure Element", "digital ID", "NFC", "selective disclosure"]
   },
   {
     "chapter": "Services security",
@@ -424,5 +424,17 @@
     "section": "Screen Time security",
     "blurb": "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules.",
     "keywords": ["Screen Time passcode", "IDS E2E", "CloudKit E2E", "parental controls", "usage data privacy"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "SharePlay security",
+    "blurb": "SharePlay uses FaceTime's end-to-end encrypted infrastructure to protect the data exchanged during a shared activity, so Apple and other parties outside the activity cannot decrypt it. SharePlay signaling uses the push channel established for FaceTime and activity traffic uses its encrypted data channel. When call membership changes, the key material protecting the activity is re-established: new participants cannot decrypt earlier traffic and removed participants cannot decrypt later traffic. Each activity derives its own key and participant identifiers, isolating apps and reducing cross-activity correlation.",
+    "keywords": ["SharePlay", "FaceTime", "end-to-end encryption", "key derivation", "participant privacy"]
+  },
+  {
+    "chapter": "Services security",
+    "section": "Nearby sharing security",
+    "blurb": "Nearby sharing is designed to let people exchange content with nearby devices while limiting who can discover, receive, and access that content. Apple uses authenticated device relationships, user-visible acceptance controls, and encrypted communication channels to help ensure that a transfer reaches its intended recipient. Discovery information is limited to the context needed to establish a sharing session, and the receiving device can require user approval before accepting content. These layers help reduce unwanted transfers and protect shared data while it moves between devices.",
+    "keywords": ["nearby sharing", "device discovery", "encrypted transfer", "user consent", "device authentication"]
   }
 ]
