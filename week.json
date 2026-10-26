@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "FileVault provides full-volume encryption for macOS using XTS-AES-128 with a 256-bit key applied to the entire startup volume including user data and system files. On Macs with Apple silicon, the Secure Enclave manages FileVault keys, providing hardware-rooted protection analogous to iOS Data Protection; the SSD controller performs real-time encryption with no performance penalty. Recovery options include an iCloud-escrowed recovery key, a personal recovery key generated at setup, or an institutional recovery key managed via MDM. Instant wipe is achieved by discarding the volume encryption key, rendering all data cryptographically inaccessible.",
-      "chapter" : "Encryption and Data Protection",
-      "date" : "2026-10-24",
-      "keywords" : [
-        "FileVault",
-        "XTS-AES-128",
-        "Secure Enclave",
-        "recovery key",
-        "full-disk encryption"
-      ],
-      "section" : "FileVault"
-    },
-    {
       "blurb" : "Apple Wallet stores supported passes, keys, IDs, and cards using device-bound credentials and authentication policies appropriate to each item. Access credentials can use the Secure Element, NFC, Bluetooth, Ultra Wideband, or device-to-reader protocols, with Face ID, Touch ID, Optic ID, or a passcode required where appropriate. For IDs, Wallet supports selective disclosure and encrypted presentation sessions so a reader can request only needed attributes. Apple designs these flows to reduce unnecessary sharing while keeping credentials difficult to clone or replay.",
       "chapter" : "Services security",
       "date" : "2026-10-25",
@@ -103,6 +90,19 @@
         "hardware isolation"
       ],
       "section" : "Apple SoC security"
+    },
+    {
+      "blurb" : "Apple platforms use a hardware True Random Number Generator (TRNG) integrated into the Secure Enclave as the root entropy source. The operating system's \/dev\/random kernel interface seeds its internal CSPRNG with TRNG output, combined with additional entropy from interrupt timing, device sensor data, and other environmental sources. This cryptographically secure random output is used for generating encryption keys, authentication protocol nonces, ASLR address space randomization, unique identifiers, and all other cryptographic operations requiring high-quality unpredictable values across every Apple platform.",
+      "chapter" : "System security",
+      "date" : "2026-11-01",
+      "keywords" : [
+        "TRNG",
+        "CSPRNG",
+        "Fortuna",
+        "entropy",
+        "\/dev\/random"
+      ],
+      "section" : "Random number generation"
     }
   ]
 }
