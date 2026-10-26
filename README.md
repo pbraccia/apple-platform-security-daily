@@ -20,6 +20,16 @@ Each day just after midnight UTC, a Github action runs a Swift script that selec
 > [!NOTE]
 > The blurbs in `blurbs.json` are AI-generated using the Apple Platform Security Guide as source material. They should be verified against the [official documentation](https://support.apple.com/guide/security/welcome/web) before being relied upon for security-critical decisions.
 
+## Testing
+
+Pull requests run `Picker checks` on GitHub Actions. The checks compile the Swift picker and verify the date window, source entries, repeatable JSON output, and three complete rotations. Generated files stay in a temporary directory.
+
+Run the same checks locally with Swift and Python 3 installed:
+
+```bash
+python3 tests/test_picker.py
+```
+
 ## Entry format
 
 Each entry in `today.json`, and each item in `week.json`'s `days`, looks like this:
