@@ -22,12 +22,12 @@ Each day just after midnight UTC, a Github action runs a Swift script that selec
 
 ## Testing
 
-Pull requests run `Picker checks` on GitHub Actions. The checks compile the Swift picker and verify the date window, source entries, repeatable JSON output, and three complete rotations. Generated files stay in a temporary directory.
+Pull requests run `Picker checks` on GitHub Actions. This simple Swift smoke test runs the picker and checks that it produces today's entry and the expected eight-day window as valid JSON. Generated files stay in a temporary directory.
 
-Run the same checks locally with Swift and Python 3 installed:
+Run the same check locally with Swift installed:
 
 ```bash
-python3 tests/test_picker.py
+swift tests/test_picker.swift
 ```
 
 ## Entry format

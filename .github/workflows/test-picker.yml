@@ -15,5 +15,5 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - name: Compile and test the picker
-        run: python3 tests/test_picker.py
+      - name: Smoke test the picker
+        run: swift tests/test_picker.swift
