@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Apple Wallet stores supported passes, keys, IDs, and cards using device-bound credentials and authentication policies appropriate to each item. Access credentials can use the Secure Element, NFC, Bluetooth, Ultra Wideband, or device-to-reader protocols, with Face ID, Touch ID, Optic ID, or a passcode required where appropriate. For IDs, Wallet supports selective disclosure and encrypted presentation sessions so a reader can request only needed attributes. Apple designs these flows to reduce unnecessary sharing while keeping credentials difficult to clone or replay.",
-      "chapter" : "Services security",
-      "date" : "2026-10-25",
-      "keywords" : [
-        "Apple Wallet",
-        "Secure Element",
-        "digital ID",
-        "NFC",
-        "selective disclosure"
-      ],
-      "section" : "Using Apple Wallet"
-    },
-    {
       "blurb" : "Apple builds security into its hardware, software, and services so that protections reinforce one another across its platforms. Apple-designed silicon and security hardware help protect the operating system and apps; signed software, sandboxing, encryption, and secure updates protect the device and its data; and services support protected communications, payments, and account access. Many safeguards, including device encryption and biometric authentication, are enabled by default so users and organisations can benefit from them without extensive configuration.",
       "chapter" : "Apple Platform Security",
       "date" : "2026-10-26",
@@ -103,6 +90,19 @@
         "\/dev\/random"
       ],
       "section" : "Random number generation"
+    },
+    {
+      "blurb" : "Apple provides a comprehensive password management ecosystem built into iOS, iPadOS, macOS, and Safari. Automatic Strong Passwords generates cryptographically random credentials stored in iCloud Keychain, synced end-to-end encrypted across devices. Password AutoFill securely retrieves credentials via associated domains verification. Password Monitoring checks stored passwords against known breach databases using a private set intersection protocol with NIST P-256 elliptic curve encryption, so Apple never learns which specific passwords a user has while still detecting compromised credentials. Sign in with Apple provides privacy-preserving OAuth authentication with an optional email relay service.",
+      "chapter" : "Services security",
+      "date" : "2026-11-02",
+      "keywords" : [
+        "iCloud Keychain",
+        "Password AutoFill",
+        "Password Monitoring",
+        "private set intersection",
+        "Sign in with Apple"
+      ],
+      "section" : "Passcode and password management"
     }
   ]
 }
