@@ -1,13 +1,13 @@
 {
-  "blurb" : "Emergency SOS via Satellite allows iPhone 14 and later models to communicate with emergency services when no cellular or Wi-Fi network is available. A custom message compression algorithm transmits emergency text over the limited bandwidth of direct-to-satellite connections. Users are guided to point their device at the satellite using an on-screen pointing interface. Emergency data is routed through relay centers staffed by specialists who contact local emergency services on the user's behalf. The feature is designed as a last-resort emergency service for situations where no other communication infrastructure is reachable.",
-  "chapter" : "System security",
-  "date" : "2026-10-27",
+  "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication.",
+  "chapter" : "App security",
+  "date" : "2026-10-28",
   "keywords" : [
-    "Emergency SOS",
-    "satellite",
-    "message compression",
-    "relay center",
-    "iPhone 14"
+    "sandbox",
+    "entitlements",
+    "code signing",
+    "App Store review",
+    "XNU"
   ],
-  "section" : "Communicating emergency information using satellites"
+  "section" : "App security overview"
 }

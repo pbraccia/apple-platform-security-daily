@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Apple builds security into its hardware, software, and services so that protections reinforce one another across its platforms. Apple-designed silicon and security hardware help protect the operating system and apps; signed software, sandboxing, encryption, and secure updates protect the device and its data; and services support protected communications, payments, and account access. Many safeguards, including device encryption and biometric authentication, are enabled by default so users and organisations can benefit from them without extensive configuration.",
-      "chapter" : "Apple Platform Security",
-      "date" : "2026-10-26",
-      "keywords" : [
-        "defense in depth",
-        "Apple silicon",
-        "secure updates",
-        "encryption",
-        "biometrics"
-      ],
-      "section" : "Intro to Apple platform security"
-    },
-    {
       "blurb" : "Emergency SOS via Satellite allows iPhone 14 and later models to communicate with emergency services when no cellular or Wi-Fi network is available. A custom message compression algorithm transmits emergency text over the limited bandwidth of direct-to-satellite connections. Users are guided to point their device at the satellite using an on-screen pointing interface. Emergency data is routed through relay centers staffed by specialists who contact local emergency services on the user's behalf. The feature is designed as a last-resort emergency service for situations where no other communication infrastructure is reachable.",
       "chapter" : "System security",
       "date" : "2026-10-27",
@@ -103,6 +90,19 @@
         "Sign in with Apple"
       ],
       "section" : "Passcode and password management"
+    },
+    {
+      "blurb" : "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
+      "chapter" : "System security",
+      "date" : "2026-11-03",
+      "keywords" : [
+        "pairing record",
+        "USB Restricted Mode",
+        "RSA-2048",
+        "trust dialog",
+        "accessory"
+      ],
+      "section" : "Device pairing and connection security"
     }
   ]
 }
