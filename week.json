@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Emergency SOS via Satellite allows iPhone 14 and later models to communicate with emergency services when no cellular or Wi-Fi network is available. A custom message compression algorithm transmits emergency text over the limited bandwidth of direct-to-satellite connections. Users are guided to point their device at the satellite using an on-screen pointing interface. Emergency data is routed through relay centers staffed by specialists who contact local emergency services on the user's behalf. The feature is designed as a last-resort emergency service for situations where no other communication infrastructure is reachable.",
-      "chapter" : "System security",
-      "date" : "2026-10-27",
-      "keywords" : [
-        "Emergency SOS",
-        "satellite",
-        "message compression",
-        "relay center",
-        "iPhone 14"
-      ],
-      "section" : "Communicating emergency information using satellites"
-    },
-    {
       "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication.",
       "chapter" : "App security",
       "date" : "2026-10-28",
@@ -103,6 +90,19 @@
         "accessory"
       ],
       "section" : "Device pairing and connection security"
+    },
+    {
+      "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
+      "chapter" : "Encryption and Data Protection",
+      "date" : "2026-11-04",
+      "keywords" : [
+        "differential privacy",
+        "on-device processing",
+        "data minimization",
+        "Neural Engine",
+        "end-to-end encryption"
+      ],
+      "section" : "How Apple protects users' personal data"
     }
   ]
 }

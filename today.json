@@ -1,13 +1,13 @@
 {
-  "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication.",
-  "chapter" : "App security",
-  "date" : "2026-10-28",
+  "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods.",
+  "chapter" : "Network security",
+  "date" : "2026-10-29",
   "keywords" : [
-    "sandbox",
-    "entitlements",
-    "code signing",
-    "App Store review",
-    "XNU"
+    "WPA3",
+    "SAE",
+    "PMF",
+    "MAC randomization",
+    "OWE"
   ],
-  "section" : "App security overview"
+  "section" : "Wi-Fi security and privacy"
 }
