@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "App security on Apple platforms is built on mandatory code signing, sandboxing, and entitlement-based privilege control. Every app must be signed with a valid certificate, and the XNU kernel enforces code signing at launch and during execution. Apps are confined to a sandbox restricting access to system resources, other apps' data, and hardware interfaces – access is granted only through explicitly declared entitlements reviewed during App Store submission. The App Store review process provides automated and human inspection to detect policy violations, malware, and privacy abuses before apps reach users, supplemented by ongoing notarization checks post-publication.",
-      "chapter" : "App security",
-      "date" : "2026-10-28",
-      "keywords" : [
-        "sandbox",
-        "entitlements",
-        "code signing",
-        "App Store review",
-        "XNU"
-      ],
-      "section" : "App security overview"
-    },
-    {
       "blurb" : "Apple devices support WPA3-Personal with SAE handshake (resistant to offline dictionary attacks) and WPA3-Enterprise with optional 192-bit mode for high-security environments. Protected Management Frames (802.11w) are mandatory for WPA3, preventing deauthentication and disassociation frame injection attacks. Opportunistic Wireless Encryption protects traffic on open networks without requiring a password. iOS and iPadOS use per-network randomized MAC addresses by default, replacing hardware MAC identifiers with rotating private addresses to prevent location tracking and network fingerprinting of users across different Wi-Fi networks and over extended time periods.",
       "chapter" : "Network security",
       "date" : "2026-10-29",
@@ -103,6 +90,19 @@
         "end-to-end encryption"
       ],
       "section" : "How Apple protects users' personal data"
+    },
+    {
+      "blurb" : "Ultra Wideband radio on Apple devices enables centimeter-precise spatial ranging for passive car key entry, Find My precision finding, and directional AirDrop. UWB ranging sessions are protected by session keys derived from a prior Bluetooth pairing exchange, ensuring only previously authenticated devices can establish ranging sessions. The short range of UWB combined with physical-layer time-of-flight measurement makes relay attacks significantly harder than with Bluetooth or NFC. Car key UWB ranging uses enhanced ranging calibration data and cryptographic binding of measurements to prevent spoofing of distance values by a relay adversary.",
+      "chapter" : "Network security",
+      "date" : "2026-11-05",
+      "keywords" : [
+        "UWB",
+        "time-of-flight",
+        "ranging session key",
+        "relay attack",
+        "car key"
+      ],
+      "section" : "Ultra Wideband security in iOS"
     }
   ]
 }
