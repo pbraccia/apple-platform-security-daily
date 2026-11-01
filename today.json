@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple designs its A-series and M-series SoCs with integrated security subsystems including dedicated hardware for encryption, key storage, and secure boot. Each SoC contains a hardware-verified Boot ROM, a hardware AES engine accelerating data encryption at line speed, and the Secure Enclave processor running its own trusted OS (sepOS). The chip architecture enforces strong isolation between the application processor and security-critical components via hardware memory controllers and IOMMU, preventing software – including operating system and kernel-level code – from directly accessing protected hardware regions or cryptographic key material.",
-  "chapter" : "Hardware security and biometrics",
-  "date" : "2026-10-31",
+  "blurb" : "Apple platforms use a hardware True Random Number Generator (TRNG) integrated into the Secure Enclave as the root entropy source. The operating system's \/dev\/random kernel interface seeds its internal CSPRNG with TRNG output, combined with additional entropy from interrupt timing, device sensor data, and other environmental sources. This cryptographically secure random output is used for generating encryption keys, authentication protocol nonces, ASLR address space randomization, unique identifiers, and all other cryptographic operations requiring high-quality unpredictable values across every Apple platform.",
+  "chapter" : "System security",
+  "date" : "2026-11-01",
   "keywords" : [
-    "A-series",
-    "M-series",
-    "sepOS",
-    "IOMMU",
-    "hardware isolation"
+    "TRNG",
+    "CSPRNG",
+    "Fortuna",
+    "entropy",
+    "\/dev\/random"
   ],
-  "section" : "Apple SoC security"
+  "section" : "Random number generation"
 }
