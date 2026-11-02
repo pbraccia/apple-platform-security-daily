@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple platforms use a hardware True Random Number Generator (TRNG) integrated into the Secure Enclave as the root entropy source. The operating system's \/dev\/random kernel interface seeds its internal CSPRNG with TRNG output, combined with additional entropy from interrupt timing, device sensor data, and other environmental sources. This cryptographically secure random output is used for generating encryption keys, authentication protocol nonces, ASLR address space randomization, unique identifiers, and all other cryptographic operations requiring high-quality unpredictable values across every Apple platform.",
-  "chapter" : "System security",
-  "date" : "2026-11-01",
+  "blurb" : "Apple provides a comprehensive password management ecosystem built into iOS, iPadOS, macOS, and Safari. Automatic Strong Passwords generates cryptographically random credentials stored in iCloud Keychain, synced end-to-end encrypted across devices. Password AutoFill securely retrieves credentials via associated domains verification. Password Monitoring checks stored passwords against known breach databases using a private set intersection protocol with NIST P-256 elliptic curve encryption, so Apple never learns which specific passwords a user has while still detecting compromised credentials. Sign in with Apple provides privacy-preserving OAuth authentication with an optional email relay service.",
+  "chapter" : "Services security",
+  "date" : "2026-11-02",
   "keywords" : [
-    "TRNG",
-    "CSPRNG",
-    "Fortuna",
-    "entropy",
-    "\/dev\/random"
+    "iCloud Keychain",
+    "Password AutoFill",
+    "Password Monitoring",
+    "private set intersection",
+    "Sign in with Apple"
   ],
-  "section" : "Random number generation"
+  "section" : "Passcode and password management"
 }
