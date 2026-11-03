@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple provides a comprehensive password management ecosystem built into iOS, iPadOS, macOS, and Safari. Automatic Strong Passwords generates cryptographically random credentials stored in iCloud Keychain, synced end-to-end encrypted across devices. Password AutoFill securely retrieves credentials via associated domains verification. Password Monitoring checks stored passwords against known breach databases using a private set intersection protocol with NIST P-256 elliptic curve encryption, so Apple never learns which specific passwords a user has while still detecting compromised credentials. Sign in with Apple provides privacy-preserving OAuth authentication with an optional email relay service.",
-  "chapter" : "Services security",
-  "date" : "2026-11-02",
+  "blurb" : "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
+  "chapter" : "System security",
+  "date" : "2026-11-03",
   "keywords" : [
-    "iCloud Keychain",
-    "Password AutoFill",
-    "Password Monitoring",
-    "private set intersection",
-    "Sign in with Apple"
+    "pairing record",
+    "USB Restricted Mode",
+    "RSA-2048",
+    "trust dialog",
+    "accessory"
   ],
-  "section" : "Passcode and password management"
+  "section" : "Device pairing and connection security"
 }
