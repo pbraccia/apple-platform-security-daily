@@ -1,13 +1,13 @@
 {
-  "blurb" : "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
-  "chapter" : "System security",
-  "date" : "2026-11-03",
+  "blurb" : "Apple applies data minimization and privacy-by-design principles across its platforms to protect users' personal data. Sensitive processing – such as face recognition in Photos, health trend analysis, and on-device Siri – is performed locally using the Neural Engine rather than uploaded to servers. When aggregate statistics must be collected, Apple uses differential privacy techniques injecting calibrated mathematical noise to prevent identification of individuals. Data in transit is protected by TLS; data at rest is encrypted with keys Apple does not hold for end-to-end encrypted services, ensuring Apple cannot access personal content even under legal compulsion.",
+  "chapter" : "Encryption and Data Protection",
+  "date" : "2026-11-04",
   "keywords" : [
-    "pairing record",
-    "USB Restricted Mode",
-    "RSA-2048",
-    "trust dialog",
-    "accessory"
+    "differential privacy",
+    "on-device processing",
+    "data minimization",
+    "Neural Engine",
+    "end-to-end encryption"
   ],
-  "section" : "Device pairing and connection security"
+  "section" : "How Apple protects users' personal data"
 }

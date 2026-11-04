@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Apple provides a comprehensive password management ecosystem built into iOS, iPadOS, macOS, and Safari. Automatic Strong Passwords generates cryptographically random credentials stored in iCloud Keychain, synced end-to-end encrypted across devices. Password AutoFill securely retrieves credentials via associated domains verification. Password Monitoring checks stored passwords against known breach databases using a private set intersection protocol with NIST P-256 elliptic curve encryption, so Apple never learns which specific passwords a user has while still detecting compromised credentials. Sign in with Apple provides privacy-preserving OAuth authentication with an optional email relay service.",
-      "chapter" : "Services security",
-      "date" : "2026-11-02",
-      "keywords" : [
-        "iCloud Keychain",
-        "Password AutoFill",
-        "Password Monitoring",
-        "private set intersection",
-        "Sign in with Apple"
-      ],
-      "section" : "Passcode and password management"
-    },
-    {
       "blurb" : "Device pairing with Mac or PC via USB requires explicit user trust confirmation on the iOS or iPadOS device, after which a 2048-bit RSA pairing record is exchanged and stored. This record enables the host to initiate backup, sync, and diagnostic connections. Accessories connecting via Lightning or USB-C have restricted data access until the device has been unlocked at least once. USB Restricted Mode limits USB accessory communication with the device if it has been more than an hour since the device was last unlocked, protecting against forensic tools and exploit devices connected to a locked iPhone.",
       "chapter" : "System security",
       "date" : "2026-11-03",
@@ -103,6 +90,19 @@
         "SSV"
       ],
       "section" : "Background Security Improvements"
+    },
+    {
+      "blurb" : "Apple's Encryption and Data Protection framework provides hardware-accelerated AES-256 encryption for all data stored on devices. Every file on NAND storage is encrypted using a unique per-file key, which is itself wrapped by a class key derived from the device UID and – for sensitive classes – the user's passcode. This key hierarchy, maintained in keybags, enables instantaneous crypto-erase by discarding the media key, and protects data when the device is locked by making class keys unavailable without passcode or biometric authentication. The Secure Enclave manages the entire key hierarchy, ensuring the OS and apps cannot access raw cryptographic material.",
+      "chapter" : "Encryption and Data Protection",
+      "date" : "2026-11-10",
+      "keywords" : [
+        "per-file key",
+        "class key",
+        "keybag",
+        "AES-256",
+        "crypto-erase"
+      ],
+      "section" : "Encryption and Data Protection overview"
     }
   ]
 }
