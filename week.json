@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Ultra Wideband radio on Apple devices enables centimeter-precise spatial ranging for passive car key entry, Find My precision finding, and directional AirDrop. UWB ranging sessions are protected by session keys derived from a prior Bluetooth pairing exchange, ensuring only previously authenticated devices can establish ranging sessions. The short range of UWB combined with physical-layer time-of-flight measurement makes relay attacks significantly harder than with Bluetooth or NFC. Car key UWB ranging uses enhanced ranging calibration data and cryptographic binding of measurements to prevent spoofing of distance values by a relay adversary.",
-      "chapter" : "Network security",
-      "date" : "2026-11-05",
-      "keywords" : [
-        "UWB",
-        "time-of-flight",
-        "ranging session key",
-        "relay attack",
-        "car key"
-      ],
-      "section" : "Ultra Wideband security in iOS"
-    },
-    {
       "blurb" : "Apple Configurator for Mac enables administrators to configure, supervise, and restore iPad, iPhone, and Apple TV devices in bulk over USB without internet access on the target devices. For Mac and Apple Vision Pro restore operations, the required OS update files are downloaded from Apple servers over TLS and installed directly, with the file deleted after use to prevent unauthorized re-use. Devices enrolled via Apple Configurator can be added to Apple School Manager or Apple Business Manager, gaining supervised status and mandatory device management enrollment while still enforcing Activation Lock requirements that apply during normal nontethered activation.",
       "chapter" : "Secure device management",
       "date" : "2026-11-06",
@@ -103,6 +90,19 @@
         "contact verification"
       ],
       "section" : "Wi-Fi password sharing security"
+    },
+    {
+      "blurb" : "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules.",
+      "chapter" : "Secure device management",
+      "date" : "2026-11-13",
+      "keywords" : [
+        "Screen Time passcode",
+        "IDS E2E",
+        "CloudKit E2E",
+        "parental controls",
+        "usage data privacy"
+      ],
+      "section" : "Screen Time security"
     }
   ]
 }
