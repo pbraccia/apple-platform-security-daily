@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Background Security Improvements enable Apple to ship rapid security remediations – including XProtect signature updates, runtime mitigations, and new security policies – independently of full OS releases. The mechanism uses cryptographically signed disk images called cryptexes (Cryptographic Extensions), which are verified and mounted at boot alongside the main system volume. Cryptexes carry their own Sealed System Volume hash tree guarantees and are delivered via standard software update infrastructure without requiring a full OS upgrade, allowing Apple to address newly discovered vulnerabilities with minimal user friction.",
-      "chapter" : "System security",
-      "date" : "2026-11-09",
-      "keywords" : [
-        "cryptex",
-        "XProtect",
-        "rapid remediation",
-        "signed disk image",
-        "SSV"
-      ],
-      "section" : "Background Security Improvements"
-    },
-    {
       "blurb" : "Apple's Encryption and Data Protection framework provides hardware-accelerated AES-256 encryption for all data stored on devices. Every file on NAND storage is encrypted using a unique per-file key, which is itself wrapped by a class key derived from the device UID and – for sensitive classes – the user's passcode. This key hierarchy, maintained in keybags, enables instantaneous crypto-erase by discarding the media key, and protects data when the device is locked by making class keys unavailable without passcode or biometric authentication. The Secure Enclave manages the entire key hierarchy, ensuring the OS and apps cannot access raw cryptographic material.",
       "chapter" : "Encryption and Data Protection",
       "date" : "2026-11-10",
@@ -103,6 +90,19 @@
         "iOS research"
       ],
       "section" : "Apple Security Research Device"
+    },
+    {
+      "blurb" : "Apple platforms support enterprise device management through a comprehensive MDM framework enabling organizations to enroll, configure, and manage Apple devices at scale across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Managed devices support remote enforcement of passcode complexity policies, content restrictions, Wi-Fi and VPN configuration deployment, app installation and removal, and remote wipe. Three enrollment modalities address different scenarios: User Enrollment for BYOD with cryptographic data separation, Device Enrollment for organization-managed devices, and Automated Device Enrollment for zero-touch supervised provisioning of corporate-owned devices.",
+      "chapter" : "Secure device management",
+      "date" : "2026-11-17",
+      "keywords" : [
+        "MDM",
+        "User Enrollment",
+        "Device Enrollment",
+        "ADE",
+        "remote wipe"
+      ],
+      "section" : "Secure device management overview"
     }
   ]
 }
