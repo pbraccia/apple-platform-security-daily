@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple's secure boot chain establishes a cryptographic chain of trust from immutable Boot ROM through each subsequent boot stage. On Apple silicon Macs, the Boot ROM loads and verifies the Low-Level Bootloader (LLB), which loads iBoot; on A-series devices Boot ROM loads iBoot directly. Each stage uses Apple's public key to verify a digital signature before passing control to the next. The LocalPolicy mechanism on Mac with Apple silicon encodes the user's chosen security configuration into a cryptographically signed structure managed by the Secure Enclave, ensuring only authorized operating systems and boot configurations can run.",
-  "chapter" : "System security",
-  "date" : "2026-11-11",
+  "blurb" : "Wi-Fi password sharing securely transmits a Wi-Fi network password from one Apple device to another belonging to a contact in the user's address book. The process uses Bluetooth Low Energy for proximity detection and the Apple Identity Service to verify that the requesting device belongs to a known contact. The password is transmitted through an end-to-end encrypted iCloud channel between the two devices, not over the local Wi-Fi network or Bluetooth radio. No Wi-Fi password data is processed by Apple servers – the transaction is peer-to-peer through iCloud's end-to-end encrypted infrastructure, verified via IDS key exchange.",
+  "chapter" : "Network security",
+  "date" : "2026-11-12",
   "keywords" : [
-    "Boot ROM",
-    "iBoot",
-    "LocalPolicy",
-    "LLB",
-    "chain of trust"
+    "IDS verification",
+    "BLE proximity",
+    "iCloud E2E",
+    "password sharing",
+    "contact verification"
   ],
-  "section" : "Secure boot"
+  "section" : "Wi-Fi password sharing security"
 }
