@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Wi-Fi password sharing securely transmits a Wi-Fi network password from one Apple device to another belonging to a contact in the user's address book. The process uses Bluetooth Low Energy for proximity detection and the Apple Identity Service to verify that the requesting device belongs to a known contact. The password is transmitted through an end-to-end encrypted iCloud channel between the two devices, not over the local Wi-Fi network or Bluetooth radio. No Wi-Fi password data is processed by Apple servers – the transaction is peer-to-peer through iCloud's end-to-end encrypted infrastructure, verified via IDS key exchange.",
-      "chapter" : "Network security",
-      "date" : "2026-11-12",
-      "keywords" : [
-        "IDS verification",
-        "BLE proximity",
-        "iCloud E2E",
-        "password sharing",
-        "contact verification"
-      ],
-      "section" : "Wi-Fi password sharing security"
-    },
-    {
       "blurb" : "Screen Time provides parental controls and self-managed usage limits with a security model protecting settings from unauthorized modification and usage data from third-party exposure. Screen Time settings are protected by a separate passcode, preventing children from modifying limits. On devices with iOS 13 or later, usage data synchronizes across a family's devices using the Apple Identity Service end-to-end encrypted protocol, with data transiently stored on IDS servers only until read by the destination device. For multi-device iCloud syncing of personal Screen Time, CloudKit end-to-end encryption ensures Apple cannot read usage patterns, limit configurations, or Downtime schedules.",
       "chapter" : "Secure device management",
       "date" : "2026-11-13",
@@ -103,6 +90,19 @@
         "entitlements"
       ],
       "section" : "System security overview"
+    },
+    {
+      "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
+      "chapter" : "Developer kit security",
+      "date" : "2026-11-20",
+      "keywords" : [
+        "DriverKit",
+        "user-space driver",
+        "kext replacement",
+        "IOKit",
+        "notarization"
+      ],
+      "section" : "DriverKit security"
     }
   ]
 }
