@@ -1,13 +1,13 @@
 {
-  "blurb" : "App extensions enable third-party functionality within system contexts – keyboards, share sheets, content blockers, widgets – while maintaining strict security isolation. Each extension runs as a separate process from both its containing app and the host app, communicating exclusively via XPC with serialized data. Extensions receive a separate, scoped sandbox and entitlement set, limiting data access compared to a full application. System Extensions on macOS allow vendors to extend kernel functionality – such as network filtering and endpoint security – in user space, eliminating the risk profile of traditional kernel extensions and confining any bugs to a user-space process.",
-  "chapter" : "App security",
-  "date" : "2026-11-15",
+  "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
+  "chapter" : "System security",
+  "date" : "2026-11-16",
   "keywords" : [
-    "app extension",
-    "XPC",
-    "sandboxing",
-    "System Extension",
-    "out-of-process"
+    "SRD",
+    "security research",
+    "responsible disclosure",
+    "SSH",
+    "iOS research"
   ],
-  "section" : "Supporting extensions"
+  "section" : "Apple Security Research Device"
 }
