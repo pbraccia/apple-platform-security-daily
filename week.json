@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "App extensions enable third-party functionality within system contexts – keyboards, share sheets, content blockers, widgets – while maintaining strict security isolation. Each extension runs as a separate process from both its containing app and the host app, communicating exclusively via XPC with serialized data. Extensions receive a separate, scoped sandbox and entitlement set, limiting data access compared to a full application. System Extensions on macOS allow vendors to extend kernel functionality – such as network filtering and endpoint security – in user space, eliminating the risk profile of traditional kernel extensions and confining any bugs to a user-space process.",
-      "chapter" : "App security",
-      "date" : "2026-11-15",
-      "keywords" : [
-        "app extension",
-        "XPC",
-        "sandboxing",
-        "System Extension",
-        "out-of-process"
-      ],
-      "section" : "Supporting extensions"
-    },
-    {
       "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
       "chapter" : "System security",
       "date" : "2026-11-16",
@@ -103,6 +90,19 @@
         "TCC permissions"
       ],
       "section" : "SiriKit security"
+    },
+    {
+      "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
+      "chapter" : "Hardware security and biometrics",
+      "date" : "2026-11-23",
+      "keywords" : [
+        "hardware disconnect",
+        "microphone privacy",
+        "physical isolation",
+        "lid switch",
+        "side-channel"
+      ],
+      "section" : "Hardware microphone disconnect"
     }
   ]
 }

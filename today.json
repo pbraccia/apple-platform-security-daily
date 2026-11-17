@@ -1,13 +1,13 @@
 {
-  "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
-  "chapter" : "System security",
-  "date" : "2026-11-16",
+  "blurb" : "Apple platforms support enterprise device management through a comprehensive MDM framework enabling organizations to enroll, configure, and manage Apple devices at scale across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Managed devices support remote enforcement of passcode complexity policies, content restrictions, Wi-Fi and VPN configuration deployment, app installation and removal, and remote wipe. Three enrollment modalities address different scenarios: User Enrollment for BYOD with cryptographic data separation, Device Enrollment for organization-managed devices, and Automated Device Enrollment for zero-touch supervised provisioning of corporate-owned devices.",
+  "chapter" : "Secure device management",
+  "date" : "2026-11-17",
   "keywords" : [
-    "SRD",
-    "security research",
-    "responsible disclosure",
-    "SSH",
-    "iOS research"
+    "MDM",
+    "User Enrollment",
+    "Device Enrollment",
+    "ADE",
+    "remote wipe"
   ],
-  "section" : "Apple Security Research Device"
+  "section" : "Secure device management overview"
 }
