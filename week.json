@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "The Apple Security Research Device (SRD) is a specialized iPhone hardware platform made available to approved security researchers under a formal program. The SRD enables deeper security investigation into iOS than is possible on production devices, providing SSH access, a root shell, and customizable security policies for targeted research. Despite these research-oriented capabilities, the SRD still runs a signed OS and maintains many production device protections. Researchers accepted into the program must agree to responsible disclosure terms and use the device exclusively for security research activities consistent with the program agreement.",
-      "chapter" : "System security",
-      "date" : "2026-11-16",
-      "keywords" : [
-        "SRD",
-        "security research",
-        "responsible disclosure",
-        "SSH",
-        "iOS research"
-      ],
-      "section" : "Apple Security Research Device"
-    },
-    {
       "blurb" : "Apple platforms support enterprise device management through a comprehensive MDM framework enabling organizations to enroll, configure, and manage Apple devices at scale across iOS, iPadOS, macOS, tvOS, visionOS, and watchOS. Managed devices support remote enforcement of passcode complexity policies, content restrictions, Wi-Fi and VPN configuration deployment, app installation and removal, and remote wipe. Three enrollment modalities address different scenarios: User Enrollment for BYOD with cryptographic data separation, Device Enrollment for organization-managed devices, and Automated Device Enrollment for zero-touch supervised provisioning of corporate-owned devices.",
       "chapter" : "Secure device management",
       "date" : "2026-11-17",
@@ -103,6 +90,19 @@
         "side-channel"
       ],
       "section" : "Hardware microphone disconnect"
+    },
+    {
+      "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
+      "chapter" : "Network security",
+      "date" : "2026-11-24",
+      "keywords" : [
+        "ECDH P-256",
+        "AES-CCM",
+        "LE Secure Connections",
+        "BLE address randomization",
+        "CTKD"
+      ],
+      "section" : "Bluetooth security"
     }
   ]
 }
