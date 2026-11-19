@@ -1,13 +1,13 @@
 {
-  "blurb" : "macOS uses code signing, notarisation, Gatekeeper, runtime protections, and malware detection to help users run trusted software while preserving the flexibility of the Mac. In macOS 26.4, Terminal paste protection warns less-experienced users before commands copied from common attack-vector apps are executed, while XProtect can inspect activity resulting from pasted terminal commands and block known malicious sources or behaviour. AppleScript scanning adds another layer against scripts commonly used in social-engineering campaigns.",
-  "chapter" : "App security",
-  "date" : "2026-11-18",
+  "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
+  "chapter" : "System security",
+  "date" : "2026-11-19",
   "keywords" : [
+    "secure boot",
+    "SIP",
     "Gatekeeper",
-    "notarisation",
     "XProtect",
-    "Terminal",
-    "AppleScript"
+    "entitlements"
   ],
-  "section" : "App security in macOS"
+  "section" : "System security overview"
 }
