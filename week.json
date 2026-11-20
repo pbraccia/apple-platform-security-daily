@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "macOS uses code signing, notarisation, Gatekeeper, runtime protections, and malware detection to help users run trusted software while preserving the flexibility of the Mac. In macOS 26.4, Terminal paste protection warns less-experienced users before commands copied from common attack-vector apps are executed, while XProtect can inspect activity resulting from pasted terminal commands and block known malicious sources or behaviour. AppleScript scanning adds another layer against scripts commonly used in social-engineering campaigns.",
-      "chapter" : "App security",
-      "date" : "2026-11-18",
-      "keywords" : [
-        "Gatekeeper",
-        "notarisation",
-        "XProtect",
-        "Terminal",
-        "AppleScript"
-      ],
-      "section" : "App security in macOS"
-    },
-    {
       "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
       "chapter" : "System security",
       "date" : "2026-11-19",
@@ -103,6 +90,19 @@
         "Tap to Pay"
       ],
       "section" : "Apple Pay"
+    },
+    {
+      "blurb" : "The Apple Account is secured by two-factor authentication using trusted devices and 6-digit time-limited codes. Authentication generates a session token bound to the specific device; account recovery requires knowledge of the account password plus possession of a trusted device or trusted phone number. Managed Apple Accounts, provisioned through Apple School Manager or Apple Business Manager, extend this model to institutional deployments with federated identity provider integration via SAML and SCIM for automated provisioning. Managed accounts are governed by the organization's IdP policies and support supervised enrollment for enterprise and educational device management.",
+      "chapter" : "Services security",
+      "date" : "2026-11-26",
+      "keywords" : [
+        "2FA",
+        "Managed Apple Account",
+        "SAML",
+        "SCIM",
+        "federated identity"
+      ],
+      "section" : "Apple Account and Managed Apple Account"
     }
   ]
 }
