@@ -1,13 +1,13 @@
 {
-  "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
-  "chapter" : "Developer kit security",
-  "date" : "2026-11-20",
+  "blurb" : "SharePlay uses FaceTime's end-to-end encrypted infrastructure to protect the data exchanged during a shared activity, so Apple and other parties outside the activity cannot decrypt it. SharePlay signaling uses the push channel established for FaceTime and activity traffic uses its encrypted data channel. When call membership changes, the key material protecting the activity is re-established: new participants cannot decrypt earlier traffic and removed participants cannot decrypt later traffic. Each activity derives its own key and participant identifiers, isolating apps and reducing cross-activity correlation.",
+  "chapter" : "Services security",
+  "date" : "2026-11-21",
   "keywords" : [
-    "DriverKit",
-    "user-space driver",
-    "kext replacement",
-    "IOKit",
-    "notarization"
+    "SharePlay",
+    "FaceTime",
+    "end-to-end encryption",
+    "key derivation",
+    "participant privacy"
   ],
-  "section" : "DriverKit security"
+  "section" : "SharePlay security"
 }

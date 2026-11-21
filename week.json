@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "System security encompasses the protections Apple applies from the initial power-on boot sequence through ongoing runtime integrity enforcement. The layered approach includes a hardware-rooted boot chain (Boot ROM → LLB → iBoot → kernel), cryptographic verification of every software component before execution, runtime kernel integrity checks, and process isolation via sandboxing and entitlement-based access control. On macOS, additional layers include System Integrity Protection, Gatekeeper, and XProtect malware detection, ensuring only Apple-authorized and user-approved software executes and that modifications to system software are immediately detectable.",
-      "chapter" : "System security",
-      "date" : "2026-11-19",
-      "keywords" : [
-        "secure boot",
-        "SIP",
-        "Gatekeeper",
-        "XProtect",
-        "entitlements"
-      ],
-      "section" : "System security overview"
-    },
-    {
       "blurb" : "DriverKit enables hardware driver development as sandboxed user-space processes on macOS, replacing the security-critical practice of loading kernel extensions. DriverKit drivers run in their own restricted process with dedicated entitlements, accessing hardware through a controlled subset of IOKit APIs rather than directly in kernel address space. If a DriverKit driver contains a bug or is exploited, the impact is confined to the driver's user-space process and cannot directly corrupt kernel memory. Apple requires notarization and explicit entitlement approval for DriverKit drivers before enterprise or public distribution, providing a vetting layer for kernel-adjacent code.",
       "chapter" : "Developer kit security",
       "date" : "2026-11-20",
@@ -103,6 +90,19 @@
         "federated identity"
       ],
       "section" : "Apple Account and Managed Apple Account"
+    },
+    {
+      "blurb" : "WidgetKit enables app widgets and Apple Watch complications that may display sensitive information in prominent locations including the Lock Screen and Always On display. Developers apply Data Protection entitlements to widget extensions – using NSFileProtectionComplete or NSFileProtectionCompleteUnlessOpen – causing WidgetKit to render placeholder content instead of actual data when the device is locked. Users can independently configure Lock Screen widget visibility in Settings. On Apple Watch, Hide Sensitive Complications globally redacts complication data during Always On mode. Developers must implement the redacted(reason:) callback to supply appropriate placeholder views for privacy-sensitive widget content.",
+      "chapter" : "Developer kit security",
+      "date" : "2026-11-27",
+      "keywords" : [
+        "NSFileProtectionComplete",
+        "Lock Screen widget",
+        "Always On",
+        "redacted callback",
+        "Data Protection entitlement"
+      ],
+      "section" : "WidgetKit security"
     }
   ]
 }
