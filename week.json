@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "SharePlay uses FaceTime's end-to-end encrypted infrastructure to protect the data exchanged during a shared activity, so Apple and other parties outside the activity cannot decrypt it. SharePlay signaling uses the push channel established for FaceTime and activity traffic uses its encrypted data channel. When call membership changes, the key material protecting the activity is re-established: new participants cannot decrypt earlier traffic and removed participants cannot decrypt later traffic. Each activity derives its own key and participant identifiers, isolating apps and reducing cross-activity correlation.",
-      "chapter" : "Services security",
-      "date" : "2026-11-21",
-      "keywords" : [
-        "SharePlay",
-        "FaceTime",
-        "end-to-end encryption",
-        "key derivation",
-        "participant privacy"
-      ],
-      "section" : "SharePlay security"
-    },
-    {
       "blurb" : "SiriKit integrates third-party apps into Siri using the app extension model, with strict data minimization for user privacy. Before passing personal data to an app's SiriKit extension, Siri checks the app's user-granted permission settings: if the app lacks Contacts access, Siri passes only literal text for relationship references rather than resolved contact data. Custom vocabulary submitted by SiriKit-enabled apps is associated with a random identifier rather than the user's identity, and is purged when the app is deleted or Siri integration is disabled. Only the minimal data needed for the specific user intent is forwarded to the extension process.",
       "chapter" : "Developer kit security",
       "date" : "2026-11-22",
@@ -103,6 +90,19 @@
         "MDM provisioning"
       ],
       "section" : "VPN security"
+    },
+    {
+      "blurb" : "iCloud protects account data with encryption in transit and at rest, account authentication, and service-specific security designs. Depending on the data type and a user's settings, Apple may hold the keys needed to operate a service or the data may be end-to-end encrypted so only trusted devices can decrypt it. Features such as Advanced Data Protection extend end-to-end encryption to more categories of iCloud data, while recovery, sharing, backup, and web access are designed to balance availability with user control and privacy.",
+      "chapter" : "Services security",
+      "date" : "2026-11-29",
+      "keywords" : [
+        "iCloud",
+        "end-to-end encryption",
+        "Advanced Data Protection",
+        "Apple Account",
+        "recovery"
+      ],
+      "section" : "iCloud"
     }
   ]
 }
