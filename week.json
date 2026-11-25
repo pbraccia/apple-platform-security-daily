@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Apple laptops implement a hardware-enforced microphone disconnect that physically severs the microphone from the system bus when the lid is closed. This disconnect is implemented at the hardware level and cannot be overridden by software, firmware, or the operating system. The design ensures no application, malware, or compromised kernel can activate the microphone when the device is physically shut. iPad models with detachable keyboards implement equivalent hardware disconnect functionality for the keyboard microphone connector, providing the same physical assurance on those platforms.",
-      "chapter" : "Hardware security and biometrics",
-      "date" : "2026-11-23",
-      "keywords" : [
-        "hardware disconnect",
-        "microphone privacy",
-        "physical isolation",
-        "lid switch",
-        "side-channel"
-      ],
-      "section" : "Hardware microphone disconnect"
-    },
-    {
       "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
       "chapter" : "Network security",
       "date" : "2026-11-24",
@@ -103,6 +90,19 @@
         "CloudKit E2E"
       ],
       "section" : "HomeKit security"
+    },
+    {
+      "blurb" : "Optic ID (visionOS), Face ID, and Touch ID enable fast, secure biometric authentication by storing enrolled templates exclusively within the Secure Enclave, encrypted with a key derived from the device UID. Raw biometric data never leaves the Secure Enclave and is never transmitted to Apple or backed up. Authentication results are returned to the application processor only as a cryptographic assertion. A spoof probability below 1-in-1,000,000 for Face ID and built-in liveness detection protect against fraudulent authentication attempts using photographs or physical replicas.",
+      "chapter" : "Hardware security and biometrics",
+      "date" : "2026-12-01",
+      "keywords" : [
+        "Secure Enclave",
+        "biometric template",
+        "liveness detection",
+        "Optic ID",
+        "Face ID"
+      ],
+      "section" : "Optic ID, Face ID, and Touch ID"
     }
   ]
 }
