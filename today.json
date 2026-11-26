@@ -1,13 +1,13 @@
 {
-  "blurb" : "Apple Pay is designed so a device, merchant, and payment network can complete a transaction without exposing a customer's card number to the merchant. The Secure Element stores payment credentials and creates payment-specific cryptograms, while Face ID, Touch ID, Optic ID, or a passcode authorises use when required. Device account numbers, tokenisation, and transaction-specific security values help limit the value of intercepted payment data. Tap to Pay on iPhone extends this model to contactless acceptance using the iPhone's built-in NFC capabilities.",
+  "blurb" : "The Apple Account is secured by two-factor authentication using trusted devices and 6-digit time-limited codes. Authentication generates a session token bound to the specific device; account recovery requires knowledge of the account password plus possession of a trusted device or trusted phone number. Managed Apple Accounts, provisioned through Apple School Manager or Apple Business Manager, extend this model to institutional deployments with federated identity provider integration via SAML and SCIM for automated provisioning. Managed accounts are governed by the organization's IdP policies and support supervised enrollment for enterprise and educational device management.",
   "chapter" : "Services security",
-  "date" : "2026-11-25",
+  "date" : "2026-11-26",
   "keywords" : [
-    "Apple Pay",
-    "Secure Element",
-    "tokenisation",
-    "NFC",
-    "Tap to Pay"
+    "2FA",
+    "Managed Apple Account",
+    "SAML",
+    "SCIM",
+    "federated identity"
   ],
-  "section" : "Apple Pay"
+  "section" : "Apple Account and Managed Apple Account"
 }

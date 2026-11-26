@@ -1,19 +1,6 @@
 {
   "days" : [
     {
-      "blurb" : "Apple's Bluetooth implementation uses Secure Simple Pairing with ECDH P-256 for Classic Bluetooth, generating a link key used to derive AES-CCM session encryption and integrity-protection keys. Bluetooth Low Energy uses LE Secure Connections with P-256 ECDH and AES-CCM-128 for connection encryption. Cross-transport key derivation (CTKD) allows a single pairing ceremony to establish keys for both BR\/EDR and BLE transports. BLE devices use randomized advertising addresses rotating periodically to prevent passive tracking. Applications access Bluetooth only through Core Bluetooth, which restricts raw device identifier access and requires user authorization for background operation.",
-      "chapter" : "Network security",
-      "date" : "2026-11-24",
-      "keywords" : [
-        "ECDH P-256",
-        "AES-CCM",
-        "LE Secure Connections",
-        "BLE address randomization",
-        "CTKD"
-      ],
-      "section" : "Bluetooth security"
-    },
-    {
       "blurb" : "Apple Pay is designed so a device, merchant, and payment network can complete a transaction without exposing a customer's card number to the merchant. The Secure Element stores payment credentials and creates payment-specific cryptograms, while Face ID, Touch ID, Optic ID, or a passcode authorises use when required. Device account numbers, tokenisation, and transaction-specific security values help limit the value of intercepted payment data. Tap to Pay on iPhone extends this model to contactless acceptance using the iPhone's built-in NFC capabilities.",
       "chapter" : "Services security",
       "date" : "2026-11-25",
@@ -103,6 +90,19 @@
         "Face ID"
       ],
       "section" : "Optic ID, Face ID, and Touch ID"
+    },
+    {
+      "blurb" : "The Secure Enclave is a dedicated security coprocessor embedded in Apple SoCs, running sepOS – an Apple-customized L4 microkernel. It has its own encrypted memory, hardware TRNG, AES engine, and PKA, and communicates with the application processor only through a tightly restricted interrupt-driven mailbox. The Secure Enclave manages biometric template processing, wraps Data Protection class keys with device UID-derived material, and performs Sealed Key Protection (SKP) to bind encryption keys to measurements of system software. No code outside the Secure Enclave can access its raw private key material.",
+      "chapter" : "Hardware security and biometrics",
+      "date" : "2026-12-02",
+      "keywords" : [
+        "sepOS",
+        "SKP",
+        "UID",
+        "mailbox interface",
+        "key wrapping"
+      ],
+      "section" : "The Secure Enclave"
     }
   ]
 }
